@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>D & D RACES</title>
+</head>
+<body>
+
+<div>
+        <!-- header -->
+        <div>
+            <nav >
+                <ul class="nav-bar">
+                    <div>
+                        <button class="logo" onclick="logoReset()" style="margin: 0px 0px 0px 50px; padding: 0px;"><img style="width: 100px; " src="./img/logo-d&d.png" alt="logo d&d"></button>
+                    </div>
+                    <div style="margin-right: 20px;">
+                        <button><li>Quick Builds</li></button>
+                        <button><li>Books</li></button>
+                        <button><li>Rules</li></button>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <!-- header -->
+
+        <!-- MAIN -->
+    <div class="full-layout">
+                <div class="menu1"></div>
+            <div class="race-layout">
+                <!-- <div class="races-container"></div>  -->
+                <!-- <div class="race-Img-Layout"></div> -->
+            </div>
+        <div class="sidebar-races-layout">
+            <div class="sidebar-races">
+               <p style="text-align: center; color: white;  margin: 5px 0px 5px 0px; letter-spacing: 8px; font-weight: 500;">Races</p>
+                <button class="aasimar" onclick="displayMenuRaces('aasimar');">Aasimar</button> 
+
+                <button class="dragonborn" onclick="displayMenuRaces('dragonborn');">Dragonborn</button>
+
+                <button class="dwarf" onclick="displayMenuRaces('dwarf');">Dwarf</button>
+
+                <button class="elf" onclick="displayMenuRaces('elf');">Elf</button>
+
+                <button class="gnome" onclick="displayMenuRaces('gnome');">Gnome</button>
+
+                <button class="goliath" onclick="displayMenuRaces('goliath');">Goliath</button>
+
+                <button class="halfling" onclick="displayMenuRaces('halfling');">Halfling</button>
+
+                <button class="human" onclick="displayMenuRaces('human');">Human</button> 
+
+                <button class="orc" onclick="displayMenuRaces('orc');">Orc</button>
+
+                <button class="tiefling" onclick="displayMenuRaces('tiefling');">Tiefling</button>
+            </div>
+            <div class="sidebar-classes">
+                <p style="text-align: center; margin: 5px 0px 5px 0px; color: white;  letter-spacing: 6px; font-weight: 500;">Classes</p>
+                <button>Artificer</button>
+                <button>Barbarian</button>
+                <button>Bard</button>
+                <button>Cleric</button>
+                <button>Druid</button>
+                <button>Fighter</button>
+                <button>Monk</button>
+                <button>Paladin</button>
+                <button>Ranger</button>
+                <button>Rogue</button>
+                <button>Sorcerer</button>
+                <button>Warlock</button>
+                <button>Wizard</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    <script src="./dd.js"></script>
+</body>
+</html>

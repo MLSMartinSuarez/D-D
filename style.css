@@ -1,0 +1,192 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-image: url('./img/dd-wallpaper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.376);
+}
+
+/* NAV BAR */
+
+.nav-bar{
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    border: none;
+    background-color: rgb(0, 0, 0);
+}
+
+.nav-bar button{
+    background-color: rgba(161, 161, 161, 0);
+    border: none;
+    cursor: pointer;
+    color: rgb(251, 78, 78);
+    letter-spacing: 2px;
+    font-style: italic;
+    font-size: larger;
+    margin-left: 20px;
+    padding-left: 20px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.nav-bar button:hover{
+    color: red;
+}
+
+/* MAIN RACES */
+
+.full-layout{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-left: 200px;
+    padding-top: 75px;
+    margin-top: 28px;
+}
+
+.sidebar-races-layout{
+    position: fixed;
+    top: 70px;
+    bottom: 0px;
+    left: 20px;
+    width: 140px;
+}
+
+.sidebar-races{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-classes{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-classes button{
+    background-color: rgba(0, 0, 0, 0.765);
+    color: rgb(251, 78, 78);
+    letter-spacing: 1px;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.sidebar-classes button:hover{
+    background-color: black;
+    color: red;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.256);
+}
+
+.sidebar-races button{
+    background-color: rgba(0, 0, 0, 0.765);
+    color: rgb(251, 78, 78);
+    letter-spacing: 1px;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2;
+}
+
+.sidebar-races button:hover{
+    background-color: black;
+    color: red;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.157);
+}
+
+/* RACE CONTAINERS */
+
+.races-container{
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    border: 1px solid black;
+    margin: 0px 50px 0px 0px;
+    background-color: rgba(0, 0, 0, 0.812);
+}
+
+.races-container p{
+    margin: 5px 0px 5px 0px;
+}
+
+.race-detail-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px 10px 20px;
+    color: white;
+}
+
+.race-detail-container button{
+    padding: 5px 20px 5px 20px;
+    margin-top: 10px;
+    background-color: black;
+    color: rgb(251, 78, 78);
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.race-detail-container button:hover{
+    background-color: black;
+    color: red;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.256);
+}
+
+.race-detail-container h1{
+    color: rgb(251, 78, 78);
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+.menu1{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 50px 0px 50px;
+}
+
+.menu1 button{
+    padding: 5px 20px 5px 20px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.765);
+    color: rgb(251, 78, 78);
+    letter-spacing: 1px;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.menu1 button:hover{
+    background-color: black;
+    color: red;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.256);
+}
+
+
+.importantDetail{
+    color: rgb(251, 78, 78);
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.raceImg{
+    width: 200px;
+    margin-top: 80px;
+}
+
+/*  */
+
