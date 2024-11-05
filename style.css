@@ -20,7 +20,7 @@ body{
 
 .nav-bar{
     display: flex;
-    height: 70px;
+    height: 55px;
     align-items: center;
     justify-content: space-between;
     position: fixed;
@@ -43,10 +43,10 @@ body{
     font-size: larger;
     margin-left: 20px;
     padding-left: 20px;
-    transition: background-color 0.2s, color 0.2s;
+    transition: color 0.2s;
 }
 .nav-bar button:hover{
-    color: red;
+    color: rgb(255, 255, 255);
 }
 
 /* MAIN RACES */
@@ -65,7 +65,7 @@ body{
     bottom: 0px;
     left: 20px;
     width: 140px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .sidebar-races{
