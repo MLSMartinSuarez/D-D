@@ -135,15 +135,19 @@ const gnome = {
     name2:`Forest Gnome`,
     name3:`Gnome: Mark of the Scribing`,
     name4:`Rock Gnome`,
+    name5:`Gnome (Base)(PHB 2014)`,
+    name6:`Gnome (Base)(PHB 2024)`,
     age:`Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age 40. They can live 350 to almost 500 years.(Deep Gnome has a shorter life Spam)`,
     ageDeep:`Deep gnomes are short-lived for gnomes. They mature at the same rate humans do and are considered full-grown adults by 25. They live 200 to 250 years, although hard toil and the dangers of the Underdark often claim them before their time.`,
     size:`Gnomes are between 3 and 4 feet tall and average about 40 pounds. Your size is Small.(Deep Gnomes are slightly shorter)`,
     sizeDeep:`A typical svirfneblin stands about 3 to 3½ feet tall and weighs 80 to 120 pounds. Your size is Small.`,
     speed:`25 feet`,
+    speed2024:`30 feet`,
     abilityScore1:`Int +2; Dex +1`,
     abilityScore2:`Int +2; Dex +1`,
     abilityScore3:`Int +2; Charisma +1`,
     abilityScore4:`Int +2; Constitution +1`,
+    abilityScore5:`Int +2`,
     darkvision:` Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.`,
     gnomeCunning: `You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.`,
     languages: `You can speak, read, and write Common and Gnomish. The Gnomish language, which uses the Dwarvish script, is renowned for its technical treatises and its catalogs of knowledge about the natural world.`,
@@ -158,9 +162,15 @@ const gnome = {
     Clockwork Toy. This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents.
     Fire Starter. The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action.
     Music Box. When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed.`,
-    giftedScribe:` When you make an Intelligence (History) check or an ability check using calligrapher's supplies, you can roll a d4 and add the number rolled to the ability check.`,
-    scribesInsight:` You know the message cantrip. You can also cast comprehend languages once with this trait, and you regain the ability to cast it when you finish a short or long rest. Starting at 3rd level, you can cast the magic mouth spell with this trait, and you regain the ability to cast it when you finish a long rest. Intelligence is your spellcasting ability for these spells`,
+    giftedScribe:` When you make an Intelligence (History) check or an ability check using <b class="importantDetail">calligrapher's supplies</b>, you can roll a <b class="importantDetail">d4</b> and add the number rolled to the ability check.`,
+    scribesInsight:` You know the <a class="importantDetail">message cantrip</a>. You can also cast <a class="importantDetail">comprehend languages</a> once with this trait, and you regain the ability to cast it when you finish a short or long rest. Starting at 3rd level, you can cast the <a class="importantDetail">magic mouth</a> spell with this trait, and you regain the ability to cast it when you finish a long rest. Intelligence is your spellcasting ability for these spells`,
     spellsoftheMark:` If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Scribing Spells table are added to the spell list of your spellcasting class.`,
+    gnomishLineage:`You are part of a lineage that grants you supernatural abilities. Choose one of the following options; whichever one you choose, Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait <b class="importantDetail">(choose the ability when you select the lineage)</b>: <br>
+    <br>
+    <b class="importantDetail">Forest Gnome</b>: You know the <a class="importantDetail">Minor Illusion</a> cantrip. You also always have the Speak with Animals spell prepared. You can cast it without a spell slot a number of times equal to your <b class="importantDetail">Proficiency Bonus</b>, and you regain all expended uses when you finish a <b class="importantDetail">Long Rest</b>. You can also use any spell slots you have to cast the spell.<br>
+    <br>
+
+    <b class="importantDetail">Rock Gnome</b>. You know the <a class="importantDetail">Mending</a> and <a class="importantDetail">Prestidigitation</b> cantrips. In addition, you can spend 10 minutes casting <a class="importantDetail">Prestidigitation</a> to create a Tiny clockwork device (AC 5, 1 HP), such as a toy, fire starter, or music box. When you create the device, you determine its function by choosing one effect from <a class="importantDetail">Prestidigitation</b>; the device produces that effect whenever you or another creature takes a <a class="importantDetail">Bonus Action</a> to activate it with a touch. If the chosen effect has options within it, you choose one of those options for the device when you create it. For example, if you choose the spell's ignite-extinguish effect, you determine whether the device ignites or extinguishes fire; the device doesn't do both. You can have three such devices in existence at a time, and each falls apart 8 hours after its creation or when you dismantle it with a touch as a <b class="importantDetail">Utilize action</b>.`
 }
 const goliath = {
     name1:`Goliath`,
@@ -305,8 +315,7 @@ function displayMenuRaces(race) {
                 <button onclick="displayMenuRacesDetails('scourge')"><li>Scourge</li></button>
                 <button onclick="displayMenuRacesDetails('protector')"><li>Protector</li></button>
                 <button onclick="displayMenuRacesDetails('fallen')"><li>Fallen</li></button>
-            
-        <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button>`
+            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
         menuSwitch = false;
         
         
@@ -358,13 +367,14 @@ function displayMenuRaces(race) {
         menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
-        <nav>
-             <ul>
-                <li>Scourge</li>
-                <li>Protector</li>
-                <li>Fallen</li>
-            </ul>                                                              
-        </nav>
+        
+                <button onclick="displayMenuRacesDetails('gnomeBase2024')"><li>Gnome (Base)(PHB 2024)</li></button>
+                <button onclick="displayMenuRacesDetails('gnomeBase2014')"><li>Gnome (Base)(PHB 2014)</li></button>
+                <button onclick="displayMenuRacesDetails('forestGnome')"><li>Forest Gnome (2014)</li></button>
+                <button onclick="displayMenuRacesDetails('rockGnome')"><li>Rock Gnome (2014)</li></button>
+                <button onclick="displayMenuRacesDetails('deepGnome')"><li>Deep Gnome</li></button>
+                <button onclick="displayMenuRacesDetails('gnomeMark')"><li>Gnome: Mark of Scribing (2014)</li></button>
+         
         <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button>`
         menuSwitch = false;
     }
@@ -709,6 +719,150 @@ function displayMenuRacesDetails(subrace){
             </div>
         </div>`
     ;  
+    }
+    //GNOME
+    else if(subrace === 'gnomeBase2024'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${gnome.name6}</h1>
+                <p><b>Size: </b>${gnome.size}</p>
+                <p><b>Speed: </b>${gnome.speed2024}</p>
+                <p><b>Age: </b>${gnome.age}</p>
+                <p><b>Lenguages: </b>${gnome.languages}</p>
+                <p><b>Dark Vision: </b>${gnome.darkvision}</p>
+                <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
+                <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
+                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if(subrace === 'gnomeBase2014'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${gnome.name5}</h1>
+                <p><b>Ability Scores: </b> ${aasimar.abilityScore5}</p>
+                <p><b>Size: </b>${gnome.size}</p>
+                <p><b>Speed: </b>${gnome.speed}</p>
+                <p><b>Age: </b>${gnome.age}</p>
+                <p><b>Lenguages: </b>${gnome.languages}</p>
+                <p><b>Dark Vision: </b>${gnome.darkvision}</p>
+                <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
+                <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
+                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if(subrace === 'forestGnome'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${gnome.name2}</h1>
+                <p><b>Ability Scores: </b> ${gnome.abilityScore2}</p>
+                <p><b>Size: </b>${gnome.size}</p>
+                <p><b>Speed: </b>${gnome.speed}</p>
+                <p><b>Age: </b>${gnome.age}</p>
+                <p><b>Lenguages: </b>${gnome.languages}</p>
+                <p><b>Dark Vision: </b>${gnome.darkvision}</p>
+                <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
+                <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
+                <p><b>Natural Illusionist: </b>${gnome.naturalIllusionist}</p>
+                <p><b>Speak with Small Beast: </b>${gnome.speakwithSmallBeasts}</p>
+                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if(subrace === 'rockGnome'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${gnome.name4}</h1>
+                <p><b>Ability Scores: </b> ${gnome.abilityScore4}</p>
+                <p><b>Size: </b>${gnome.size}</p>
+                <p><b>Speed: </b>${gnome.speed}</p>
+                <p><b>Age: </b>${gnome.age}</p>
+                <p><b>Lenguages: </b>${gnome.languages}</p>
+                <p><b>Dark Vision: </b>${gnome.darkvision}</p>
+                <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
+                <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
+                <p><b>Artificer's Lore: </b>${gnome.artificersLore}</p>
+                <p><b>Tinker: </b>${gnome.tinker}</p>
+                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if(subrace === 'deepGnome'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${gnome.name1}</h1>
+                <p><b>Ability Scores: </b> ${gnome.abilityScore1}</p>
+                <p><b>Size: </b>${gnome.size}</p>
+                <p><b>Speed: </b>${gnome.speed}</p>
+                <p><b>Age: </b>${gnome.age}</p>
+                <p><b>Languages: </b>${gnome.languages1}</p>
+                <p><b>Superior Darkvision: </b>${gnome.superiorDarkvision}</p>
+                <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
+                <p><b>Stone Camouflage: </b>${gnome.stoneCamouflage}</p>
+                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if(subrace === 'gnomeMark'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${gnome.name3}</h1>
+                <p><b>Ability Scores: </b> ${gnome.abilityScore3}</p>
+                <p><b>Size: </b>${gnome.size}</p>
+                <p><b>Speed: </b>${gnome.speed}</p>
+                <p><b>Age: </b>${gnome.age}</p>
+                <p><b>Languages: </b>${gnome.languages}</p>
+                <p><b>Dark Vision: </b>${gnome.darkvision}</p>
+                <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
+                <p><b>Gifted Scribe: </b>${gnome.giftedScribe}</p>
+                <p><b>Scribe's Insight: </b>${gnome.scribesInsight}</p>
+                <p><b>Spells of the Mark: </b>${gnome.spellsoftheMark}</p>
+                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
     }
 }
 

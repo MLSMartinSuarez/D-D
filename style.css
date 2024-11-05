@@ -38,7 +38,6 @@ body{
     border: none;
     cursor: pointer;
     color: rgba(32, 237, 172, 0.748);
-    /* letter-spacing: 2px; */
     font-style: italic;
     font-size: larger;
     margin-left: 20px;
@@ -138,7 +137,7 @@ body{
     padding: 5px 20px 5px 20px;
     margin-top: 10px;
     background-color: black;
-    color: rgb(251, 78, 78);
+    color: rgba(32, 237, 172, 0.748);
     transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
     cursor: pointer;
     border: 1px solid white;
@@ -146,14 +145,18 @@ body{
 }
 .race-detail-container button:hover{
     background-color: black;
-    color: red;
+    color: rgb(255, 255, 255);
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.256);
 }
 
 .race-detail-container h1{
-    color: rgb(251, 78, 78);
+    color: rgba(32, 237, 172, 0.748);
     letter-spacing: 2px;
-    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.race-detail-container p{
+    margin-bottom: 10px;
 }
 
 .menu1{
@@ -166,24 +169,32 @@ body{
     padding: 5px 20px 5px 20px;
     margin-top: 10px;
     background-color: rgba(0, 0, 0, 0.765);
-    color: rgb(251, 78, 78);
+    color: rgba(32, 237, 172, 0.748);
     letter-spacing: 1px;
     transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
     border-radius: 10px;
     cursor: pointer;
 }
 
+.hide-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px 10px 0px;
+}
+
 .menu1 button:hover{
     background-color: black;
-    color: red;
+    color: rgb(255, 255, 255);
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.256);
 }
 
 
 .importantDetail{
-    color: rgb(251, 78, 78);
+    color: rgba(32, 237, 172, 0.748);
     font-weight: 100;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 .raceImg{
