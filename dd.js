@@ -28,12 +28,18 @@ const aasimar = {
 const dragonborn = {
     name1:`Dragonborn (Base)(PHB 2024)`,
     name2:`Dragonborn (Base)(PHB 2014)`,
-    name2:`Dragonborn Draconblood`,
-    name3:`Dragonborn Ravenite`,
+    name3:`Dragonborn Draconblood`,
+    name4:`Dragonborn Ravenite`,
     size:`Dragonborn are taller and heavier than humans, standing well over 6 feet tall and averaging almost 250 pounds. Your size is Medium.`,
     age:`Age. Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.`,
+    speed:`30 feet`,
+    abilityScore1:`Str +2; Charisma +1`,
+    abilityScore2:`Int +2; Charisma +1`,
+    abilityScore3:`Str +2; Constitution +1`,
     draconicAncestry:` Your lineage stems from a dragon progenitor. Choose the kind of dragon from the Draconic Ancestors table. Your choice affects your Breath Weapon and Damage Resistance traits as well as your appearance`,
     breathWeapon:` When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw (DC 8 plus your Constitution modifier and Proficiency Bonus). On a failed save, a creature takes 1d10 damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by 1d10 when you reach character levels 5 (2d10), 11 (3d10), and 17 (4d10).You can use this Breath Weapon a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.`,
+    breathWeapon2024:`When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw (DC 8 plus your Constitution modifier and Proficiency Bonus). On a failed save, a creature takes 1d10 damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by 1d10 when you reach character levels 5 (2d10), 11 (3d10), and 17 (4d10).<br>
+    You can use this Breath Weapon a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.`,
     damageResistance:` You have Resistance to the damage type determined by your Draconic Ancestry trait.`,
     draconicFlight:` When you reach character level 5, you can channel draconic magic to give yourself temporary flight. As a Bonus Action, you sprout spectral wings on your back that last for 10 minutes or until you retract the wings (no action required) or have the Incapacitated condition. During that time, you have a Fly Speed equal to your Speed. Your wings appear to be made of the same energy as your Breath Weapon. Once you use this trait, you can't use it again until you finish a Long Rest.`,
     forcefulPresence:` You can use your understanding of creative diplomacy or intimidation to guide a conversation in your favor. When you make a Charisma (Intimidation or Persuasion) check, you can do so with advantage. Once you use this trait, you can't do so again until you finish a short or long rest.`,
@@ -84,6 +90,7 @@ const elf = {
     name7:"Sea Elf",
     name8:`Elf (Base)(PHB 2014)`,
     name9:`Elf (Base)(PHB 2024)`,
+    name10:`Pallid Elf`,
     abilityScore1:`Dex +2; Int +1`,
     abilityScore2:`Dex +2; Wisdom +1`,
     abilityScore3:`Dex +2; Charisma +1`,
@@ -91,10 +98,13 @@ const elf = {
     abilityScore5:`Dex +2; Charisma +1`,
     abilityScore6:`Dex +2; Constitution +1`,
     abilityScore7:`Dex +2; Constitution +1`,
-    abilityScore8:`Dex +2`,
+    abilityScore9:`Dex +2`,
+    abilityScore10:`Dex +2; Wisdom +1`,
     age:`Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around the age of 100 and can live to be 750 years old.`,
     size:`Elves range from under 5 to over 6 feet tall and have slender builds. Your size is Medium.`,
-    speed:`30 feet (Wood Elf 35 feet)`,
+    speed:`30 feet`,
+    speedWoodElf:`35 feet`,
+    speedSeaElf:`30 feet, Swim 30 feet`,
     darkvision:`Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.`,
     elvenLineage:` You are part of a lineage that grants you supernatural abilities. Choose a lineage from the Elven Lineages table. You gain the level 1 benefit of that lineage.
     When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level.
@@ -109,11 +119,15 @@ const elf = {
     sunlightSensitivity:"You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.",
     drowMagic: "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once with this trait; you regain the ability to cast it when you finish a long rest. When you reach 5th level, you can also cast the darkness spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.",
     drowWeaponTraining:" You have proficiency with rapiers, shortswords, and hand crossbows.",
-    feyStep: `As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a short or long rest. When you reach 3rd level, your Fey Step gains an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + your proficiency bonus + your Charisma modifier: 
-    Autumn. Immediately after you use your Fey Step, up to two creatures of your choice that you can see within 10 feet of you must succeed on a Wisdom saving throw or be charmed by you for 1 minute, or until you or your companions deal any damage to it. 
-    Winter. When you use your Fey Step, one creature of your choice that you can see within 5 feet of you before you teleport must succeed on a Wisdom saving throw or be frightened of you until the end of your next turn.
-    Spring. When you use your Fey Step, you can touch one willing creature within 5 feet of you. That creature then teleports instead of you, appearing in an unoccupied space of your choice that you can see within 30 feet of you.
-    Summer. Immediately after you use your Fey Step, each creature of your choice that you can see within 5 feet of you takes fire damage equal to your Charisma modifier (minimum of 1 damage).`,
+    feyStep: `As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a short or long rest. When you reach 3rd level, your Fey Step gains an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + your proficiency bonus + your Charisma modifier:<br>
+    <br>
+    <b class="importantDetail">Autumn</b>: Immediately after you use your Fey Step, up to two creatures of your choice that you can see within 10 feet of you must succeed on a Wisdom saving throw or be charmed by you for 1 minute, or until you or your companions deal any damage to it. <br>
+    <br>
+    <b class="importantDetail">Winter</b>: When you use your Fey Step, one creature of your choice that you can see within 5 feet of you before you teleport must succeed on a Wisdom saving throw or be frightened of you until the end of your next turn.<br>
+    <br>
+    <b class="importantDetail">Spring</b>: When you use your Fey Step, you can touch one willing creature within 5 feet of you. That creature then teleports instead of you, appearing in an unoccupied space of your choice that you can see within 30 feet of you.<br>
+    <br>
+    <b class="importantDetail">Summer</b>. Immediately after you use your Fey Step, each creature of your choice that you can see within 5 feet of you takes fire damage equal to your Charisma modifier (minimum of 1 damage).`,
     cunningIntuition: `When you make a Charisma (Performance) or Dexterity (Stealth) check, you can roll a d4 and add the number rolled to the ability check.`,
     shapeShadows: `You know the minor illusion cantrip. Starting at 3rd level, you can cast the invisibility spell once with this trait, and you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.`,
     spellsOfTheMark: `If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Shadow Spells table are added to the spell list of your spellcasting class.`,
@@ -127,8 +141,10 @@ const elf = {
     fleetofFoot: `Your base walking speed increases to 35 feet.`,
     maskoftheWild: `You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.`,
     necroticResistance: `You have resistance to necrotic damage.`,
-    blessingoftheRavenQueen:` As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a long rest.
+    blessingoftheRavenQueen:` As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. Once you use this trait, you can't do so again until you finish a long rest.<br>
     Starting at 3rd level, you also gain resistance to all damage when you teleport using this trait. The resistance lasts until the start of your next turn. During that time, you appear ghostly and translucent.`,
+    incisiveSense:`You have advantage on Intelligence (Investigation) and Wisdom (Insight) checks.`,
+    blessingoftheMoonWeaver:`You know the light cantrip. When you reach 3rd level, you can cast the sleep spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the invisibility spell (targeting yourself only) once with this trait and regain the ability to do so when you finish a long rest. Casting these spells with this trait doesn't require material components. Wisdom is your spellcasting ability for these spells.`
 }
 const gnome = {
     name1:`Deep Gnome (Gnome Svirfneblin)`,
@@ -174,8 +190,10 @@ const gnome = {
 }
 const goliath = {
     name1:`Goliath`,
+    name2:`Goliath (Base)(PHB 2024)`,
     size:`Goliaths are between 7 and 8 feet tall and weigh between 280 and 340 pounds. Your size is Medium.`,
     speed:`30 feet`,
+    speed2024:`35 feet`,
     age:`Goliaths have lifespans comparable to humans. They enter adulthood in their late teens and usually live less than a century.`,
     abilityScore1:`Str +2; Constitution +1`,
     naturalAthlete: `You have proficiency in the Athletics skill.`,
@@ -183,39 +201,71 @@ const goliath = {
     powerfulBuild:` You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.`,
     mountainBorn:` You have resistance to cold damage. You're also acclimated to high altitude, including elevations above 20,000 feet.`,
     languages: `You can speak, read, and write Common and Giant.`,
+    giantAncestry: `You are descended from Giants. Choose one of the following benefits—a supernatural boon from your ancestry; you can use the chosen benefit a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest:<br>
+    <br>
+    <b class="importantDetail">Cloud's Jaunt (Cloud Giant)</b>: As a Bonus Action, you magically teleport up to 30 feet to an unoccupied space you can see.<br>
+    <br>
+    <b class="importantDetail">Fire's Burn (Fire Giant)</b>: When you hit a target with an attack roll and deal damage to it, you can also deal 1d10 Fire damage to that target.<br>
+    <br>
+    <b class="importantDetail">Frost's Chill (Frost Giant)</b>: When you hit a target with an attack roll and deal damage to it, you can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until the start of your next turn.<br>
+    <br>
+    <b class="importantDetail">Hill's Tumble (Hill Giant)</b>: When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the Prone condition.<br>
+    <br>
+    <b class="importantDetail">Stone's Endurance (Stone Giant)</b>: When you take damage, you can take a Reaction to roll 1d12. Add your Constitution modifier to the number rolled and reduce the damage by that total.<br>
+    <br>
+    <b class="importantDetail">Storm's Thunder (Storm Giant)</b>: When you take damage from a creature within 60 feet of you, you can take a Reaction to deal 1d8 Thunder damage to that creature.`,
+    largeForm:`Starting at character level 5, you can change your size to Large as a Bonus Action if you're in a big enough space. This transformation lasts for 10 minutes or until you end it (no action required). For that duration, you have Advantage on Strength checks, and your Speed increases by 10 feet. Once you use this trait, you can't use it again until you finish a Long Rest.`,
+    powerfulBuild2024:` You have Advantage on any ability check you make to end the Grappled condition. You also count as one size larger when determining your carrying capacity.`
 }
 const halfling = {
     name1:`Halfling: LightFoot`,
     name2:`Halfling: Mark Of Healing`,
     name3:`Halfling: Mark Of Hospitality`,
     name4:`Halfling: Stout`,
+    name5:`Halfling: Lotusden`,
+    name6:`Halfling: Ghostwise`,
+    name7:`Halfling (Base)(2024)`,
+    name8:`Halfling (Base)(2014)`,
     speed:`25 feet`,
+    speed2024:`30 feet`,
     size:`Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.`,
     age:`A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.`,
     abilityScore1:`Dex+2; Charisma +1`,
     abilityScore2:`Dex+2; Wisdom +1`,
     abilityScore3:`Dex+2; Charisma +1`,
     abilityScore4:`Dex+2; Constitution +1`,
+    abilityScore5:`Dex+2; Wisdom +1`,
+    abilityScore6:`Dex+2; Wisdom +1`,
+    abilityScore8:`Dex+2;`,
     lucky: `When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.`,
-    brave: `You have advantage on saving throws against being frightened.
-    Halfling Nimbleness. You can move through the space of any creature that is of a size larger than yours.`,
+    lucky2024:`When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll.`,
+    brave: `You have advantage on saving throws against being frightened.`,
     languages: `You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling.`,
     naturallyStealthy:` You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.`,
     stoutResilience:` You have advantage on saving throws against poison, and you have resistance against poison damage.`,
     medicalIntuition:` When you make a Wisdom (Medicine) check or an ability check using an herbalism kit, you can roll a d4 and add the number rolled to the ability check.`,
     healingTouch:` You can cast the cure wounds spell with this trait. Starting at 3rd level, you can also cast lesser restoration with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells.`,
     spellsoftheMark:` If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Healing Spells table are added to the spell list of your spellcasting class.`,
+    childOfTheWood:`You know the druidcraft cantrip. When you reach 3rd level, you can cast the entangle spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the spike growth spell once with this trait and regain the ability to do so when you finish a long rest. Casting these spells with this trait doesn't require material components. Wisdom is your spellcasting ability for these spells.`,
+    timberWalk:`Ability checks made to track you have disadvantage, and you can move across difficult terrain made of nonmagical plants and undergrowth without expending extra movement.`,
+    silentSpeech:`You can speak telepathically to any creature within 30 feet of you. The creature understands you only if the two of you share a language. You can speak telepathically in this way to one creature at a time.`,
+    halflingNimbleness:`You can move through the space of any creature that is of a size larger than yours.`,
+    everHospitable:`When you make a Charisma (Persuasion) check or an ability check involving brewer's supplies or cook's utensils, you can roll a d4 and add the number rolled to the ability check.`,
+    innkeepersMagic:`You know the prestidigitation cantrip. You can also cast the purify food and drink and unseen servant spells with this trait. Once you cast either spell with this trait, you can't cast that spell with it again until you finish long rest. Charisma is your spellcasting ability for these spells.`
 }   
 const human = {
-    name1:`Human (Base)`,
+    name1:`Human (Base)(PHB 2014)`,
     name2:`Human (Variant)`,
     name3:`Human (Mark of Handling)`,
     name4:`Human (Mark of Making)`,
     name5:`Human (Mark of Passage)`,
     name6:`Human (Mark of Sentinel)`,
-    name7:`Human (Mark of Finding)`,
+    name7:`Human (Variant: Mark of Finding)`,
+    name8:`Human (Keldon)`,
+    name9:`Human (Base)(PHB 2024)`,
     size:`Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is Medium.`,
-    speed:`30 feet (Mark of Passage has 35 feet for his ability "Courier's Speed")`,
+    speed:`30 feet`,
+    speedMarkPassage:`Mark of Passage has 35 feet for his ability "Courier's Speed`,
     age:`Humans reach adulthood in their late teens and live less than a century`,
     abilityScore1:`+1 Every Attribute`,
     abilityScore2:`Any 2 attributes of your choice +1`,
@@ -224,6 +274,7 @@ const human = {
     abilityScore5:`Dex +2; Any +1`,
     abilityScore6:`Constitution +2, Wisdom +1`,
     abilityScore7:`Wisdom +2; Constitution +1`,
+    abilityScore8:`Str +2; Constitution +1`,
     languages: `You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.`,
     wildIntuition:` When you make a Wisdom (Animal Handling) or Intelligence (Nature) check, you can roll a d4 and add the number rolled to the ability check.`,
     primalConnection:` You can cast the animal friendship and speak with animals spells with this trait, requiring no material component. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a short or long rest. Wisdom is your spellcasting ability for these spells.`,
@@ -243,6 +294,13 @@ const human = {
     darkvision: `You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.`,
     huntersIntuition:` When you make a Wisdom (Perception) or Wisdom (Survival) check, you can roll a d4 and add the number rolled to the ability check.`,
     findersMagic:` You can cast the hunter's mark spell with this trait. Starting at 3rd level, you can also cast the locate object spell with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells.`,
+    resourceful:`Resourceful. You gain Heroic Inspiration whenever you finish a Long Rest.`,
+    skillful:`Skillful. You gain proficiency in one skill of your choice.`,
+    versatile:`You gain an Origin feat of your choice.`,
+    naturalAthlete:`You have proficiency in the Athletics skill.`,
+    keldonResilience:`You have proficiency in Strength saving throws.`,
+    icehavenBorn:`You are naturally adapted to cold climates, as described in chapter 5 of the Dungeon Master's Guide.`,
+    alignment:`Keldons tend toward chaotic alignments, and many walk a fine line between good and evil.`
 }
 const orc = {
     name1:`Orc`,
@@ -324,15 +382,14 @@ function displayMenuRaces(race) {
         menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
-        <nav>
-             <ul>
-                <li>Scourge</li>
-                <li>Protector</li>
-                <li>Fallen3</li>
-            </ul>                                                              
-        </nav>
-        <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button>`
+
+                <button onclick="displayMenuRacesDetails('dragonbornBase2024')"><li>Dragonborn (Base)(PHB 2024) </li></button>
+                <button onclick="displayMenuRacesDetails('dragonbornBase')"><li>Dragonborn (Base)(PHB 2014)</li></button>
+                <button onclick="displayMenuRacesDetails('dragonbornDracon')"><li>Dragonborn (Draconblood)</li></button>
+                <button onclick="displayMenuRacesDetails('dragonbornRavenite')"><li>Dragonborn (Ravenite)</li></button>
+            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
         menuSwitch = false;
+        
     }
     else if (race === 'dwarf'){
         menuRaces.innerHTML= '';
@@ -345,7 +402,7 @@ function displayMenuRaces(race) {
         <button onclick="displayMenuRacesDetails('dwarfhill')"><li>Dwarf of the Hill</li></button>
         <button onclick="displayMenuRacesDetails('dwarfmountain')"><li>Dwarf of the Mountain</li></button>
         <button onclick="displayMenuRacesDetails('dwarfmark')"><li>Dwarf : Mark of the Warding</li></button>
-        <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button>`
+        <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
 
         menuSwitch = false;
     }
@@ -353,14 +410,28 @@ function displayMenuRaces(race) {
         menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
-        <nav>
-             <ul>
-                <li>Scourge</li>
-                <li>Protector</li>
-                <li>Fallen</li>
-            </ul>                                                              
-        </nav>
-        <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button>`
+
+                <button onclick="displayMenuRacesDetails('elfBase2024')"><li>Elf (Base)(PHB 2024) </li></button>
+
+                <button onclick="displayMenuRacesDetails('elfBase')"><li>Elf (Base)(PHB 2014)</li></button>
+
+                <button onclick="displayMenuRacesDetails('highelf')"><li>High Elf</li></button>
+
+                <button onclick="displayMenuRacesDetails('woodelf')"><li>Wood Elf</li></button>
+
+                <button onclick="displayMenuRacesDetails('drowelf')"><li>Drow Elf</li></button>
+
+                <button onclick="displayMenuRacesDetails('eladrinelf')"><li>Eladrin Elf</li></button>
+
+                <button onclick="displayMenuRacesDetails('shadarelf')"><li>Shadar-kai Elf</li></button>
+
+                <button onclick="displayMenuRacesDetails('seaelf')"><li>Sea Elf</li></button>
+
+                <button onclick="displayMenuRacesDetails('pallidelf')"><li>Pallid Elf</li></button>
+
+                <button onclick="displayMenuRacesDetails('markelf')"><li>Elf (Mark of Shadow)</li></button>
+
+            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
         menuSwitch = false;
     }
     else if (race === 'gnome'){
@@ -375,49 +446,68 @@ function displayMenuRaces(race) {
                 <button onclick="displayMenuRacesDetails('deepGnome')"><li>Deep Gnome</li></button>
                 <button onclick="displayMenuRacesDetails('gnomeMark')"><li>Gnome: Mark of Scribing (2014)</li></button>
          
-        <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button>`
+        <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
         menuSwitch = false;
     }
     else if (race === 'goliath'){
         menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
-        <nav>
-             <ul>
-                <li>Scourge</li>
-                <li>Protector</li>
-                <li>Fallen</li>
-            </ul>                                                              
-        </nav>
-        <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button>`
+        
+                <button onclick="displayMenuRacesDetails('goliathbase2024')"><li>Goliath (Base)(PHB 2024)</li></button>
+                <button onclick="displayMenuRacesDetails('goliathbase')"><li>Goliath (Base)</li></button>
+         
+        <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
         menuSwitch = false;
     }
     else if (race === 'halfling'){
         menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
-        <nav>
-             <ul>
-                <li>Scourge</li>
-                <li>Protector</li>
-                <li>Fallen</li>
-            </ul>                                                              
-        </nav>
-        <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button>`
+
+                <button onclick="displayMenuRacesDetails('halflingbase2024')"><li>Halfling (Base)(PHB 2024) </li></button>
+
+                <button onclick="displayMenuRacesDetails('halflingBase')"><li>Halfling (Base)(PHB 2014)</li></button>
+
+                <button onclick="displayMenuRacesDetails('halflinglight')"><li>Halfling: Lightfoot</li></button>
+
+                <button onclick="displayMenuRacesDetails('halflingstout')"><li>Halfling: Stout</li></button>
+
+                <button onclick="displayMenuRacesDetails('halflinglotusden')"><li>Halfling: Lotusden</li></button>
+
+                <button onclick="displayMenuRacesDetails('halflingghost')"><li>Halfling: Ghostwise</li></button>
+
+                <button onclick="displayMenuRacesDetails('halfingmarkhealing')"><li>Halfling: Mark of Healing</li></button>
+
+                <button onclick="displayMenuRacesDetails('halflingmarkhospital')"><li>Halfling: Mark of Hospitality</li></button>
+
+            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
         menuSwitch = false;
     }
     else if (race === 'human'){
         menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
-        <nav>
-             <ul>
-                <li>Scourge</li>
-                <li>Protector</li>
-                <li>Fallen</li>
-            </ul>                                                              
-        </nav>
-        <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button>`
+
+                <button onclick="displayMenuRacesDetails('humanbase2024')"><li>Human (Base)(PHB 2024) </li></button>
+
+                <button onclick="displayMenuRacesDetails('humanbase')"><li>Human (Base)(PHB 2014)</li></button>
+
+                <button onclick="displayMenuRacesDetails('humanvariant')"><li>Human (Variant)</li></button>
+
+                <button onclick="displayMenuRacesDetails('humankeldon')"><li>Human Keldon</li></button>
+
+                <button onclick="displayMenuRacesDetails('humanmarkhandling')"><li>Human: Mark of Handling</li></button>
+
+                <button onclick="displayMenuRacesDetails('humanmarkmaking')"><li>Human: Mark of Making</li></button>
+
+                <button onclick="displayMenuRacesDetails('humanmarkpassage')"><li>Human: Mark of Passage</li></button>
+
+                <button onclick="displayMenuRacesDetails('humanmarksentinel')"><li>Human: Mark of Sentinel</li></button>
+
+                <button onclick="displayMenuRacesDetails('humanmarkfinding')"><li>Human: Mark of Finding</li></button>
+
+            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
         menuSwitch = false;
     }
     else if (race === 'orc'){
@@ -563,7 +653,363 @@ function displayMenuRacesDetails(subrace){
         ;
     }
     // DRAGONBORN
-
+    else if (subrace === 'dragonbornBase2024'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+       <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${dragonborn.name1}</h1>
+                <p><b>Size: </b>${dragonborn.size}</p>
+                <p><b>Speed: </b>${dragonborn.speed}</p>
+                <p><b>Age: </b>${dragonborn.age}</p>
+                <p><b>Lenguages: </b>${dragonborn.languages}</p>
+                <p><b>Dark Vision: </b>${dragonborn.darkvision}</p>
+                <p><b>Breath Weapon: </b>${dragonborn.breathWeapon2024}</p>
+                <p><b>Draconic Flight: </b>${dragonborn.draconicFlight}</p>
+                <p><b>Damage Resistance: </b>${dragonborn.damageResistance}</p>
+                <p><b>Draconic Ancestry: </b>${dragonborn.draconicAncestry}</p>
+                <button onclick = "displayMenuRaces('dragonborn')"> BACK </button>
+                </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if (subrace === 'dragonbornBase'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+       <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${dragonborn.name2}</h1>
+                <p><b>Ability Score: </b>${dragonborn.abilityScore1}</p>
+                <p><b>Size: </b>${dragonborn.size}</p>
+                <p><b>Speed: </b>${dragonborn.speed}</p>
+                <p><b>Age: </b>${dragonborn.age}</p>
+                <p><b>Lenguages: </b>${dragonborn.languages}</p>
+                <p><b>Breath Weapon: </b>${dragonborn.breathWeapon}</p>
+                <p><b>Damage Resistance: </b>${dragonborn.damageResistance}</p>
+                <p><b>Draconic Ancestry: </b>${dragonborn.draconicAncestry}</p>
+                <button onclick = "displayMenuRaces('dragonborn')"> BACK </button>
+                </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if (subrace === 'dragonbornDracon'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${dragonborn.name3}</h1>
+            <p><b>Ability Score: </b>${dragonborn.abilityScore2}</p>
+            <p><b>Size: </b>${dragonborn.size}</p>
+            <p><b>Speed: </b>${dragonborn.speed}</p>
+            <p><b>Age: </b>${dragonborn.age}</p>
+            <p><b>Lenguages: </b>${dragonborn.languages}</p>
+            <p><b>Dark Vision: </b>${dragonborn.darkvision}</p>
+            <p><b>Breath Weapon: </b>${dragonborn.breathWeapon}</p>
+            <p><b>Forceful Presence: </b>${dragonborn.forcefulPresence}</p>
+            <p><b>Draconic Ancestry: </b>${dragonborn.draconicAncestry}</p>
+            <button onclick = "displayMenuRaces('dragonborn')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ; 
+    }
+    else if (subrace === 'dragonbornRavenite'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${dragonborn.name4}</h1>
+            <p><b>Ability Score: </b>${dragonborn.abilityScore3}</p>
+            <p><b>Size: </b>${dragonborn.size}</p>
+            <p><b>Speed: </b>${dragonborn.speed}</p>
+            <p><b>Age: </b>${dragonborn.age}</p>
+            <p><b>Lenguages: </b>${dragonborn.languages}</p>
+            <p><b>Dark Vision: </b>${dragonborn.darkvision}</p>
+            <p><b>Breath Weapon: </b>${dragonborn.breathWeapon}</p>
+            <p><b>Vengeful Assault: </b>${dragonborn.vengefulAssault}</p>
+            <p><b>Draconic Ancestry: </b>${dragonborn.draconicAncestry}</p>
+            <button onclick = "displayMenuRaces('dragonborn')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;   
+    }
+    //ELF
+    else if (subrace === 'elfBase2024'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${elf.name9}</h1>
+            <p><b>Size: </b>${elf.size}</p>
+            <p><b>Speed: </b>${elf.speed}</p>
+            <p><b>Age: </b>${elf.age}</p>
+            <p><b>Lenguages: </b>${elf.languages}</p>
+            <p><b>Dark Vision: </b>${elf.darkvision}</p>
+            <p><b>Fey Ancestry: </b>${elf.feyAncestry2024}</p>
+            <p><b>Keen Senses: </b>${elf.keenSenses2024}</p>
+            <p><b>Trance: </b>${elf.trance}</p>
+            <p><b>Elven Lineage: </b>${elf.elvenLineage}</p>
+            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;   
+    }
+    else if (subrace === 'elfBase'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${elf.name8}</h1>
+            <p><b>Ability Score: </b>${elf.abilityScore9}</p>
+            <p><b>Size: </b>${elf.size}</p>
+            <p><b>Speed: </b>${elf.speed}</p>
+            <p><b>Age: </b>${elf.age}</p>
+            <p><b>Lenguages: </b>${elf.languages}</p>
+            <p><b>Dark Vision: </b>${elf.darkvision}</p>
+            <p><b>Fey Ancestry: </b>${elf.feyAncestry}</p>
+            <p><b>Keen Senses: </b>${elf.keenSenses}</p>
+            <p><b>Trance: </b>${elf.trance}</p>
+            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;    
+    }
+    else if (subrace === 'highelf'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${elf.name1}</h1>
+            <p><b>Ability Score: </b>${elf.abilityScore1}</p>
+            <p><b>Size: </b>${elf.size}</p>
+            <p><b>Speed: </b>${elf.speed}</p>
+            <p><b>Age: </b>${elf.age}</p>
+            <p><b>Lenguages: </b>${elf.languages}</p>
+            <p><b>Dark Vision: </b>${elf.darkvision}</p>
+            <p><b>Fey Ancestry: </b>${elf.feyAncestry}</p>
+            <p><b>Keen Senses: </b>${elf.keenSenses}</p>
+            <p><b>Trance: </b>${elf.trance}</p>
+            <p><b>Extra Language: </b>${elf.extraLanguage1}</p>
+            <p><b>Cantrip: </b>${elf.cantrip}</p>
+            <p><b>Elf Weapon Training: </b>${elf.elfWeaponTraining}</p>
+            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;    
+    }
+    else if (subrace === 'woodelf'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${elf.name2}</h1>
+            <p><b>Ability Score: </b>${elf.abilityScore2}</p>
+            <p><b>Size: </b>${elf.size}</p>
+            <p><b>Speed: </b>${elf.speedWoodElf}</p>
+            <p><b>Age: </b>${elf.age}</p>
+            <p><b>Lenguages: </b>${elf.languages}</p>
+            <p><b>Dark Vision: </b>${elf.darkvision}</p>
+            <p><b>Fey Ancestry: </b>${elf.feyAncestry}</p>
+            <p><b>Keen Senses: </b>${elf.keenSenses}</p>
+            <p><b>Trance: </b>${elf.trance}</p>
+            <p><b>Mask of the Wild: </b>${elf.maskoftheWild}</p>
+            <p><b>Fleet of Foot: </b>${elf.fleetofFoot}</p>
+            <p><b>Elf Weapon Training: </b>${elf.elfWeaponTraining}</p>
+            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;    
+    }
+    else if (subrace === 'drowelf'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${elf.name3}</h1>
+            <p><b>Ability Score: </b>${elf.abilityScore3}</p>
+            <p><b>Size: </b>${elf.size}</p>
+            <p><b>Speed: </b>${elf.speed}</p>
+            <p><b>Age: </b>${elf.age}</p>
+            <p><b>Lenguages: </b>${elf.languages}</p>
+            <p><b>Superior DarkVision: </b>${elf.superiorDarkvision}</p>
+            <p><b>Fey Ancestry: </b>${elf.feyAncestry}</p>
+            <p><b>Keen Senses: </b>${elf.keenSenses}</p>
+            <p><b>Trance: </b>${elf.trance}</p>
+            <p><b>Sunlight Sensitivity: </b>${elf.sunlightSensitivity}</p>
+            <p><b>Drow Magic: </b>${elf.drowMagic}</p>
+            <p><b>Drow Weapon Training: </b>${elf.drowWeaponTraining}</p>
+            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;    
+    }
+    else if (subrace === 'eladrinelf'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${elf.name4}</h1>
+            <p><b>Ability Score: </b>${elf.abilityScore4}</p>
+            <p><b>Size: </b>${elf.size}</p>
+            <p><b>Speed: </b>${elf.speed}</p>
+            <p><b>Age: </b>${elf.age}</p>
+            <p><b>Lenguages: </b>${elf.languages}</p>
+            <p><b>Dark Vision: </b>${elf.darkvision}</p>
+            <p><b>Fey Ancestry: </b>${elf.feyAncestry}</p>
+            <p><b>Keen Senses: </b>${elf.keenSenses}</p>
+            <p><b>Trance: </b>${elf.trance}</p>
+            <p><b>Fey Step: </b>${elf.feyStep}
+            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;    
+    }
+    else if (subrace === 'shadarelf'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${elf.name6}</h1>
+            <p><b>Ability Score: </b>${elf.abilityScore6}</p>
+            <p><b>Size: </b>${elf.size}</p>
+            <p><b>Speed: </b>${elf.speed}</p>
+            <p><b>Age: </b>${elf.age}</p>
+            <p><b>Lenguages: </b>${elf.languages}</p>
+            <p><b>Dark Vision: </b>${elf.darkvision}</p>
+            <p><b>Fey Ancestry: </b>${elf.feyAncestry}</p>
+            <p><b>Keen Senses: </b>${elf.keenSenses}</p>
+            <p><b>Trance: </b>${elf.trance}</p>
+            <p><b>Necrotic Resistance: </b>${elf.necroticResistance}
+            <p><b>Blessing of the Raven Queen: </b>${elf.blessingoftheRavenQueen}</p>
+            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;   
+    }
+    else if (subrace === 'seaelf'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${elf.name7}</h1>
+            <p><b>Ability Score: </b>${elf.abilityScore7}</p>
+            <p><b>Size: </b>${elf.size}</p>
+            <p><b>Speed: </b>${elf.speedSeaElf}</p>
+            <p><b>Age: </b>${elf.age}</p>
+            <p><b>Lenguages: </b>${elf.languages}</p>
+            <p><b>Dark Vision: </b>${elf.darkvision}</p>
+            <p><b>Fey Ancestry: </b>${elf.feyAncestry}</p>
+            <p><b>Keen Senses: </b>${elf.keenSenses}</p>
+            <p><b>Trance: </b>${elf.trance}</p>
+            <p><b>Extra Language: </b>${elf.extraLanguage7}</p>
+            <p><b>Sea Elf Training: </b>${elf.seaElfTraining}</p>
+            <p><b>Child of the Sea: </b>${elf.childoftheSea}</p>
+            <p><b>Friend of the Sea: </b>${elf.friendoftheSea}</p>
+            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;   
+    }
+    else if (subrace === 'pallidelf'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${elf.name10}</h1>
+            <p><b>Ability Score: </b>${elf.abilityScore10}</p>
+            <p><b>Size: </b>${elf.size}</p>
+            <p><b>Speed: </b>${elf.speed}</p>
+            <p><b>Age: </b>${elf.age}</p>
+            <p><b>Lenguages: </b>${elf.languages}</p>
+            <p><b>Dark Vision: </b>${elf.darkvision}</p>
+            <p><b>Fey Ancestry: </b>${elf.feyAncestry}</p>
+            <p><b>Keen Senses: </b>${elf.keenSenses}</p>
+            <p><b>Trance: </b>${elf.trance}</p>
+            <p><b>Incisive Sense: </b>${elf.incisiveSense}</p>
+            <p><b>Blessing of the Moon Weaver: </b>${elf.blessingoftheMoonWeaver}</p>
+            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;    
+    }
+    else if (subrace === 'markelf'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${elf.name5}</h1>
+            <p><b>Ability Score: </b>${elf.abilityScore5}</p>
+            <p><b>Size: </b>${elf.size}</p>
+            <p><b>Speed: </b>${elf.speed}</p>
+            <p><b>Age: </b>${elf.age}</p>
+            <p><b>Lenguages: </b>${elf.languages}</p>
+            <p><b>Dark Vision: </b>${elf.darkvision}</p>
+            <p><b>Fey Ancestry: </b>${elf.feyAncestry}</p>
+            <p><b>Keen Senses: </b>${elf.keenSenses}</p>
+            <p><b>Trance: </b>${elf.trance}</p>
+            <p><b>Cunning Intuition: </b>${elf.cunningIntuition}</p>
+            <p><b>Shape of Shadow: </b>${elf.shapeShadows}</p>
+            <p><b>Spells of the Mark: </b>${elf.spellsOfTheMark}</p>
+            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;     
+    }
     // DWARF SUBRACE
     else if(subrace === 'dwarf2024'){
         menuRaces.innerHTML= '';
@@ -735,7 +1181,7 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${gnome.darkvision}</p>
                 <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
                 <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
-                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
             </div>
             <div>
                 <img class="raceImg" src="./img/aasimar.png" alt="">
@@ -758,7 +1204,7 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${gnome.darkvision}</p>
                 <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
                 <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
-                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
             </div>
             <div>
                 <img class="raceImg" src="./img/aasimar.png" alt="">
@@ -783,7 +1229,7 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
                 <p><b>Natural Illusionist: </b>${gnome.naturalIllusionist}</p>
                 <p><b>Speak with Small Beast: </b>${gnome.speakwithSmallBeasts}</p>
-                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
             </div>
             <div>
                 <img class="raceImg" src="./img/aasimar.png" alt="">
@@ -808,7 +1254,7 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
                 <p><b>Artificer's Lore: </b>${gnome.artificersLore}</p>
                 <p><b>Tinker: </b>${gnome.tinker}</p>
-                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
             </div>
             <div>
                 <img class="raceImg" src="./img/aasimar.png" alt="">
@@ -831,7 +1277,7 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Superior Darkvision: </b>${gnome.superiorDarkvision}</p>
                 <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
                 <p><b>Stone Camouflage: </b>${gnome.stoneCamouflage}</p>
-                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
             </div>
             <div>
                 <img class="raceImg" src="./img/aasimar.png" alt="">
@@ -856,13 +1302,456 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Gifted Scribe: </b>${gnome.giftedScribe}</p>
                 <p><b>Scribe's Insight: </b>${gnome.scribesInsight}</p>
                 <p><b>Spells of the Mark: </b>${gnome.spellsoftheMark}</p>
-                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
             </div>
             <div>
                 <img class="raceImg" src="./img/aasimar.png" alt="">
             </div>
         </div>`
         ;
+    }
+    // GOLIATH
+    else if (subrace === 'goliathbase2024'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${goliath.name1}</h1>
+                <p><b>Size: </b>${goliath.size}</p>
+                <p><b>Speed: </b>${goliath.speed2024}</p>
+                <p><b>Age: </b>${goliath.age}</p>
+                <p><b>Lenguages: </b>${goliath.languages}</p>
+                <p><b>Large Form: </b>${goliath.largeForm}</p>
+                <p><b>Powerful Build: </b>${goliath.powerfulBuild2024}</p>
+                <p><b>Giant Ancestry: </b>${goliath.giantAncestry}</p>
+                <button onclick = "displayMenuRaces('goliath')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if (subrace === 'goliathbase'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${goliath.name2}</h1>
+                <p><b>Size: </b>${goliath.size}</p>
+                <p><b>Speed: </b>${goliath.speed}</p>
+                <p><b>Age: </b>${goliath.age}</p>
+                <p><b>Lenguages: </b>${goliath.languages}</p>
+                <p><b>Natural Athlete: </b>${goliath.naturalAthlete}</p>
+                <p><b>Powerful Build: </b>${goliath.powerfulBuild}</p>
+                <p><b>Stone Endurance: </b>${goliath.stonesEndurance}</p>
+                <p><b>Mountain Born: </b>${goliath.mountainBorn}</p>
+                <button onclick = "displayMenuRaces('goliath')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    // HALFLING
+    else if (subrace === 'halflingbase2024'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${halfling.name7}</h1>
+                <p><b>Size: </b>${halfling.size}</p>
+                <p><b>Speed: </b>${halfling.speed2024}</p>
+                <p><b>Age: </b>${halfling.age}</p>
+                <p><b>Lucky: </b>${halfling.lucky2024}</p>
+                <p><b>Brave: </b>${halfling.brave}</p>
+                <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
+                <p><b>Naturally Stealthy: </b>${halfling.naturallyStealthy}</p>
+                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if (subrace === 'halflingBase'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${halfling.name8}</h1>
+                <p><b>Ability Score: </b>${halfling.abilityScore8}</p>
+                <p><b>Size: </b>${halfling.size}</p>
+                <p><b>Speed: </b>${halfling.speed}</p>
+                <p><b>Age: </b>${halfling.age}</p>
+                <p><b>Lucky: </b>${halfling.lucky}</p>
+                <p><b>Brave: </b>${halfling.brave}</p>
+                <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
+                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if (subrace === 'halflinglight'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${halfling.name1}</h1>
+                <p><b>Ability Score: </b>${halfling.abilityScore1}</p>
+                <p><b>Size: </b>${halfling.size}</p>
+                <p><b>Speed: </b>${halfling.speed}</p>
+                <p><b>Age: </b>${halfling.age}</p>
+                <p><b>Lucky: </b>${halfling.lucky}</p>
+                <p><b>Brave: </b>${halfling.brave}</p>
+                <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
+                <p><b>Naturally Stealthy: </b>${halfling.naturallyStealthy}</p>
+                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if (subrace === 'halflingstout'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${halfling.name4}</h1>
+                <p><b>Ability Score: </b>${halfling.abilityScore4}</p>
+                <p><b>Size: </b>${halfling.size}</p>
+                <p><b>Speed: </b>${halfling.speed}</p>
+                <p><b>Age: </b>${halfling.age}</p>
+                <p><b>Lucky: </b>${halfling.lucky}</p>
+                <p><b>Brave: </b>${halfling.brave}</p>
+                <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
+                <p><b>Stout Resilience: </b>${halfling.stoutResilience}</p>
+                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if (subrace === 'halflinglotusden'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${halfling.name5}</h1>
+                <p><b>Ability Score: </b>${halfling.abilityScore5}</p>
+                <p><b>Size: </b>${halfling.size}</p>
+                <p><b>Speed: </b>${halfling.speed}</p>
+                <p><b>Age: </b>${halfling.age}</p>
+                <p><b>Lucky: </b>${halfling.lucky}</p>
+                <p><b>Brave: </b>${halfling.brave}</p>
+                <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
+                <p><b>Child of the Woods: </b>${halfling.childOfTheWood}</p>
+                <p><b>Timberwalk: </b>${halfling.timberWalk}</p>
+                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if (subrace === 'halflingghost'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${halfling.name6}</h1>
+                <p><b>Ability Score: </b>${halfling.abilityScore6}</p>
+                <p><b>Size: </b>${halfling.size}</p>
+                <p><b>Speed: </b>${halfling.speed}</p>
+                <p><b>Age: </b>${halfling.age}</p>
+                <p><b>Lucky: </b>${halfling.lucky}</p>
+                <p><b>Brave: </b>${halfling.brave}</p>
+                <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
+                <p><b>Silent Speech: </b>${halfling.silentSpeech}</p>
+                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+    }
+    else if (subrace === 'halflingmarkhealing'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${halfling.name2}</h1>
+                <p><b>Ability Score: </b>${halfling.abilityScore2}</p>
+                <p><b>Size: </b>${halfling.size}</p>
+                <p><b>Speed: </b>${halfling.speed}</p>
+                <p><b>Age: </b>${halfling.age}</p>
+                <p><b>Lucky: </b>${halfling.lucky}</p>
+                <p><b>Brave: </b>${halfling.brave}</p>
+                <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
+                <p><b>Medical Intuition: </b>${halfling.medicalIntuition}</p>
+                <p><b>Healing Touch: </b>${halfling.healingTouch}</p>
+                <p><b>Spells of the Mark: </b>${halfling.spellsoftheMark}</p>
+                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ; 
+    }
+    else if (subrace === 'halflingmarkhospitality'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${halfling.name3}</h1>
+                <p><b>Ability Score: </b>${halfling.abilityScore3}</p>
+                <p><b>Size: </b>${halfling.size}</p>
+                <p><b>Speed: </b>${halfling.speed}</p>
+                <p><b>Age: </b>${halfling.age}</p>
+                <p><b>Lucky: </b>${halfling.lucky}</p>
+                <p><b>Brave: </b>${halfling.brave}</p>
+                <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
+                <p><b>Ever Hospitable: </b>${halfling.everHospitable}</p>
+                <p><b>Innkeeper's Magic: </b>${halfling.innkeepersMagic}</p>
+                <p><b>Spells of the Mark: </b>${halfling.spellsoftheMark}</p>
+                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    // HUMAN
+    else if (subrace === 'humanbase2024'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${human.name9}</h1>
+                <p><b>Size: </b>${human.size}</p>
+                <p><b>Speed: </b>${human.speed}</p>
+                <p><b>Age: </b>${human.age}</p>
+                <p><b>Language: </b>${human.languages}</p>
+                <p><b>Resourceful: </b>${human.resourceful}</p>
+                <p><b>Skillful: </b>${human.skillful}</p>
+                <p><b>Versatile: </b>${human.versatile}</p>
+                <button onclick = "displayMenuRaces('human')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;   
+    }
+    else if (subrace === 'humanbase'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${human.name1}</h1>
+                <p><b>Ability Score: </b>${human.abilityScore1}</p>
+                <p><b>Size: </b>${human.size}</p>
+                <p><b>Speed: </b>${human.speed}</p>
+                <p><b>Age: </b>${human.age}</p>
+                <p><b>Language: </b>${human.languages}</p>
+                <button onclick = "displayMenuRaces('human')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;   
+    }
+    else if (subrace === 'humanvariant'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${human.name2}</h1>
+                <p><b>Ability Score: </b>${human.abilityScore2}</p>
+                <p><b>Size: </b>${human.size}</p>
+                <p><b>Speed: </b>${human.speed}</p>
+                <p><b>Age: </b>${human.age}</p>
+                <p><b>Language: </b>${human.languages}</p>
+                <p><b>Skills: </b>${human.skills}</p>
+                <p><b>Feat: </b>${human.feat}</p>
+                <button onclick = "displayMenuRaces('human')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;   
+    }
+    else if (subrace === 'humankeldon'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${human.name2}</h1>
+                <p><b>Ability Score: </b>${human.abilityScore2}</p>
+                <p><b>Size: </b>${human.size}</p>
+                <p><b>Speed: </b>${human.speed}</p>
+                <p><b>Age: </b>${human.age}</p>
+                <p><b>Language: </b>${human.languages}</p>
+                <p><b>Natural Athlete: </b>${human.naturalAthlete}</p>
+                <p><b>Keldon Resilience: </b>${human.keldonResilience}</p>
+                <p><b>Icehaven Born: </b>${human.icehavenBorn}</p>
+                <p><b>Alignment: </b>${human.alignment}</p>
+                <button onclick = "displayMenuRaces('human')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if (subrace === 'humanmarkhandling'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${human.name3}</h1>
+                <p><b>Ability Score: </b>${human.abilityScore3}</p>
+                <p><b>Size: </b>${human.size}</p>
+                <p><b>Speed: </b>${human.speed}</p>
+                <p><b>Age: </b>${human.age}</p>
+                <p><b>Language: </b>${human.languages}</p>
+                <p><b>Wild Intuition: </b>${human.wildIntuition}</p>
+                <p><b>Primal Connection: </b>${human.primalConnection}</p>
+                <p><b>The Bigger They Are: </b>${human.theBiggerTheyAre}</p>
+                <p><b>Spells of the Mark: </b>${human.spellsOfTheMark}</p>
+                <button onclick = "displayMenuRaces('human')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if (subrace === 'humanmarkmaking'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${human.name4}</h1>
+                <p><b>Ability Score: </b>${human.abilityScore4}</p>
+                <p><b>Size: </b>${human.size}</p>
+                <p><b>Speed: </b>${human.speed}</p>
+                <p><b>Age: </b>${human.age}</p>
+                <p><b>Language: </b>${human.languages}</p>
+                <p><b>Artisan's Intuition: </b>${human.artisansIntuition}</p>
+                <p><b>Maker's Gift: </b>${human.makersGift}</p>
+                <p><b>Spellsmith: </b>${human.spellsmith}</p>
+                <p><b>Spells of the Mark: </b>${human.spellsOfTheMark}</p>
+                <button onclick = "displayMenuRaces('human')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if (subrace === 'humanmarkpassage'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${human.name5}</h1>
+                <p><b>Ability Score: </b>${human.abilityScore5}</p>
+                <p><b>Size: </b>${human.size}</p>
+                <p><b>Speed: </b>${human.speedMarkPassage}</p>
+                <p><b>Age: </b>${human.age}</p>
+                <p><b>Language: </b>${human.languages}</p>
+                <p><b>Intuitive Motion: </b>${human.intuitiveMotion}</p>
+                <p><b>Magical Passage: </b>${human.magicalPassage}</p>
+                <p><b>Courier's Speed: </b>${human.couriersSpeed}</p>
+                <p><b>Spells of the Mark: </b>${human.spellsOfTheMark}</p>
+                <button onclick = "displayMenuRaces('human')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if (subrace === 'humanmarksentinel'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${human.name6}</h1>
+                <p><b>Ability Score: </b>${human.abilityScore6}</p>
+                <p><b>Size: </b>${human.size}</p>
+                <p><b>Speed: </b>${human.speed}</p>
+                <p><b>Age: </b>${human.age}</p>
+                <p><b>Language: </b>${human.languages}</p>
+                <p><b>Sentinel's Intuition: </b>${human.sentinelsIntuition}</p>
+                <p><b>Guardian's Shield: </b>${human.guardiansShield}</p>
+                <p><b>Vigilant Guardian: </b>${human.vigilantGuardian}</p>
+                <p><b>Spells of the Mark: </b>${human.spellsOfTheMark}</p>
+                <button onclick = "displayMenuRaces('human')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if (subrace === 'humanmarkfinding'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${human.name7}</h1>
+                <p><b>Ability Score: </b>${human.abilityScore7}</p>
+                <p><b>Size: </b>${human.size}</p>
+                <p><b>Speed: </b>${human.speed}</p>
+                <p><b>Age: </b>${human.age}</p>
+                <p><b>Language: </b>${human.languages}</p>
+                <p><b>Dark Vision: </b>${human.darkvision}</p>
+                <p><b>Hunter's Intuition: </b>${human.huntersIntuition}</p>
+                <p><b>Finder's Magic: </b>${human.findersMagic}</p>
+                <p><b>Spells of the Mark: </b>${human.spellsOfTheMark}</p>
+                <button onclick = "displayMenuRaces('human')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
     }
 }
 
