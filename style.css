@@ -128,8 +128,9 @@ button:hover{
     display: grid;
     grid-template-columns: 1fr 250px;
     border: 1px solid black;
+    border-radius: 20px;
     margin: 0px 50px 0px 0px;
-    background-color: rgba(0, 0, 0, 0.812);
+    background-color: rgba(0, 0, 0, 0.644);
 }
 
 .races-container p{
@@ -265,6 +266,11 @@ button:hover{
 .td-spell a{
     color: rgba(32, 237, 172, 0.748);
     text-decoration: none;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+.td-spell a:hover{
+    box-shadow: 1px -2px 20px 5px rgb(249 249 249 / 11%);
+    background-color: rgb(249 249 249 / 11%);
 }
 .th-level{
     border: 1px solid rgba(255, 255, 255, 0.219);
@@ -307,6 +313,11 @@ button:hover{
 .td-info a{
     color: rgba(32, 237, 172, 0.748);
     text-decoration: none;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+.td-info a:hover{
+    box-shadow: 1px -2px 20px 5px rgb(249 249 249 / 11%);
+    background-color: rgb(249 249 249 / 11%);
 }
 .td-subclass{
     border: 1px solid rgba(255, 255, 255, 0.226);
