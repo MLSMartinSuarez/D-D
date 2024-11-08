@@ -15,6 +15,20 @@ body{
     background-attachment: fixed;
 }
 
+/* button{
+    background-color: rgba(0, 0, 0, 0.607);
+    color: rgba(255, 255, 255, 0.597);
+    letter-spacing: 1px;
+    border-radius: 10px;
+    padding: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+button:hover{
+    background-color: black;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.256); */
+
 /* NAV BAR */
 
 .nav-bar{
@@ -36,15 +50,14 @@ body{
     background-color: rgba(161, 161, 161, 0);
     border: none;
     cursor: pointer;
-    color: rgba(32, 237, 172, 0.748);
-    font-style: italic;
+    color: rgba(255, 255, 255, 0.597);
     font-size: larger;
     margin-left: 20px;
     padding-left: 20px;
-    transition: color 0.2s;
+    transition: color 0.5s;
 }
 .nav-bar button:hover{
-    color: rgb(255, 255, 255);
+    color: rgba(32, 237, 172, 0.748);
 }
 
 /* MAIN RACES */
@@ -81,7 +94,7 @@ body{
     color: rgba(255, 255, 255, 0.597);
     letter-spacing: 1px;
     border-radius: 10px;
-    /* font-weight: bold; */
+
     padding: 1px;
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
@@ -89,7 +102,7 @@ body{
 
 .sidebar-classes button:hover{
     background-color: black;
-    color: rgb(255, 255, 255);
+    color: rgba(32, 237, 172, 0.748);
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.256);
 }
 
@@ -98,7 +111,6 @@ body{
     color: rgba(255, 255, 255, 0.597);
     letter-spacing: 1px;
     border-radius: 10px;
-    /* font-weight: bold; */
     padding: 1px;
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
@@ -106,7 +118,7 @@ body{
 
 .sidebar-races button:hover{
     background-color: black;
-    color: rgb(255, 255, 255);
+    color: rgba(32, 237, 172, 0.748);
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.157);
 }
 
@@ -136,7 +148,7 @@ body{
     padding: 5px 20px 5px 20px;
     margin-top: 10px;
     background-color: black;
-    color: rgba(32, 237, 172, 0.748);
+    color: rgba(255, 255, 255, 0.597);
     transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
     cursor: pointer;
     border: 1px solid white;
@@ -144,7 +156,7 @@ body{
 }
 .race-detail-container button:hover{
     background-color: black;
-    color: rgb(255, 255, 255);
+    color: rgba(32, 237, 172, 0.748);
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.256);
 }
 
@@ -158,21 +170,27 @@ body{
     margin-bottom: 10px;
 }
 
+.menu1-layout{
+    display: flex;
+    justify-content: center;
+}
+
 .menu1{
     display: flex;
     flex-direction: column;
     margin: 0px 50px 0px 50px;
+    width: 500px;
 }
 
 .menu1 button{
     padding: 5px 20px 5px 20px;
     margin-top: 10px;
-    background-color: rgba(0, 0, 0, 0.765);
-    color: rgba(32, 237, 172, 0.748);
+    color: rgba(255, 255, 255, 0.597);
     letter-spacing: 1px;
     transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
     border-radius: 10px;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.607);
 }
 
 .hide-div{
@@ -184,8 +202,8 @@ body{
 
 .menu1 button:hover{
     background-color: black;
-    color: rgb(255, 255, 255);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.256);
+    color: rgba(32, 237, 172, 0.748);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.157);
 }
 
 
