@@ -201,5 +201,97 @@ body{
     margin-top: 80px;
 }
 
-/*  */
+/* TABLAS */
 
+.tabledragonborn{
+    border: 2px solid black;
+    width: 500px;
+}
+
+.tabledragonborn tr{
+    color: rgba(255, 255, 255, 0.748); 
+    text-align: center;
+}
+
+.tabledragonborn td{
+    border: 1px solid rgba(255, 255, 255, 0.226);
+    padding: 7px 0px 7px 0px;
+    width: 250px;
+}
+
+.tabledragonborn th{
+    border: 1px solid rgba(255, 255, 255, 0.219);
+    color: rgba(32, 237, 172, 0.748);
+    padding: 7px 0px 7px 0px;
+    width: 250px;
+}
+
+.tableSpellsOfTheMark{
+    border: 2px solid black;
+    width: 700px;
+}
+.tableSpellsOfTheMark tr{
+    color: rgba(255, 255, 255, 0.748); 
+    text-align: center;
+}
+.td-level{
+    border: 1px solid rgba(255, 255, 255, 0.226);
+    padding: 7px 0px 7px 0px;
+    width: 200px;
+}
+.td-spell{
+    border: 1px solid rgba(255, 255, 255, 0.226);
+    padding: 7px 0px 7px 0px;
+    width: 500px;
+}
+.td-spell a{
+    color: rgba(32, 237, 172, 0.748);
+    text-decoration: none;
+}
+.th-level{
+    border: 1px solid rgba(255, 255, 255, 0.219);
+    color: rgba(32, 237, 172, 0.748);
+    padding: 7px 0px 7px 0px;
+    width: 200px;
+}
+.th-spell{
+    border: 1px solid rgba(255, 255, 255, 0.219);
+    color: rgba(32, 237, 172, 0.748);
+    padding: 7px 0px 7px 0px;
+    width: 500px;
+}
+
+.tableSubclasses2024{
+    border: 2px solid black;
+    width: 800px;
+}
+.tableSubclasses2024 tr{
+    color: rgba(255, 255, 255, 0.748); 
+    text-align: center;
+}
+.th-subclass{
+    border: 1px solid rgba(255, 255, 255, 0.219);
+    color: rgba(32, 237, 172, 0.748);
+    padding: 7px 0px 7px 0px;
+    width: 250px;
+}
+.th-info{
+    border: 1px solid rgba(255, 255, 255, 0.219);
+    color: rgba(32, 237, 172, 0.748);
+    padding: 7px 0px 7px 0px;
+    width: 550px;
+}
+.td-info{
+    border: 1px solid rgba(255, 255, 255, 0.226);
+    padding: 7px 0px 7px 0px;
+    width: 500px;
+}
+.td-info a{
+    color: rgba(32, 237, 172, 0.748);
+    text-decoration: none;
+}
+.td-subclass{
+    border: 1px solid rgba(255, 255, 255, 0.226);
+    padding: 7px 0px 7px 0px;
+    width: 200px;
+}

@@ -36,7 +36,54 @@ const dragonborn = {
     abilityScore1:`Str +2; Charisma +1`,
     abilityScore2:`Int +2; Charisma +1`,
     abilityScore3:`Str +2; Constitution +1`,
-    draconicAncestry:` Your lineage stems from a dragon progenitor. Choose the kind of dragon from the Draconic Ancestors table. Your choice affects your Breath Weapon and Damage Resistance traits as well as your appearance`,
+    draconicAncestry:` Your lineage stems from a dragon progenitor. Choose the kind of dragon from the Draconic Ancestors table. Your choice affects your Breath Weapon and Damage Resistance traits as well as your appearance: <br>
+    <br>
+    <table class="tabledragonborn">
+                            <tr >
+                                <th>Dragon</th>
+                                <th>Damage type</th>
+                            </tr>
+                            <tr >
+                                <td >Black</td>
+                                <td>Acid</td>
+                            </tr>
+                            <tr >
+                                <td>Blue</td>
+                                <td>Lighting</td>
+                            </tr>
+                            <tr >
+                                <td>Brass</td>
+                                <td>Fire</td>
+                            </tr>
+                            <tr >
+                                <td>Bronze</td>
+                                <td>Lighting</td>
+                            </tr>
+                            <tr >
+                                <td>Cooper</td>
+                                <td>Acid</td>
+                            </tr>
+                            <tr >
+                                <td>Gold</td>
+                                <td>Fire</td>
+                            </tr>
+                            <tr >
+                                <td>Green</td>
+                                <td>Poison</td>
+                            </tr>
+                            <tr >
+                                <td>Red</td>
+                                <td>Fire</td>
+                            </tr>
+                            <tr >
+                                <td>Silver</td>
+                                <td>Cold</td>
+                            </tr>
+                            <tr >
+                                <td>white</td>
+                                <td>Cold</td>
+                            </tr>
+                        </table>`,
     breathWeapon:` When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw (DC 8 plus your Constitution modifier and Proficiency Bonus). On a failed save, a creature takes 1d10 damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by 1d10 when you reach character levels 5 (2d10), 11 (3d10), and 17 (4d10).You can use this Breath Weapon a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.`,
     breathWeapon2024:`When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw (DC 8 plus your Constitution modifier and Proficiency Bonus). On a failed save, a creature takes 1d10 damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by 1d10 when you reach character levels 5 (2d10), 11 (3d10), and 17 (4d10).<br>
     You can use this Breath Weapon a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.`,
@@ -70,12 +117,67 @@ const dwarf = {
     dwarvenCombatTraining:`You have proficiency with the <b class="importantDetail">battleaxe</b>, <b class="importantDetail">handaxe</b>, <b class="importantDetail">light hammer</b>, and <b class="importantDetail">warhammer</b>.`,
     toolProficiency: `You gain proficiency with the artisan's tools of your choice: <b class="importantDetail">Smith's tools</b>, <b class="importantDetail">brewer's supplies</b>, or <b class="importantDetail">mason's tools</b>.`, 
     stonecunning:`Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.`,
-    dwarvenArmorTraining: `You have proficiency with light and medium armor.`, superiorDarkvision: `Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.`, 
+    dwarvenArmorTraining: `You have proficiency with light and medium armor.`, 
+    superiorDarkvision: `Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.`, 
     duergarMagic: `When you reach 3rd level, you can cast the <b class="importantDetail">Enlarge/Reduce</b> spell on yourself once with this trait, using only the spell's enlarge option. When you reach 5th level, you can cast the <b class="importantDetail">Invisibility</b> spell on yourself once with this trait. You don't need material components for either spell, and you can't cast them while you're in direct sunlight, although sunlight has no effect on them once cast. You regain the ability to cast these spells with this trait when you finish a long rest. Intelligence is your spellcasting ability for these spells.`,
     sunlightSensitivity: `You have disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.`,
     wardersIntuition: `When you make an Intelligence (Investigation) check or an ability check using <b class="importantDetail">thieves' tools</b>, you can roll a <b class="importantDetail">d4</b> and add the number rolled to the ability check.`,
     wardsAndSeals:`You can cast the <b class="importantDetail">alarm</b> and <b class="importantDetail">mage armor</b> spells with this trait. Starting at 3rd level, you can also cast the <b class="importantDetail">arcane lock</b> spell with it. Once you cast any of these spells with this trait, you can't cast that spell with it again until you finish a long rest. Intelligence is your spellcasting ability for these spells, and you don't need material components for them when you cast them with this trait.`,
-    spellsOfTheMark:`If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Warding Spells table are added to the spell list of your spellcasting class.`,
+    spellsOfTheMark:`If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Warding Spells table are added to the spell list of your spellcasting class.<br>
+    <br>
+    <table class="tableSpellsOfTheMark">
+                            <tr>
+                                <th class="th-spell">Spell Level</th>
+                                <th class="th-level">Spells</th>
+                            </tr>
+                            <tr>
+                                <td class="td-level">1st</td>
+                                <td class="td-spell">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:alarm">Alarm</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:armor-of-agathys">Armor of Agathys</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">2st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:arcane-lock">Arcane Lock</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:knock">Knock</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">3st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:glyph-of-warding">Glyph of warding</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:magic-circle">Magic Circle</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">4st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:leomunds-secret-chest">Leomund's Secret Chest</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:mordenkainens-faithful-hound">Mordenkainen's faithful hound</a>  
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">5st</td>
+
+                                <td class="td-spell">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:antilife-shell">Antilife Shell</a>
+
+                                </td>
+                            </tr>
+                        </table>`,
     stonecunning2024:`As a <b class="importantDetail">Bonus Action</b>, you gain Tremorsense with a range of 60 feet for 10 minutes. You must be on a stone surface or touching a stone surface to use this Tremorsense. The stone can be natural or worked.
     You can use this <b class="importantDetail">Bonus Action</b> a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a <b class="importantDetail">Long Rest</b>.`,
     duergarResilience: `You have advantage on saving throws against poison, and you have resistance against poison damage. You also have advantage on saving throws against illusions and against being charmed or paralyzed.`,
@@ -108,7 +210,53 @@ const elf = {
     darkvision:`Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.`,
     elvenLineage:` You are part of a lineage that grants you supernatural abilities. Choose a lineage from the Elven Lineages table. You gain the level 1 benefit of that lineage.
     When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level.
-    Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage).`,
+    Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage).<br>
+    <br>
+    <table class="tableSubclasses2024">
+                            <tr>
+                                <th class="th-subclass">Lineage</th>
+                                <th class="th-info">Level 1</th>
+                                <th class="th-info">Level 3</th>
+                                <th class="th-info">Level 5</th>
+                            </tr>
+                            <tr>
+                                <td class="td-subclass">Drow</td>
+                                <td class="td-info">
+                                    The range of your Darkvision increases to 120 feet. You also know the <a target="_blank" href="https://dnd5e.wikidot.com/spell:dancing-lights">Dancing Lights</a> cantrip.
+                                </td>
+                                <td class="td-info">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:faerie-fire">Faerie Fire</a>
+                                </td>
+                                <td class="td-info">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:darkness">Darkness</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                    <td class="td-subclass">High Elf</td>
+                                    <td class="td-info">
+                                        You know the <a target="_blank" href="https://dnd5e.wikidot.com/spell:prestidigitation">Prestidigitation</a> cantrip. Whenever you finish a Long Rest, you can replace that cantrip with a different cantrip from the <b class="importantDetail">Wizard spell list</b>.
+                                    </td>
+                                    <td class="td-info">
+                                        <a target="_blank" href="https://dnd5e.wikidot.com/spell:detect-magic">Detect Magic</a>
+                                    </td>
+                                    <td class="td-info">
+                                        <a target="_blank" href="https://dnd5e.wikidot.com/spell:misty-step">Misty Step</a>
+                                    </td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-subclass">Wood Elf</td>
+                                <td class="td-info">
+                                    Your Speed increases to 35 feet. You also know the <a target="_blank" href="https://dnd5e.wikidot.com/spell:druidcraft">Druidcraft</a> cantrip.
+                                </td>
+                                <td class="td-info">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:longstrider">Longstrider</a>
+                                </td>
+                                <td class="td-info">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:pass-without-trace">Pass without trace</a>
+                                </td>
+                            </tr>
+                        </table>`,
     keenSenses: "You have proficiency in the Perception skill.",
     keenSenses2024:`You have proficiency in the Insight, Perception, or Survival skill.`,
     feyAncestry : "You have advantage on saving throws against being charmed, and magic can't put you to sleep.",
@@ -130,7 +278,61 @@ const elf = {
     <b class="importantDetail">Summer</b>. Immediately after you use your Fey Step, each creature of your choice that you can see within 5 feet of you takes fire damage equal to your Charisma modifier (minimum of 1 damage).`,
     cunningIntuition: `When you make a Charisma (Performance) or Dexterity (Stealth) check, you can roll a d4 and add the number rolled to the ability check.`,
     shapeShadows: `You know the minor illusion cantrip. Starting at 3rd level, you can cast the invisibility spell once with this trait, and you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.`,
-    spellsOfTheMark: `If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Shadow Spells table are added to the spell list of your spellcasting class.`,
+    spellsOfTheMark: `If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Shadow Spells table are added to the spell list of your spellcasting class.<br>
+    <br>
+    <table class="tableSpellsOfTheMark">
+                            <tr>
+                                <th class="th-spell">Spell Level</th>
+                                <th class="th-level">Spells</th>
+                            </tr>
+                            <tr>
+                                <td class="td-level">1st</td>
+                                <td class="td-spell">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:disguise-self">Disguise self</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:silent-image">Silent image</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">2st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:darkness">Darkness</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:pass-without-trace">Pass without trace</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">3st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:clairvoyance">Clairvoyance</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:major-image">Major image</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">4st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:greater-invisibility">Greater Invisibility</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:mislead">hallucinatory terrain</a>  
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">5st</td>
+
+                                <td class="td-spell">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:antilife-shell">Misslead</a>
+                                    
+                                </td>
+                            </tr>
+                        </table>`,
     seaElfTraining:`  have proficiency with the spear, trident, light crossbow, and net.`,
     childoftheSea: "You have a swimming speed of 30 feet, and you can breathe air and water.",
     friendoftheSea: "Using gestures and sounds, you can communicate simple ideas with any beast that has an innate swimming speed.",
@@ -180,7 +382,62 @@ const gnome = {
     Music Box. When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed.`,
     giftedScribe:` When you make an Intelligence (History) check or an ability check using <b class="importantDetail">calligrapher's supplies</b>, you can roll a <b class="importantDetail">d4</b> and add the number rolled to the ability check.`,
     scribesInsight:` You know the <a class="importantDetail">message cantrip</a>. You can also cast <a class="importantDetail">comprehend languages</a> once with this trait, and you regain the ability to cast it when you finish a short or long rest. Starting at 3rd level, you can cast the <a class="importantDetail">magic mouth</a> spell with this trait, and you regain the ability to cast it when you finish a long rest. Intelligence is your spellcasting ability for these spells`,
-    spellsoftheMark:` If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Scribing Spells table are added to the spell list of your spellcasting class.`,
+    spellsoftheMark:` If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Scribing Spells table are added to the spell list of your spellcasting class.
+    <br>
+    <br>
+    <table class="tableSpellsOfTheMark">
+                            <tr>
+                                <th class="th-spell">Spell Level</th>
+                                <th class="th-level">Spells</th>
+                            </tr>
+                            <tr>
+                                <td class="td-level">1st</td>
+                                <td class="td-spell">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:comprehend-languages">Comprehend languages</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:illusory-script">Illusory script</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">2st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:animal-messenger">Animal messenger</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:silence">Silence</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">3st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:sending">Sending</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:tongues">Tongues</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">4st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:arcane-eye">Arcane eye</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:confusion">Confusion</a>  
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">5st</td>
+
+                                <td class="td-spell">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:dream">Dream</a>
+                                    
+                                </td>
+                            </tr>
+                        </table>`,
     gnomishLineage:`You are part of a lineage that grants you supernatural abilities. Choose one of the following options; whichever one you choose, Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait <b class="importantDetail">(choose the ability when you select the lineage)</b>: <br>
     <br>
     <b class="importantDetail">Forest Gnome</b>: You know the <a class="importantDetail">Minor Illusion</a> cantrip. You also always have the Speak with Animals spell prepared. You can cast it without a spell slot a number of times equal to your <b class="importantDetail">Proficiency Bonus</b>, and you regain all expended uses when you finish a <b class="importantDetail">Long Rest</b>. You can also use any spell slots you have to cast the spell.<br>
@@ -245,7 +502,116 @@ const halfling = {
     stoutResilience:` You have advantage on saving throws against poison, and you have resistance against poison damage.`,
     medicalIntuition:` When you make a Wisdom (Medicine) check or an ability check using an herbalism kit, you can roll a d4 and add the number rolled to the ability check.`,
     healingTouch:` You can cast the cure wounds spell with this trait. Starting at 3rd level, you can also cast lesser restoration with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells.`,
-    spellsoftheMark:` If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Healing Spells table are added to the spell list of your spellcasting class.`,
+    spellsoftheMarkHealing:` If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Healing Spells table are added to the spell list of your spellcasting class.<br>
+    <br>
+    <table class="tableSpellsOfTheMark">
+                            <tr>
+                                <th class="th-spell">Spell Level</th>
+                                <th class="th-level">Spells</th>
+                            </tr>
+                            <tr>
+                                <td class="td-level">1st</td>
+                                <td class="td-spell">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:cure-wounds">Cure wounds</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:healing-word">Healing word</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">2st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:lesser-restoration">Lesser restoration</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:prayer-of-healing">Prayer of healing</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">3st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:aura-of-vitality">Aura of vitality</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:mass-healing-word">Mass healing word</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">4st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:aura-of-purity">Aura of purity</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:aura-of-life">Aura of life</a>  
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">5st</td>
+
+                                <td class="td-spell">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:greater-restoration">Greater restoration</a>
+                                    
+                                </td>
+                            </tr>
+                        </table>`,
+    spellsoftheMarkHospitality:` If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Healing Spells table are added to the spell list of your spellcasting class.<br>
+    <br>
+    <table class="tableSpellsOfTheMark">
+                            <tr>
+                                <th class="th-spell">Spell Level</th>
+                                <th class="th-level">Spells</th>
+                            </tr>
+                            <tr>
+                                <td class="td-level">1st</td>
+                                <td class="td-spell">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:goodberry">Goodberry</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:sleep">Sleep</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">2st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:aid">Aid</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:calm-emotions">Calm emotions</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">3st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:create-food-and-water">Create food and water</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:leomunds-tiny-hut">Leomund's tiny hut</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">4st</td>
+                                <td class="td-spell">
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:aura-of-purity">Aura of purity</a> -
+
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:mordenkainens-private-sanctum">Mordenkainen's private sanctum</a>  
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td-level">5st</td>
+
+                                <td class="td-spell">
+                                    <a target="_blank" href="https://dnd5e.wikidot.com/spell:hallow">Hallow</a>
+                                    
+                                </td>
+                            </tr>
+                        </table>`,
     childOfTheWood:`You know the druidcraft cantrip. When you reach 3rd level, you can cast the entangle spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the spike growth spell once with this trait and regain the ability to do so when you finish a long rest. Casting these spells with this trait doesn't require material components. Wisdom is your spellcasting ability for these spells.`,
     timberWalk:`Ability checks made to track you have disadvantage, and you can move across difficult terrain made of nonmagical plants and undergrowth without expending extra movement.`,
     silentSpeech:`You can speak telepathically to any creature within 30 feet of you. The creature understands you only if the two of you share a language. You can speak telepathically in this way to one creature at a time.`,
@@ -303,19 +669,32 @@ const human = {
     alignment:`Keldons tend toward chaotic alignments, and many walk a fine line between good and evil.`
 }
 const orc = {
-    name1:`Orc`,
+    name1:`Orc (Base)(PHB 2024)`,
+    name2:`Half-Orc`,
+    name3:`Half-Orc Mark of Finding`,
+    abilityScore2:`Str +2; Constitution +1`,
+    abilityScore3:`Str +2: Constitution +1`,
     size:`Orcs are usually over 6 feet tall and weigh between 230 and 280 pounds. Your size is Medium.`,
+    sizeHalf:`Half-orcs are somewhat larger and bulkier than humans, and they range from 5 to well over 6 feet tall. Your size is Medium.`,
     speed:`30 feet`,
     age:`Orcs reach adulthood at age 12 and live up to 50 years.`,
+    ageHalf:`Half-orcs mature a little faster than humans, reaching adulthood around age 14. They age noticeably faster and rarely live longer than 75 years.`,
     abilityScore1:`Str +2; Constitution +1`,
     darkvision:`You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.`,
-    aggressive:` As a bonus action, you can move up to your movement speed toward a hostile creature you can see or hear. You must end this move closer to the enemy than you started.`,
-    primalIntuition:` You have proficiency in two of the following skills of your choice: Animal Handling, Insight, Intimidation, Medicine, Nature, Perception, and Survival.`,
-    powerfulBuild:` You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.`,
+    darkvision2024:`You have Darkvision with a range of 120 feet.`,
     languages:` You can speak, read, and write Common and Orc.`,
+    menacing:` You gain proficiency in the Intimidation skill.`,
+    relentlessEndurance: `When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest.`,
+    savageAttacks:` When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit.`,
+    adrenalineRush: `You can take the Dash action as a Bonus Action. When you do so, you gain a number of Temporary Hit Points equal to your Proficiency Bonus.
+    You can use this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Short or Long Rest.`,
+    relentlessEndurance:`When you are reduced to 0 Hit Points but not killed outright, you can drop to 1 Hit Point instead. Once you use this trait, you can't do so again until you finish a Long Rest.`,
+    huntersIntuition:` When you make a Wisdom (Perception) or Wisdom (Survival) check, you can roll a d4 and add the number rolled to the ability check.`,
+    findersMagic:`You can cast the hunter's mark spell with this trait. Starting at 3rd level, you can also cast the locate object spell with it. Once you cast either spell with this trait, you can't cast that spell with it again until you finish a long rest. Wisdom is your spellcasting ability for these spells.`,
+    spellsoftheMark: `If you have the Spellcasting or the Pact Magic class feature, the spells on the Mark of Finding Spells table are added to the spell list of your spellcasting class.`
 }
 const tiefling = {
-    name1:`Tiefling (Base)`,
+    name1:`Tiefling (Base)(PHB 2014)`,
     name2:`Tiefling (Asmodeus)`,
     name3:`Tiefling (Baalzebul)`,
     name4:`Tiefling (Dispater)`,
@@ -325,9 +704,15 @@ const tiefling = {
     name8:`Tiefling (Mammon)`,
     name9:`Tiefling (Mephistopheles)`,
     name10:`Tiefling (Zariel)`,
+    name11:`Tiefling (Devil's Tongue)`,
+    name12:`Tiefling (Hellfire)`,
+    name13:`Tiefling (Infernal Legacy)`,
+    name14:`Tiefling (Winged)`,
+    name15:`Tiefling (Base)(PHB 2024)`,
     age:`Tieflings mature at the same rate as humans but live a few years longer.`,
     size:`Tieflings are about the same size and build as humans. Your size is Medium.`,
     speed:`30 feet`,
+    speedwinged:`30 feet, Fly 30 feet`,
     abilityScore1:`Charisma +2; Int +1`,
     abilityScore2:`Charisma +2; Int +1`,
     abilityScore3:`Charisma +2; Int +1`,
@@ -338,6 +723,10 @@ const tiefling = {
     abilityScore8:`Charisma +2; Int +1`,
     abilityScore9:`Charisma +2; Int +1`,
     abilityScore10:`Charisma +2; Str +1`,
+    abilityScore11:`Int +1; Dex or Charisma +2`,
+    abilityScore12:`Int +1; Dex or Charisma +2`,
+    abilityScore13:`Int +1; Dex or Charisma +2`,
+    abilityScore14:`Int +1; Dex or Charisma +2`,
     darkvision:`Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.`,
     hellishResistance:` You have resistance to fire damage.`,
     infernalLegacy:` You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell as a 2nd-level spell with this trait; you regain the ability to cast it when you finish a long rest. Once you reach 5th level, you can also cast the darkness spell once per day with this trait; you regain the ability to cast it when you finish a long rest. Charisma is your spellcasting ability for these spells.`,
@@ -347,9 +736,56 @@ const tiefling = {
     legacyofPhlegethos:` You know the friends cantrip. When you reach 3rd level, you can cast the charm person spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the suggestion spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.`,
     legacyofMalbolge:` You know the minor illusion cantrip. When you reach 3rd level, you can cast the disguise self spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the invisibility spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.`,
     legacyofStygia:` You know the ray of frost cantrip. When you reach 3rd level, you can cast the armor of Agathys spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.`,
-    ñegacyofMinauros:` You know the mage hand cantrip. When you reach 3rd level, you can cast the Tenser's floating disk spell once with this trait and regain the ability to do so when you finish a short or long rest. When you reach 5th level, you can cast the arcane lock spell once with this trait, requiring no material component, and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.`,
+    legacyofMinauros:` You know the mage hand cantrip. When you reach 3rd level, you can cast the Tenser's floating disk spell once with this trait and regain the ability to do so when you finish a short or long rest. When you reach 5th level, you can cast the arcane lock spell once with this trait, requiring no material component, and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.`,
     legacyofAvernus:` You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the searing smite spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the branding smite spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.`,
     legacyofCania:` You know the mage hand cantrip. When you reach 3rd level, you can cast the burning hands spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the flame blade spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.`,
+    otherworldlyPresence: `You know the Thaumaturgy cantrip. When you cast it with this trait, the spell uses the same spellcasting ability you use for your Fiendish Legacy Trait.`,
+    fiendishLegacy: `You are the recipient of a legacy that grants you supernatural abilities. Choose a legacy from the Fiendish Legacies table. You gain the level 1 benefit of the chosen legacy.<br>
+    When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a Long Rest. You can also cast the spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the legacy).`,
+    devilsTongue: `You know the vicious mockery cantrip. When you reach 3rd level, you can cast the charm person spell as a 2nd-level spell once with this trait. When you reach 5th level, you can cast the enthrall spell once with this trait. You must finish a long rest to cast these spells once again with this trait. Charisma is your spellcasting ability for them. This trait replaces the Infernal Legacy trait.`,
+    appearance: `Your tiefling might not look like other tieflings. Rather than having the physical characteristics described in the Player's Handbook, choose 1d4+1 of the following features: small horns; fangs or sharp teeth; a forked tongue; catlike eyes; six fingers on each hand; goatlike legs; cloven hoofs; a forked tail; leathery or scaly skin; red or dark blue skin; cast no shadow or reflection; exude a smell of brimstone.`,
+    hellfire: `You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the burning hands spell once per day as a 2nd-level spell; you must finish a long rest in order to cast the spell again using this trait. Once you reach 5th level, you can also cast the darkness spell; you must finish a long rest in order to cast the spell again using this trait. Charisma is your spellcasting ability for these spells.`,
+    winged: `You have bat-like wings sprouting from your shoulder blades. You have a flying speed of 30 feet while you aren't wearing heavy armor.`
+}
+
+const artificer = {
+
+}
+const barbarian = {
+
+}
+const bard = {
+
+}
+const cleric = {
+
+}
+const druid = {
+
+}
+const fighter = {
+
+}
+const monk = {
+
+}
+const paladin = {
+
+}
+const ranger = {
+
+}
+const rogue = {
+
+}
+const sorcerer = {
+
+}
+const warlock = {
+
+}
+const wizard = {
+
 }
 
 const menuRaces = document.querySelector('.menu1');
@@ -455,6 +891,7 @@ function displayMenuRaces(race) {
         menuRaces.innerHTML = `
         
                 <button onclick="displayMenuRacesDetails('goliathbase2024')"><li>Goliath (Base)(PHB 2024)</li></button>
+
                 <button onclick="displayMenuRacesDetails('goliathbase')"><li>Goliath (Base)</li></button>
          
         <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
@@ -477,9 +914,9 @@ function displayMenuRaces(race) {
 
                 <button onclick="displayMenuRacesDetails('halflingghost')"><li>Halfling: Ghostwise</li></button>
 
-                <button onclick="displayMenuRacesDetails('halfingmarkhealing')"><li>Halfling: Mark of Healing</li></button>
+                <button onclick="displayMenuRacesDetails('halflingmarkhealing')"><li>Halfling: Mark of Healing</li></button>
 
-                <button onclick="displayMenuRacesDetails('halflingmarkhospital')"><li>Halfling: Mark of Hospitality</li></button>
+                <button onclick="displayMenuRacesDetails('halflingmarkhospitality')"><li>Halfling: Mark of Hospitality</li></button>
 
             <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
         menuSwitch = false;
@@ -514,28 +951,52 @@ function displayMenuRaces(race) {
         menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
-        <nav>
-             <ul>
-                <li>Scourge</li>
-                <li>Protector</li>
-                <li>Fallen</li>
-            </ul>                                                              
-        </nav>
-        <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button>`
+
+                <button onclick="displayMenuRacesDetails('orcbase2024')"><li>Orc (Base)(PHB 2024) </li></button>
+
+                <button onclick="displayMenuRacesDetails('halforc')"><li>Half-Orc (Base)(PHB 2014)</li></button>
+
+                <button onclick="displayMenuRacesDetails('halforcmark')"><li>Half-Orc (Mark of Finding)</li></button>
+
+            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
         menuSwitch = false;
     }
     else if (race === 'tiefling'){
         menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
-        <nav>
-             <ul>
-                <li>Scourge</li>
-                <li>Protector</li>
-                <li>Fallen</li>
-            </ul>                                                              
-        </nav>
-        <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button>`
+
+                <button onclick="displayMenuRacesDetails('tieflingbase2024')"><li>Tiefling (Base)(PHB 2024) </li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflingbase')"><li>Tiefling (Base)(PHB 2014)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflingasmodeus')"><li>Tiefling (Asmodeus)</li></button>
+                
+                <button onclick="displayMenuRacesDetails('tieflingbaalzebul')"><li>Tiefling (Baalzebul)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflingdispater')"><li>Tiefling (Dispater)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflingfierna')"><li>Tiefling (Fierna)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflingglasya')"><li>Tiefling (Glasya)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflinglevistus')"><li>Tiefling (Levistus)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflingmammon')"><li>Tiefling (Mammon)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflingmephistopheles')"><li>Tiefling (Mephistopheles)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflingzariel')"><li>Tiefling (Zariel)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflingdeviltongue')"><li>Tiefling (Devil's Tongue)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflinghellfire')"><li>Tiefling (Hellfire)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflinginfernallegacy')"><li>Tiefling (Infernal Legacy)</li></button>
+
+                <button onclick="displayMenuRacesDetails('tieflingwinged')"><li>Tiefling (Winged)</li></button>
+
+            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
         menuSwitch = false;
     }
 }
@@ -1510,7 +1971,7 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
                 <p><b>Medical Intuition: </b>${halfling.medicalIntuition}</p>
                 <p><b>Healing Touch: </b>${halfling.healingTouch}</p>
-                <p><b>Spells of the Mark: </b>${halfling.spellsoftheMark}</p>
+                <p><b>Spells of the Mark: </b>${halfling.spellsoftheMarkHealing}</p>
                 <button onclick = "displayMenuRaces('halfling')"> BACK </button>
             </div>
             <div>
@@ -1535,7 +1996,7 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
                 <p><b>Ever Hospitable: </b>${halfling.everHospitable}</p>
                 <p><b>Innkeeper's Magic: </b>${halfling.innkeepersMagic}</p>
-                <p><b>Spells of the Mark: </b>${halfling.spellsoftheMark}</p>
+                <p><b>Spells of the Mark: </b>${halfling.spellsoftheMarkHospitality}</p>
                 <button onclick = "displayMenuRaces('halfling')"> BACK </button>
             </div>
             <div>
@@ -1752,6 +2213,468 @@ function displayMenuRacesDetails(subrace){
             </div>
         </div>`
         ;  
+    }
+    // ORC x HALF-ORC
+    else if (subrace === 'orcbase2024'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${orc.name1}</h1>
+                <p><b>Size: </b>${orc.size}</p>
+                <p><b>Speed: </b>${orc.speed}</p>
+                <p><b>Age: </b>${orc.age}</p>
+                <p><b>Language: </b>${orc.languages}</p>
+                <p><b>Dark Vision: </b>${orc.darkvision}</p>
+                <p><b>Adrenaline Rush: </b>${orc.adrenalineRush}</p>
+                <p><b>Relentless Endurance: </b>${orc.relentlessEndurance}</p>
+                <button onclick = "displayMenuRaces('orc')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if (subrace === 'halforc'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${orc.name2}</h1>
+                <p><b>Ability Score: </b>${orc.abilityScore2}</p>
+                <p><b>Size: </b>${orc.size}</p>
+                <p><b>Speed: </b>${orc.speed}</p>
+                <p><b>Age: </b>${orc.age}</p>
+                <p><b>Language: </b>${orc.languages}</p>
+                <p><b>Dark Vision: </b>${orc.darkvision}</p>
+                <p><b>Menacing: </b>${orc.menacing}</p>
+                <p><b>Relentless Endurance: </b>${orc.relentlessEndurance}</p>
+                <p><b>Savage Attacks: </b>${orc.savageAttacks}</p>
+                <button onclick = "displayMenuRaces('orc')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if (subrace === 'halforcmark'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${orc.name3}</h1>
+                <p><b>Ability Score: </b>${orc.abilityScore3}</p>
+                <p><b>Size: </b>${orc.size}</p>
+                <p><b>Speed: </b>${orc.speed}</p>
+                <p><b>Age: </b>${orc.age}</p>
+                <p><b>Language: </b>${orc.languages}</p>
+                <p><b>Dark Vision: </b>${orc.darkvision}</p>
+                <p><b>Hunter's Intuition: </b>${orc.huntersIntuition}</p>
+                <p><b>Finder's Magic: </b>${orc.findersMagic}</p>
+                <p><b>Spells of the Mark: </b>${orc.spellsoftheMark}</p>
+                <button onclick = "displayMenuRaces('orc')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    // TIEFLING
+    else if(subrace === 'tieflingbase2024'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name15}</h1>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Otherwordly Presence: </b>${tiefling.otherworldlyPresence}</p>
+                <p><b>Fiendish Legacy: </b>${tiefling.fiendishLegacy}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflingbase'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name1}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore1}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Infernal Legacy: </b>${tiefling.infernalLegacy}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflingasmodeus'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name2}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore2}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Infernal Legacy: </b>${tiefling.infernalLegacy}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflingbaalzebul'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name3}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore3}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Legacy of Maladomini: </b>${tiefling.legacyofMaladomini}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflingdispater'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name4}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore4}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Legacy of Dis: </b>${tiefling.legacyofDis}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflingfierna'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name5}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore5}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Legacy of Phlegethos: </b>${tiefling.legacyofPhlegethos}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflingglasya'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name6}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore6}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Legacy of Malbolge: </b>${tiefling.legacyofMalbolge}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflinglevistus'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name7}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore7}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Legacy of Stygia: </b>${tiefling.legacyofStygia}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflingmammon'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name8}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore8}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Legacy of Minauros: </b>${tiefling.legacyofMinauros}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflingmephistopheles'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name9}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore9}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Legacy of Cania: </b>${tiefling.legacyofCania}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflingzariel'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name10}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore10}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Legacy of Avernus: </b>${tiefling.legacyofAvernus}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflingdeviltongue'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name11}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore11}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Appearance: </b>${tiefling.appearance}</p>
+                <p><b>Devil's Tongue: </b>${tiefling.devilsTongue}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflinghellfire'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name12}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore12}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Appearance: </b>${tiefling.appearance}</p>
+                <p><b>Hellfire: </b>${tiefling.hellfire}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflinginfernallegacy'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name13}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore13}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speed}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Appearance: </b>${tiefling.appearance}</p>
+                <p><b>Infernal Legacy: </b>${tiefling.infernalLegacy}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+    else if(subrace === 'tieflingwinged'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${tiefling.name14}</h1>
+                <p><b>Ability Score: </b>${tiefling.abilityScore14}</p>
+                <p><b>Size: </b>${tiefling.size}</p>
+                <p><b>Speed: </b>${tiefling.speedwinged}</p>
+                <p><b>Age: </b>${tiefling.age}</p>
+                <p><b>Language: </b>${tiefling.languages}</p>
+                <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
+                <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
+                <p><b>Appearance: </b>${tiefling.appearance}</p>
+                <p><b>Winged: </b>${tiefling.winged}</p>
+                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;  
+    }
+}
+
+function displayMenuClassesDetails(subclass){
+    if (subclass === 'artificer' ){
+        
+    }
+    else if ( subclass === 'barbarian' ){
+
+    }
+    else if ( subclass === 'bard' ){
+        
+    }
+    else if ( subclass === 'cleric' ){
+        
+    }
+    else if ( subclass === 'druid' ){
+        
+    }
+    else if ( subclass === 'fighter' ){
+        
+    }
+    else if ( subclass === 'monk' ){
+        
+    }
+    else if ( subclass === 'paladin' ){
+        
+    }
+    else if ( subclass === 'ranger' ){
+        
+    }
+    else if ( subclass === 'rogue' ){
+        
+    }
+    else if ( subclass === 'sorcerer' ){
+        
+    }
+    else if ( subclass === 'warlock' ){
+        
+    }
+    else if ( subclass === 'wizard' ){
+        
     }
 }
 
