@@ -15,20 +15,6 @@ body{
     background-attachment: fixed;
 }
 
-/* button{
-    background-color: rgba(0, 0, 0, 0.607);
-    color: rgba(255, 255, 255, 0.597);
-    letter-spacing: 1px;
-    border-radius: 10px;
-    padding: 1px;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-}
-button:hover{
-    background-color: black;
-    color: rgb(255, 255, 255);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.256); */
-
 /* NAV BAR */
 
 .nav-bar{
@@ -65,7 +51,7 @@ button:hover{
 .full-layout{
     display: grid;
     grid-template-columns: 1fr;
-    padding-left: 200px;
+    padding-left: 170px;
     padding-top: 75px;
     margin-top: 28px;
 }
@@ -169,6 +155,15 @@ button:hover{
 
 .race-detail-container p{
     margin-bottom: 10px;
+}
+.race-detail-container a {
+    color: rgba(32, 237, 172, 0.748);
+    text-decoration: none;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+.race-detail-container a:hover{
+    box-shadow: 1px -2px 20px 5px rgb(249 249 249 / 11%);
+    background-color: rgb(249 249 249 / 11%);
 }
 
 .menu1-layout{
@@ -324,3 +319,28 @@ button:hover{
     padding: 7px 0px 7px 0px;
     width: 200px;
 }
+
+.tableClass{
+    border: 2px solid black;
+    width: 830px;
+}
+.tableClass th{
+    border: 1px solid rgba(255, 255, 255, 0.219);
+    color: rgba(32, 237, 172, 0.748);
+    padding: 7px 0px 7px 0px;
+}
+.tableClass td{
+    border: 1px solid rgba(255, 255, 255, 0.226);
+    padding: 7px 0px 7px 0px;
+    text-align: center;
+}
+.tableClass a{
+    color: rgba(32, 237, 172, 0.748);
+    text-decoration: none;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+.tableClass a:hover{
+    box-shadow: 1px -2px 20px 5px rgb(249 249 249 / 11%);
+    background-color: rgb(249 249 249 / 11%);
+}
+

@@ -752,9 +752,380 @@ const artificer = {
 
 }
 const barbarian = {
+name:`Barbarian`,
+hitPoints:`Hit Dice: 1d12 per barbarian level<br>
+Hit Points at 1st Level: 12 + your Constitution modifier<br>
+Hit Points at Higher Levels: 1d12 (or 7) + your Constitution modifier per barbarian level after 1st`,
+proficiencies:`Armor: Light armor, medium armor, shields<br> 
+Weapons: Simple weapons, martial weapons<br> 
+Tools: None<br>
+Saving Throws: Strength, Constitution<br> 
+Skills: Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival`,
+frenzy:` You can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion`,
+mindlessRage:`You can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage.`,
+intimidatingPresence:`You can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you.
+If the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours.`,
+retaliation:`when you take damage froma creature that is within 5 feet of you. you can use your reaction to make a melee weapon attack against that creature.`,
+spiritSeeker:`Yours is a path that seeks attunement with the natural world, giving you a kinship with beasts. You gain the ability to cast the <a>beast sense</a> and <a>speak with animals</a> spells. but only as rituals`,
+totemSpirit:`When you adopt this path, you choose a totem spirit and gain its feature. You must make or acquire a physical totem object- an amulet or similar adornment—that incorporates fur or feathers, claws. teeth, or bones of the totem animal. At your option, you also gain minor physical attributes that are reminiscent of your totem spirit. For example, if you have a bear totem spirit, you might be unusually hairy and thickskinned, or if your totem is the eagle, your eyes turn bright yellow. Your totem animal might be an animal related to those listed here but more appropriate to your homeland. For example, you could choose a hawk or vulture in place of an eagle.<br>
+<b>Bear</b> :While raging. you have resistance to all damage except psychic damage. The spirit of the bear makes you tough enough to stand up to any punishment.<br>
+<b>Eagle</b>: While you're raging and aren't wearing heavy armor, other creatures have disadvantage on opportunity attack rolls against you, and you can use the Dash action as a bonus action on your turn. The spirit of the eagle makes you into a predator who can weave through the fray with ease.<br>
+<b>Wolf</b>: While you're raging, your friends have advantage on melee attack rolls against any creature within 5 feet of you that is hostile to you. The spirit of the wolf makes you a leader of hunters.`,
+aspectOfTheBeast:`you gain a magical benefit based on the totem animal of your choice. You can choose the same animal you selected at 3rd level or a different one.<br>
+<b>Bear</b>: You gain the might of a bear. Your carrying capacity (including maximum load and maximum lift) is doubled, and you have advantage on Strength checks made to push, pull, lift, or break objects.<br>
+<b>Eagle</b>: You gain the eyesight of an eagle. You can see up to 1 mile away with no difficulty, able to discern even fine details as though looking at something no more than 100 feet away from you. Additionally, dim light doesn't impose disadvantage on your Wisdom (Perception) checks.<br>
+<b>Wolf</b>: You gain the hunting sensibilities of a wolf. You can track other creatures while traveling at a fast pace, and you can move stealthily while traveling at a normal pace.`,
+spiritWalker:`you can cast <a>the commune with nature</a> spell, but only as a ritual. When you do so, a spiritual version of one of the animals you chose for Totem Spirit or Aspect of the Beast appears to you to convey the information you seek.`,
+totemicAttunement:`You gain a magical benefit based on a totem animal of your choice. You can choose the same animal you selected previously or a different one.<br>
+<b>Bear</b> :While you're raging, any creature within 5 feet of you that’s hostile to you has disadvantage on attack rolls against targets other than you or another character witb this feature. An enemy is immune to this effect if it can't see or hear you or if it can’t be frightened.<br>
+<b>Eagle</b>: While raging, you have a flying speed equal to your current walking speed. This benefit works only in short bursts; you fall if you end your turn in the air and nothing else is holding you aloft.<br>
+<b>Wolf</b>: While you're raging, you can use a bonus action on your turn to knock a Large or smaller creature prone when you hit it with melee weapon attack.`,
+table:`<table class="tableClass">
+                            <tr>
+                                <th >Level</th>
+                                <th >Proficiency Bonus</th>
+                                <th >Features</th>
+                                <th >Rage</th>
+                                <th >Rage Damage</th>
+                            </tr>
+                            <tr>
+                                <td>1st</td>
+                                <td>+2</td>
+                                <td><a href="">Rage</a> - <a href="">Unarmored defense</a></td>
+                                <td>2</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>2nd</td>
+                                <td>+2</td>
+                                <td><a href="">Reckless attack</a> - <a href="">Danger sense</a></td>
+                                <td>2</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>3rd</td>
+                                <td>+2</td>
+                                <td><a href="">Primal path</a></td>
+                                <td>3</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>4th</td>
+                                <td>+2</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>3</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>5th</td>
+                                <td>+3</td>
+                                <td><a href="">Extra attack</a> - <a href="">Fast movement</a></td>
+                                <td>3</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>6th</td>
+                                <td>+3</td>
+                                <td><a href="">Path features</a></td>
+                                <td>4</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>7th</td>
+                                <td>+3</td>
+                                <td><a href="">Feral instinct</a></td>
+                                <td>4</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>8th</td>
+                                <td>+3</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>4</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>9th</td>
+                                <td>+4</td>
+                                <td><a href="">Brutal critical (1 die)</a></td>
+                                <td>4</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td>10th</td>
+                                <td>+4</td>
+                                <td><a href="">Path feature</a></td>
+                                <td>4</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td>11th</td>
+                                <td>+4</td>
+                                <td><a href="">Relentless rage</a></td>
+                                <td>4</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td>12th</td>
+                                <td>+4</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>5</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td>13th</td>
+                                <td>+5</td>
+                                <td><a href="">Brutal critical (2 dice)</a></td>
+                                <td>5</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td>14th</td>
+                                <td>+5</td>
+                                <td><a href="">Path feature</a></td>
+                                <td>5</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td>15th</td>
+                                <td>+5</td>
+                                <td><a href="">Persistent Rage</a></td>
+                                <td>5</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td>16th</td>
+                                <td>+5</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>5</td>
+                                <td>+4</td>
+                            </tr>
+                            <tr>
+                                <td>17th</td>
+                                <td>+6</td>
+                                <td><a href="">Brutal critical (3 dice)</a></td>
+                                <td>6</td>
+                                <td>+4</td>
+                            </tr>
+                            <tr>
+                                <td>18th</td>
+                                <td>+6</td>
+                                <td><a href="">Indomitable might</a></td>
+                                <td>6</td>
+                                <td>+4</td>
+                            </tr>
+                            <tr>
+                                <td>19th</td>
+                                <td>+6</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>6</td>
+                                <td>+4</td>
+                            </tr>
+                            <tr>
+                                <td>20th</td>
+                                <td>+6</td>
+                                <td><a href="">Primal Champion</a></td>
+                                <td>Unlimited</td>
+                                <td>+4</td>
+                            </tr>
+
+                        </table>`
 
 }
 const bard = {
+    name:`Bard`,
+    hitPoints:`Hit Dice: 1d8 per bard level<br>
+    Hit Points at 1st Level: 8 + your Constitution modifier<br>
+    Hit Points at Higher Levels: 1d8 (or 5) + your Constitution modifier per bard level after 1st`,
+    proficiencies:`Armor: Light armor<br>
+    Weapons: Simple weapons, hand crossbows, longswords, rapiers, shortswords<br>
+    Tools: Three musical instruments of your choice<br>
+    Saving Throws: Dexterity, Charisma<br> 
+    Skills: Choose any three`,
+    spells:`2 Cantrips of your choice from <a href="">the bard cantrip table</a> and the the ability of known 4 spells from <a href="">the bard spells table</a><br>
+    Additionally, when you gain a level in this class, you can choose one of the bard spells you know and replace it with another spell from the bard spell list, which also must be of a level for which you have spell slots. Charisma is your spellcasting ability for your bard spells`,
+    bonusProficienciesLore:`You gain proficiency with three skills of your choice.`,
+    cuttingWords:`You learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling
+    a Bardic Inspiration die and subtracting the number rolled from the creature's roll. You can choose to use this feature after the creature makes its roll, but before the DM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can't hear you or if it's immune to being charmed.`,
+    additionalMagicalSecrets:`You learn two spells of your choice from any class. A spell you choose must be of a level you can cast. as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you but don't count against the number of bard spells you know.`,
+    peerlessSkill:`When you make an ability check. you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roil the die for the ability check, but before the DM tells you whether you succeed or fail.`,
+    bonusProficienciesValor:`You gain proficiency with medium armor, shields, and martial weapons.`,
+    combatInspiration:`You learn to inspire others in battle. A creature that has a Bardic Inspiration die from you can roll that die and add the number rolled to a weapon damage roll it just made. Alternatively, when an attack roll is made against the creature, it can use its reaction to roll the Bardic Inspiration die and add the number rolled to its AC against that attack, after seeing the roll but before knowing whether it hits or misses.`,
+    extraAttack:`You can attack twice, instead of once, whenever you take the Attack action on your turn.`,
+    battleMagic:`you have mastered the art of weaving spellcasting and weapon use into a single harmonious act. When you use your action to cast a bard spell, you can make one weapon attack as a bonus action.`,
+    table:`<table class="tableClass">
+                            <tr>
+                                <th >Level</th>
+                                <th >Proficiency Bonus</th>
+                                <th >Features</th>
+                                <th >Cantrips</th>
+                                <th >Spells known</th>
+                                <th >Spells Slots per Level</th>
+                            </tr>
+                            <tr>
+                                <td>1st</td>
+                                <td>+2</td>
+                                <td><a href="">Spellcasting</a> - <a href="">Bardic Inspiration (d6)</a></td>
+                                <td>2</td>
+                                <td>4</td>
+                                <td><b>1st></b> 2</td>
+                            </tr>
+                            <tr>
+                                <td>2nd</td>
+                                <td>+2</td>
+                                <td><a href="">Jack of all trades</a> - <a href="">Song of Rest (d6)</a></td>
+                                <td>2</td>
+                                <td>5</td>
+                                <td><b>1st></b> 3</td>
+                            </tr>
+                            <tr>
+                                <td>3rd</td>
+                                <td>+2</td>
+                                <td><a href="">Bard College</a> - <a href="">Expertise</a></td>
+                                <td>2</td>
+                                <td>6</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 2</td>
+                            </tr>
+                            <tr>
+                                <td>4th</td>
+                                <td>+2</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>3</td>
+                                <td>7</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3</td>
+                            </tr>
+                            <tr>
+                                <td>5th</td>
+                                <td>+3</td>
+                                <td><a href="">Bardic Inspiration (d8)</a> - <a href="">Font of Inspiration</a></td>
+                                <td>3</td>
+                                <td>8</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 2</td>
+                            </tr>
+                            <tr>
+                                <td>6th</td>
+                                <td>+3</td>
+                                <td><a href="">Countercharm</a> - <a href="">Bard College feature</a></td>
+                                <td>3</td>
+                                <td>9</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3</td>
+                            </tr>
+                            <tr>
+                                <td>7th</td>
+                                <td>+3</td>
+                                <td> - </td>
+                                <td>3</td>
+                                <td>10</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 1</td>
+                            </tr>
+                            <tr>
+                                <td>8th</td>
+                                <td>+3</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>3</td>
+                                <td>11</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 2</td>
+                            </tr>
+                            <tr>
+                                <td>9th</td>
+                                <td>+4</td>
+                                <td><a href="">Song of Rest(d8)</a></td>
+                                <td>3</td>
+                                <td>12</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 1</td>
+                            </tr>
+                            <tr>
+                                <td>10th</td>
+                                <td>+4</td>
+                                <td><a href="">Bardic Inspiration (d10)</a> - <a href="">Expertise</a> - <a href="">Magical Secrets</a></td>
+                                <td>4</td>
+                                <td>14</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 2</td>
+                            </tr>
+                            <tr>
+                                <td>11th</td>
+                                <td>+4</td>
+                                <td>-</td>
+                                <td>4</td>
+                                <td>15</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 2 <b>6th></b> 1</td>
+                            </tr>
+                            <tr>
+                                <td>12th</td>
+                                <td>+4</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>4</td>
+                                <td>15</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 2 <b>6th></b> 1</td>
+                            </tr>
+                            <tr>
+                                <td>13th</td>
+                                <td>+5</td>
+                                <td><a href="">Song of Rest (d10)</a></td>
+                                <td>4</td>
+                                <td>16</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 2 <b>6th></b> 1 <b>7th></b> 1</td>
+                            </tr>
+                            </tr>
+                            <tr>
+                                <td>14th</td>
+                                <td>+5</td>
+                                <td><a href="">Magical Secrets</a> - <a href="">Bard College Feature</a></td>
+                                <td>4</td>
+                                <td>18</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 2 <b>6th></b> 1 <b>7th></b> 1</td>
+                            </tr>
+                            <tr>
+                                <td>15th</td>
+                                <td>+5</td>
+                                <td><a href="">Bardic Inspiration (d12)</a></td>
+                                <td>4</td>
+                                <td>19</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 2 <b>6th></b> 1 <b>7th></b> 1 <b>8th></b> 1</td>
+                            </tr>
+                            <tr>
+                                <td>16th</td>
+                                <td>+5</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>4</td>
+                                <td>19</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 2 <b>6th></b> 1 <b>7th></b> 1 <b>8th></b> 1</td>
+                            </tr>
+                            <tr>
+                                <td>17th</td>
+                                <td>+6</td>
+                                <td><a href="">Song of Rest (d12)</a></td>
+                                <td>4</td>
+                                <td>20</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 2 <b>6th></b> 1 <b>7th></b> 1 <b>8th></b> 1 <b>9th></b> 1</td>
+                            </tr>
+                            <tr>
+                                <td>18th</td>
+                                <td>+6</td>
+                                <td><a href="">Magical Secrets</a></td>
+                                <td>4</td>
+                                <td>22</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 2 <b>6th></b> 1 <b>7th></b> 1 <b>8th></b> 1 <b>9th></b> 1</td>
+                            </tr>
+                            <tr>
+                                <td>19th</td>
+                                <td>+6</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>4</td>
+                                <td>22</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 2 <b>6th></b> 2 <b>7th></b> 1 <b>8th></b> 1 <b>9th></b> 1</td>
+                            </tr>
+                            <tr>
+                                <td>20th</td>
+                                <td>+6</td>
+                                <td><a href="">Superior Inspiration</a></td>
+                                <td>4</td>
+                                <td>22</td>
+                                <td><b>1st></b> 4 <b>2nd></b> 3 <b>3rd></b> 3 <b>4th></b> 3 <b>5th></b> 2 <b>6th></b> 2 <b>7th></b> 2 <b>8th></b> 1 <b>9th></b> 1</td>
+                            </tr>
+
+                        </table>`
+
 
 }
 const cleric = {
@@ -770,7 +1141,270 @@ const monk = {
 
 }
 const paladin = {
+    name:`Paladin`,
+    hitPoints:`Hit Dice: 1d10 per paladin level<br>
+    Hit Points at 1st Level: 10 + your Constitution modifier<br>
+    Hit Points at Higher Levels: 1d10 (or 6) + your Constitution modifier per paladin level after Ist`,
+    proficiencies:`Armor: All armor, shields<br>
+    Weapons: Simple weapons, martial weapons <br>
+    Tools: None<br>
+    Saving Throws: Wisdom, Charisma<br> 
+    Skills: Choose two from Athletics, Insight, Intimidation, Medicine, Persuasion, and Religion`,
+    spells:`By 2nd level, you have learned to draw on divine magic through meditation and prayer to cast spells for <a href="">the paladin spell list</a>.<br>
+    The prepared spells for a palladin works like this, everytime you finish a long rest you can choose a number of paladin spells equal to your Charisma modifier + half your paladin level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.<br>
+    Charisma is your spellcasting ability for your paladin spells,`,
+    oathSpellsDevotion:`<table class="tableClass">
+                            <tr>
+                                <th>Paladin Level</th>
+                                <th>Spells</th>
+                            </tr>
+                            <tr>
+                                <td>3rd</td>
+                                <td><a href="">Protection from Evil and Good</a> - <a href="">Sanctuary</a></td>
+                            </tr>
+                            <tr>
+                                <td>5th</td>
+                                <td><a href="">Lesser Restoration</a> - <a href="">Zone of truth</a></td>
+                            </tr>
+                            <tr>
+                                <td>9th</td>
+                                <td><a href="">Beacon of Hope</a> - <a href="">Dispel Magic</a></td>
+                            </tr>
+                            <tr>
+                                <td>13th</td>
+                                <td><a href="">Freedom of movement</a> - <a href="">Guardian of faith</a></td>
+                            </tr>
+                            <tr>
+                                <td>17th</td>
+                                <td><a href="">Commune</a> - <a href="">Flame strike</a></td>
+                            </tr>
+                        </table>`,
+    channelDivinityDevotion:`You gain the following two Channel Divinity options<br>
+    <br>
+    <b>Sacred Weapon</b>: As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration.<br>
+    You can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends.<br>
+    <br>
+    <b>Turn the Unholy</b>: As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage.<br>
+    A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.`,
+    auraOfDevotion:`You and friendly creatures within 10 feet of you can't be charmed while you are conscious. At 18th level, the range of this aura increases to 30 feet`,
+    purityOfSpirit:`You are always under the effects of a protection from evil and good spell.`,
+    holyNimbus:`As an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that. Whenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage. In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.<br> 
+    Once you use this feature, you can't use it again until you finish a long rest.`,
+    oathSpellsAncient:`<table class="tableClass">
+                            <tr>
+                                <th>Paladin Level</th>
+                                <th>Spells</th>
+                            </tr>
+                            <tr>
+                                <td>3rd</td>
+                                <td><a href="">Ensnaring strike </a> - <a href="">Speak with animals</a></td>
+                            </tr>
+                            <tr>
+                                <td>5th</td>
+                                <td><a href="">Moonbeam</a> - <a href="">Misty Step</a></td>
+                            </tr>
+                            <tr>
+                                <td>9th</td>
+                                <td><a href="">Plant growth</a> - <a href="">Protection from Energy</a></td>
+                            </tr>
+                            <tr>
+                                <td>13th</td>
+                                <td><a href="">Ice Storm</a> - <a href="">Stoneskin</a></td>
+                            </tr>
+                            <tr>
+                                <td>17th</td>
+                                <td><a href="">Commune with nature</a> - <a href="">Tree Stride</a></td>
+                            </tr>
+                        </table>`,
+    channelDivinityAncient:`You gain the following two Channel Divinity options.<br>
+    <br>
+    <b>Nature's Wrath</b>: You can use your Channel Divinity to invoke primeval forces to ensnare a foe. As an action, you can cause spectral vines to spring up and reach for a creature within 10 feet of you that you can see. The creature must succeed on a Strength or Dexterity saving throw (its choice) or be restrained. While restrained by the vines, the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish.<br>
+    <br>
+    <b>Turn the Faithless</b>: You can use your Channel Divinity to utter ancient words that are painful for fey and fiends to hear. As an action, you present your holy symbol, and each fey or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.<br>
+    A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.<br>
+    If the creature's true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed while it is turned.`,
+    auraOfWarding:`Ancient magic lies so heavily upon you that it forms an eldritch ward. You and friendly creatures within 10 feet of you have resistance to damage from spells.<br>
+    At 18th level, the range of this aura increases to 30 feet.`,
+    undyingSentinel:`When you are reduced to O hit points and are not killed outright, you can choose to drop to 1 hit point instead. Once you use this ability, you can't use it again until you finish a long rest. Additionally, you suffer none of the drawbacks of old
+    age, and you can't be aged magically`,
+    elderChampion:`You can assume the form of an ancient force of nature, taking on an appearance you choose. For example, your skin might turn green or take ona bark-like texture, your hair might become leafy or moss-like, or you might sprout antlers or a lion-like mane.<br>
+    Using your action, you undergo a transformation.For 1 minute, you gain the following benefits:<br>
+    <br>
+    - At the start of each of your turns, you regain 10 hit points.<br>
+    - Whenever you cast a paladin spell that has a casting time of 1 action, you can cast it using a bonus action instead.<br>
+    - Enemy creatures within 10 feet of you have disadvantage on saving throws against your paladin spells and Channel Divinity options.<br>
+    <br>
+    Once you use this feature, you can’t use it again until you finish a long rest.`,
+    oathSpellsVengeance:`<table class="tableClass">
+                            <tr>
+                                <th>Paladin Level</th>
+                                <th>Spells</th>
+                            </tr>
+                            <tr>
+                                <td>3rd</td>
+                                <td><a href="">Bane</a> - <a href="">Hunter's Mark</a></td>
+                            </tr>
+                            <tr>
+                                <td>5th</td>
+                                <td><a href="">Hold Person</a> - <a href="">Misty Step</a></td>
+                            </tr>
+                            <tr>
+                                <td>9th</td>
+                                <td><a href="">Haste</a> - <a href="">Protection from Energy</a></td>
+                            </tr>
+                            <tr>
+                                <td>13th</td>
+                                <td><a href="">Banishment</a> - <a href="">Dimension Door</a></td>
+                            </tr>
+                            <tr>
+                                <td>17th</td>
+                                <td><a href="">Hold Monster</a> - <a href="">Scrying</a></td>
+                            </tr>
+                        </table>`,
+    channelDivinityVengeance:`You gain the following two Channel Divinity options.<br>
+    <br>
+    <b>Abjure Enemy</b>: As an action, you present your holy symbol and speak a prayer of denunciation, using your Channel Divinity. Choose one creature within 60 feet of you that you can see. That creature must make a Wisdom saving throw, unless it is immune to being frightened. Fiends and undead have disadvantage on this saving throw.<br>
+    On a failed save, the creature is frightened for 1 minute or until it takes any damage. While frightened, the creature's speed is 0, and it can't benefit from any bonus to its speed.<br>
+    On a successful save, the creature's speed is halved for 1 minute or until the creature takes any damage.<br>
+    <b>Vow of Enmity</b>: As a bonus action, you can utter a vow of enmity against a creature you can see within 10 feet of you, using your Channel Divinity. You gain advantage on attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls unconscious.`,
+    relentlessAvenger:`Your supernatural focus helps you close off a foe's retreat. When you hit a creature with an opportunity attack, you can move up to half your speed immediately after the attack and as part of the same reaction. This movement doesn't provoke opportunity attacks.`,
+    soulOfVengeance:`The authority with which you speak your Vow of Enmity gives you greater power over your foe. When a creature under the effect of your Vow of Enmity makes an attack, you can use your reaction to make a melee weapon attack against that creature if it is within range.`,
+    avengingAngel:`You can assume the form of an angelic avenger. Using your action, you undergo a transformation. For 1 hour, you gain the following benefits:<br>
+    <br>
+    - Wings sprout from your back and grant you a flying speed of 60 feet.<br>
+    - You emanate an aura of menace in a 30-foot radius. The first time any enemy creature enters the aura or starts its turn there during a battle, the creature must succeed on a Wisdom saving throw or become frightened of you for 1 minute or until it takes any damage. Attack rolls against the frightened creature have advantage.<br>
+    <br>
+    Once you use this feature, you can't use it again until you finish a long rest.`,
+    table:`<table class="tableClass">
+                            <tr>
+                                <th >Level</th>
+                                <th >Proficiency Bonus</th>
+                                <th >Features</th>
+                                <th >Spells Slots per Level</th>
+                            </tr>
+                            <tr>
+                                <td>1st</td>
+                                <td>+2</td>
+                                <td><a href="">Divine Sense</a> - <a href="">Lay on Hands</a></td>
+                                <td>NO SPELL SLOTS</td>
+                            </tr>
+                            <tr>
+                                <td>2nd</td>
+                                <td>+2</td>
+                                <td><a href="">Fighting Style</a> - <a href="">Spellcasting</a> - <a href="">Divinite Smite</a></td>
+                                <td><b>1st -></b> 2 </td>
+                            </tr>
+                            <tr>
+                                <td>3rd</td>
+                                <td>+2</td>
+                                <td><a href="">Divine Health</a> - <a href="">Sacred Oath</a></td>
+                                <td><b>1st-></b> 3 <b></td>
+                            </tr>
+                            <tr>
+                                <td>4th</td>
+                                <td>+2</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td><b>1st -></b> 3 <b></td>
+                            </tr>
+                            <tr>
+                                <td>5th</td>
+                                <td>+3</td>
+                                <td><a href="">Extra Attack</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 2</td>
+                            </tr>
+                            <tr>
+                                <td>6th</td>
+                                <td>+3</td>
+                                <td><a href="">Aura of Protection</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 2</td>
+                            </tr>
+                            <tr>
+                                <td>7th</td>
+                                <td>+3</td>
+                                <td><a href="">Sacred Oath Feature</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3</td>
+                            </tr>
+                            <tr>
+                                <td>8th</td>
+                                <td>+3</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3</td>
+                            </tr>
+                            <tr>
+                                <td>9th</td>
+                                <td>+4</td>
+                                <td>-</td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 2</td>
+                            </tr>
+                            <tr>
+                                <td>10th</td>
+                                <td>+4</td>
+                                <td><a href="">Aura of Courage</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 2</td>
+                            </tr>
+                            <tr>
+                                <td>11th</td>
+                                <td>+4</td>
+                                <td><a href="">Improved Divine Smite</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 3</td>
+                            </tr>
+                            <tr>
+                                <td>12th</td>
+                                <td>+4</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 3</td>
+                            </tr>
+                            <tr>
+                                <td>13th</td>
+                                <td>+5</td>
+                                <td>-</td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 3 <b>4th -></b> 1 </td>
+                            </tr>
+                            </tr>
+                            <tr>
+                                <td>14th</td>
+                                <td>+5</td>
+                                <td><a href="">Cleansing Touch</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 3 <b>4th -></b> 1 </td>
+                            </tr>
+                            <tr>
+                                <td>15th</td>
+                                <td>+5</td>
+                                <td><a href="">Sacred Oath Feature</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 3 <b>4th -></b> 2 </td>
+                            </tr>
+                            <tr>
+                                <td>16th</td>
+                                <td>+5</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 3 <b>4th -></b> 2 </td>
+                            </tr>
+                            <tr>
+                                <td>17th</td>
+                                <td>+6</td>
+                                <td>-</td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 3 <b>4th -></b> 3 <b>5th -></b> 1 </td>
+                            </tr>
+                            <tr>
+                                <td>18th</td>
+                                <td>+6</td>
+                                <td><a href="">Aura Improvements</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 3 <b>4th -></b> 3 <b>5th -></b> 1 </td>
+                            </tr>
+                            <tr>
+                                <td>19th</td>
+                                <td>+6</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 3 <b>4th -></b> 3 <b>5th -></b> 2 </td>
+                            </tr>
+                            <tr>
+                                <td>20th</td>
+                                <td>+6</td>
+                                <td><a href="">Sacred Oath Feature</a></td>
+                                <td><b>1st -></b> 4 <b>2nd -></b> 3 <b>3rd -></b> 3 <b>4th -></b> 3 <b>5th -></b> 2 </td>
+                            </tr>
 
+                        </table>`,
 }
 const ranger = {
 
@@ -999,6 +1633,128 @@ function displayMenuRaces(race) {
             <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
         menuSwitch = false;
     }
+}
+function displayMenuClasses(subclasses){
+    if (subclasses === 'barbarian'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${barbarian.name}</h1>
+                <p><b>Hit Points: </b> ${barbarian.hitPoints}</p>
+                <p><b>Proficiencies: </b>${barbarian.proficiencies}</p>
+                <p><b>Subclasses:</b><br>
+                <b class="importantDetail">Path of the Berserker</b> or <b class="importantDetail">Path of the Totem Warrior</b></p> 
+                <p><b>Path of The berserker:</b></p>
+                <p><b>Level 3 - Frenzy:</b> ${barbarian.frenzy}</p>
+                <p><b>Level 6 - Mindless Rage:</b> ${barbarian.mindlessRage}</p>
+                <p><b>Level 10 - Intimidating Presence:</b> ${barbarian.intimidatingPresence}</p>
+                <p><b>Level 14 - Retaliation:</b> ${barbarian.retaliation}</p>
+                <p><b class="importantDetail">Path of The Totem Warrior:</b></p>
+                <p><b>Level 3 (both skills) - Spirit Seeker:</b> ${barbarian.spiritSeeker}<br> <b>Totem Spirit:</b> ${barbarian.totemSpirit}</p>
+                <p><b>Level 6 - Aspect Of The Beast:</b> ${barbarian.aspectOfTheBeast}</p>
+                <p><b>Level 10 - Spirit Walker:</b> ${barbarian.spiritWalker}</p>
+                <p><b>Level 14 - Totemic Attunement:</b> ${barbarian.totemicAttunement}</p>
+                <p><b>Class table per level</b> ${barbarian.table}</p>
+                <button onclick = "logoReset()"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+}
+    else if (subclasses === 'bard'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${bard.name}</h1>
+                <p><b>Hit Points: </b> ${bard.hitPoints}</p>
+                <p><b>Proficiencies: </b>${bard.proficiencies}</p>
+                <p><b>Spells: </b>${bard.spells}</p>
+                <p><b>Subclasses:</b><br>
+                <br>
+                <b class="importantDetail">College of Lore</b> or <b class="importantDetail">College of Valor</b></p> 
+                <p><b class="importantDetail">College of Lore:</b></p>
+                <p><b>Level 3 (both skills):<br>
+                <br>
+                Bonus Proficiencies:</b> ${bard.bonusProficienciesLore}<br>
+                <br>
+                <b>Cutting Word:</b> ${bard.cuttingWords}</p>
+                <p><b>Level 6 - Additional Magical Secrets:</b> ${bard.additionalMagicalSecrets}</p>
+                <p><b>Level 14 - Peerless Skill:</b> ${bard.peerlessSkill}</p>
+                <p><b class="importantDetail">College of Valor:</b></p>
+                <p><b>Level 3 (both skills)<br>
+                <br>
+                Bonus Proficiencies:</b> ${bard.bonusProficienciesValor}<br> 
+                <br>
+                <b>Combat Inspiration:</b> ${bard.combatInspiration}</p>
+                <p><b>Level 6 - Extra Attack:</b> ${bard.extraAttack}</p>
+                <p><b>Level 14 - Battle Magic:</b> ${bard.battleMagic}</p>
+                <p><b>Class table per level</b> ${bard.table}</p>
+                <button onclick = "logoReset()"> BACK </button>
+            </div>
+            <div>
+                <img class="raceImg" src="./img/aasimar.png" alt="">
+            </div>
+        </div>`
+        ;
+}
+    else if (subclasses === 'paladin'){
+    menuRaces.innerHTML= '';
+    menuRacesDetails.innerHTML= '';
+    menuRacesDetails.innerHTML= `
+    <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${paladin.name}</h1>
+            <p><b>Hit Points: </b> ${paladin.hitPoints}</p>
+            <p><b>Proficiencies: </b>${paladin.proficiencies}</p>
+            <p><b>Spells: </b>${paladin.spells}</p>
+            <p><b>Subclasses:</b><br>
+            <br>
+            <b class="importantDetail">Oath of Devotion</b> , <b class="importantDetail">Oath of Ancient</b> or <b class="importantDetail">Oath of Vengeance</b></p> 
+            <p><b class="importantDetail">Oath of Devotion:</b></p>
+            <p><b>You gain the following spells for your Oath:<br>
+            ${paladin.oathSpellsDevotion}</b></p>
+            <p><b>Level 3 :<br>
+            <br>
+            Channel Divinity ( Devotion ):</b> ${paladin.channelDivinityDevotion}<br>
+            <br>
+            <p><b>Level 7 - Aura of Devotion:</b> ${paladin.auraOfDevotion}</p>
+            <p><b>Level 15 - Purity of Spirit:</b> ${paladin.purityOfSpirit}</p>
+            <p><b>Level 20 - Holy nimbus:</b> ${paladin.holyNimbus}</p>
+            <p><b class="importantDetail">Oath of The Ancients:</b></p>
+            <p><b>You gain the following spells for your Oath:<br>
+            ${paladin.oathSpellsAncient}</b></p>
+            <p><b>Level 3 :<br>
+            <br>
+            Channel Divinity ( Ancients ):</b> ${paladin.channelDivinityAncient}<br>
+            <br>
+            <p><b>Level 7 - Aura of Warding:</b> ${paladin.auraOfWarding}</p>
+            <p><b>Level 15 - Undying Sentinel:</b> ${paladin.undyingSentinel}</p>
+            <p><b>Level 20 - Elder Champion:</b> ${paladin.elderChampion}</p>
+            <p><b class="importantDetail">Oath of Vengeance:</b></p>
+            <p><b>You gain the following spells for your Oath:<br>
+            ${paladin.oathSpellsVengeance}</b></p>
+            <p><b>Level 3 :<br>
+            <br>
+            Channel Divinity ( Devotion ):</b> ${paladin.channelDivinityVengeance}<br>
+            <br>
+            <p><b>Level 7 - Relentless Avenger:</b> ${paladin.relentlessAvenger}</p>
+            <p><b>Level 15 - Soul of Vengeance:</b> ${paladin.soulOfVengeance}</p>
+            <p><b>Level 20 - Avenging Angel:</b> ${paladin.avengingAngel}</p>
+            <p><b>Class table per level</b> ${paladin.table}</p>
+            <button onclick = "logoReset()"> BACK </button>
+        </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;
+}
 }
 
 function hideMenuRaces(){
@@ -2636,46 +3392,43 @@ function displayMenuRacesDetails(subrace){
     }
 }
 
-function displayMenuClassesDetails(subclass){
-    if (subclass === 'artificer' ){
-        
-    }
-    else if ( subclass === 'barbarian' ){
+// function displayMenuClassesDetails(subclass){
+//     if ( subclass === 'barbarian' ){
 
-    }
-    else if ( subclass === 'bard' ){
+//     }
+//     else if ( subclass === 'bard' ){
         
-    }
-    else if ( subclass === 'cleric' ){
+//     }
+//     else if ( subclass === 'cleric' ){
         
-    }
-    else if ( subclass === 'druid' ){
+//     }
+//     else if ( subclass === 'druid' ){
         
-    }
-    else if ( subclass === 'fighter' ){
+//     }
+//     else if ( subclass === 'fighter' ){
         
-    }
-    else if ( subclass === 'monk' ){
+//     }
+//     else if ( subclass === 'monk' ){
         
-    }
-    else if ( subclass === 'paladin' ){
+//     }
+//     else if ( subclass === 'paladin' ){
         
-    }
-    else if ( subclass === 'ranger' ){
+//     }
+//     else if ( subclass === 'ranger' ){
         
-    }
-    else if ( subclass === 'rogue' ){
+//     }
+//     else if ( subclass === 'rogue' ){
         
-    }
-    else if ( subclass === 'sorcerer' ){
+//     }
+//     else if ( subclass === 'sorcerer' ){
         
-    }
-    else if ( subclass === 'warlock' ){
+//     }
+//     else if ( subclass === 'warlock' ){
         
-    }
-    else if ( subclass === 'wizard' ){
+//     }
+//     else if ( subclass === 'wizard' ){
         
-    }
-}
+//     }
+// }
 
 
