@@ -1160,23 +1160,23 @@ const paladin = {
                             </tr>
                             <tr>
                                 <td>3rd</td>
-                                <td><a href="">Protection from Evil and Good</a> - <a href="">Sanctuary</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:protection-from-evil-and-good">Protection from Evil and Good</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:sanctuary">Sanctuary</a></td>
                             </tr>
                             <tr>
                                 <td>5th</td>
-                                <td><a href="">Lesser Restoration</a> - <a href="">Zone of truth</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:lesser-restoration">Lesser Restoration</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:zone-of-truth">Zone of truth</a></td>
                             </tr>
                             <tr>
                                 <td>9th</td>
-                                <td><a href="">Beacon of Hope</a> - <a href="">Dispel Magic</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:beacon-of-hope">Beacon of Hope</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:dispel-magic">Dispel Magic</a></td>
                             </tr>
                             <tr>
                                 <td>13th</td>
-                                <td><a href="">Freedom of movement</a> - <a href="">Guardian of faith</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:freedom-of-movement">Freedom of movement</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:guardian-of-faith">Guardian of faith</a></td>
                             </tr>
                             <tr>
                                 <td>17th</td>
-                                <td><a href="">Commune</a> - <a href="">Flame strike</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:commune">Commune</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:flame-strike">Flame strike</a></td>
                             </tr>
                         </table>`,
     channelDivinityDevotion:`You gain the following two Channel Divinity options<br>
@@ -1197,23 +1197,23 @@ const paladin = {
                             </tr>
                             <tr>
                                 <td>3rd</td>
-                                <td><a href="">Ensnaring strike </a> - <a href="">Speak with animals</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:ensnaring-strike">Ensnaring strike </a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:speak-with-animals">Speak with animals</a></td>
                             </tr>
                             <tr>
                                 <td>5th</td>
-                                <td><a href="">Moonbeam</a> - <a href="">Misty Step</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:moonbeam">Moonbeam</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:misty-step">Misty Step</a></td>
                             </tr>
                             <tr>
                                 <td>9th</td>
-                                <td><a href="">Plant growth</a> - <a href="">Protection from Energy</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:plant-growth">Plant growth</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:protection-from-energy">Protection from Energy</a></td>
                             </tr>
                             <tr>
                                 <td>13th</td>
-                                <td><a href="">Ice Storm</a> - <a href="">Stoneskin</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:ice-storm">Ice Storm</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:stoneskin">Stoneskin</a></td>
                             </tr>
                             <tr>
                                 <td>17th</td>
-                                <td><a href="">Commune with nature</a> - <a href="">Tree Stride</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:commune-with-nature">Commune with nature</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:tree-stride">Tree Stride</a></td>
                             </tr>
                         </table>`,
     channelDivinityAncient:`You gain the following two Channel Divinity options.<br>
@@ -1242,23 +1242,23 @@ const paladin = {
                             </tr>
                             <tr>
                                 <td>3rd</td>
-                                <td><a href="">Bane</a> - <a href="">Hunter's Mark</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:bane">Bane</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:hunters-mark">Hunter's Mark</a></td>
                             </tr>
                             <tr>
                                 <td>5th</td>
-                                <td><a href="">Hold Person</a> - <a href="">Misty Step</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:hold-person">Hold Person</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:misty-step">Misty Step</a></td>
                             </tr>
                             <tr>
                                 <td>9th</td>
-                                <td><a href="">Haste</a> - <a href="">Protection from Energy</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:haste">Haste</a> - <a target="_blank"  href="https://dnd5e.wikidot.com/spell:protection-from-energy">Protection from Energy</a></td>
                             </tr>
                             <tr>
                                 <td>13th</td>
-                                <td><a href="">Banishment</a> - <a href="">Dimension Door</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:banishment">Banishment</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:dimension-door">Dimension Door</a></td>
                             </tr>
                             <tr>
                                 <td>17th</td>
-                                <td><a href="">Hold Monster</a> - <a href="">Scrying</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:hold-monster">Hold Monster</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:scrying">Scrying</a></td>
                             </tr>
                         </table>`,
     channelDivinityVengeance:`You gain the following two Channel Divinity options.<br>
@@ -1453,23 +1453,23 @@ const warlock = {
                             </tr>
                             <tr>
                                 <td>1st</td>
-                                <td><a href="">Faerie Fire</a> - <a href="">Sleep</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:faerie-fire">Faerie Fire</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:sleep">Sleep</a></td>
                             </tr>
                             <tr>
                                 <td>2nd</td>
-                                <td><a href="">Calm Emotions</a> - <a href="">Phantasmal Force</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:calm-emotions">Calm Emotions</a> - <a target="_blank" target="_blank" href="https://dnd5e.wikidot.com/spell:phantasmal-force">Phantasmal Force</a></td>
                             </tr>
                             <tr>
                                 <td>3rd</td>
-                                <td><a href="">Blink</a> - <a href="">Plant Growth</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:blink">Blink</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:plant-growth">Plant Growth</a></td>
                             </tr>
                             <tr>
                                 <td>4th</td>
-                                <td><a href="">Dominate Beast</a> - <a href="">Greater Invisibility</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:dominate-beast">Dominate Beast</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:greater-invisibility">Greater Invisibility</a></td>
                             </tr>
                             <tr>
                                 <td>5th</td>
-                                <td><a href="">Dominate Person</a> - <a href="">Seeming</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:dominate-person">Dominate Person</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:seeming">Seeming</a></td>
                             </tr>
                         </table>`,
     patronSpellsFiend:`<table class="tableClass">
@@ -1479,23 +1479,23 @@ const warlock = {
                             </tr>
                             <tr>
                                 <td>1st</td>
-                                <td><a href="">Burning Hands</a> - <a href="">Command</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:burning-hands">Burning Hands</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:command">Command</a></td>
                             </tr>
                             <tr>
                                 <td>2nd</td>
-                                <td><a href="">Blindness/Deafness</a> - <a href="">Scorching Ray</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:blindness-deafness">Blindness/Deafness</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:scorching-ray">Scorching Ray</a></td>
                             </tr>
                             <tr>
                                 <td>3rd</td>
-                                <td><a href="">Fireball</a> - <a href="">Stinking Cloud</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:fireball">Fireball</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:stinking-cloud">Stinking Cloud</a></td>
                             </tr>
                             <tr>
                                 <td>4th</td>
-                                <td><a href="">Fire Shield</a> - <a href="">Wall of Fire</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:fire-shield">Fire Shield</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:wall-of-fire">Wall of Fire</a></td>
                             </tr>
                             <tr>
                                 <td>5th</td>
-                                <td><a href="">Flame Strike</a> - <a href="">Hallow</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:flame-strike">Flame Strike</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:hallow">Hallow</a></td>
                             </tr>
                         </table>`,
     patronSpellsOldOne:`<table class="tableClass">
@@ -1505,23 +1505,23 @@ const warlock = {
                             </tr>
                             <tr>
                                 <td>1st</td>
-                                <td><a href="">Dissonant Whispers</a> - <a href="">Tasha's Hideous Laughter</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:dissonant-whispers">Dissonant Whispers</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:tashas-hideous-laughter">Tasha's Hideous Laughter</a></td>
                             </tr>
                             <tr>
                                 <td>2nd</td>
-                                <td><a href="">Detect Thoughts</a> - <a href="">Phantasmal Force</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:detect-thoughts">Detect Thoughts</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:phantasmal-force">Phantasmal Force</a></td>
                             </tr>
                             <tr>
                                 <td>3rd</td>
-                                <td><a href="">Clairvoyance</a> - <a href="">Sending</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:clairvoyance">Clairvoyance</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:sending">Sending</a></td>
                             </tr>
                             <tr>
                                 <td>4th</td>
-                                <td><a href="">Dominate Beast</a> - <a href="">Evard's Black Tentacles</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:dominate-beast">Dominate Beast</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:evards-black-tentacles">Evard's Black Tentacles</a></td>
                             </tr>
                             <tr>
                                 <td>5th</td>
-                                <td><a href="">Dominate Person</a> - <a href="">Telekinesis</a></td>
+                                <td><a target="_blank" href="https://dnd5e.wikidot.com/spell:dominate-person">Dominate Person</a> - <a target="_blank" href="https://dnd5e.wikidot.com/spell:telekinesis">Telekinesis</a></td>
                             </tr>
                         </table>`,
     table:`<table class="tableClass">
