@@ -1416,7 +1416,327 @@ const sorcerer = {
 
 }
 const warlock = {
+    name:`Warlock`,
+    hitPoints:`Hit Dice: 1d8 per warlock level<br>
+    Hit Points at 1st Level: 8 + your Constitution modifier<br>
+    Hit Points at Higher Levels: 1d8 (or 5) + your Constitution modifier per warlock level after 1st`,
+    proficiencies:`Armor: Light armor<br> 
+    Weapons: Simple weapons<br> 
+    Tools: None<br>
+    Saving Throws: Wisdom, Charisma<br>
+    Skills: Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion`,
+    spells:`You know two cantrips of your choice from the warlock spell list. You learn additional warlock cantrips of your choice at higher levels, as shown in the Cantrips Known column of  <a href="">The Warlock table</a>.<br>
+    Charisma is your spellcasting ability for your warlock spells.`,
+    feyPresence:`Your patron bestows upon you the ability to project the beguiling and fearsome presence of the fey. As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.<br>
+    Once you use this feature, you can't use it again until you finish a short or long rest.`,
+    mistyEscape:`Starting at 6th level, you can vanish in a puff of mist in response to harm. When you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell.<br>
+    Once you use this feature, you can't use it again until you finish a short or long rest.`,
+    beguilingDefenses:`Your patron teaches you how to turn the mind-affecting magic of your enemies against them. You are immune to being charmed, and when another creature attempts to charm you, you can use your reaction to attempt to turn the charm back on that creature. The creature must succeed on a Wisdom saving throw against your warlock spell save DC or be charmed by you for 1 minute or until the creature takes any damage.`,
+    darkDelirium:`You can plunge a creature into an illusory realm. As an action, choose a creature that you can see within 60 feet of you. It must make a Wisdom saving throw against your warlock spell save DC. On a failed save, it is charmed or frightened by you (your choice) for 1 minute or until your concentration is broken (as if you are concentrating on a spell), This effect ends early if the creature takes any damage.<br> Until this illusion ends, the creature thinks it is lost in a misty realm, the appearance of which you choose. The creature can see and hear only itself, you, and the illusion.<br> You must finish a short or long rest before you can use this feature again.`,
+    darkOneBlessing:`When you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1).`,
+    darkOnesOwnLuck:`You can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll. You can do so after seeing the initial roll but before any of the roll's effects occur.<br>
+    Once you use this feature, you can't use it again until you finish a short or long rest.`,
+    fiendishResilience:`You can choose one damage type when you finish a short or long rest. You gain resistance to that damage type until you choose a different one with this feature. Damage from magical weapons or silver weapons ignores this resistance.`,
+    hurlThroughHell:`When you hit a creature with an attack, you can use this feature to instantly transport the target through the lower planes. The creature disappears and hurtles through a nightmare landscape.<br>
+    At the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target is not a fiend, it takes 10d10 psychic damage as it reels from its horrific experience.<br>
+    Once you use this feature, you can't use it again until you finish a long rest.`,
+    awakenedMind:`Your alien knowledge gives you the ability to touch the minds of other creatures. You can communicate telepathically with any creature you can see within 30 feet of you. You don't need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language.`,
+    entropicWard:`You learn to magically ward yourself against attack and to turn an enemy’s failed strike into good luck for yourself. When a creature makes an attack roll against you, you can use your reaction to impose disadvantage on that roll. If the attack misses you, your next attack roll against the creature has advantage if you make it before the end of your next turn.<br>
+    Once you use this feature, you can't use it again until you finish a short or long rest.`,
+    thoughtShield:`Your thoughts can't be read by telepathy or other means unless you allow it. You also have resistance to psychic damage, and whenever a creature deals psychic damage to you, that creature takes the same amount of damage that you do.`,
+    createThrall:`You gain the ability to infect a humanoid's mind with the alien magic of your patron. You can use your action to touch an incapacitated humanoid. That creature is then charmed by you until a remove curse spell is cast on it, the charmed condition is removed from it, or you use this feature again.<br>
+    You can communicate telepathically with the charmed creature as long as the two of you are on the same plane of existence.`,
+    patronSpellsArchfey:`<table class="tableClass">
+                            <tr>
+                                <th>Spell Level</th>
+                                <th>Spells</th>
+                            </tr>
+                            <tr>
+                                <td>1st</td>
+                                <td><a href="">Faerie Fire</a> - <a href="">Sleep</a></td>
+                            </tr>
+                            <tr>
+                                <td>2nd</td>
+                                <td><a href="">Calm Emotions</a> - <a href="">Phantasmal Force</a></td>
+                            </tr>
+                            <tr>
+                                <td>3rd</td>
+                                <td><a href="">Blink</a> - <a href="">Plant Growth</a></td>
+                            </tr>
+                            <tr>
+                                <td>4th</td>
+                                <td><a href="">Dominate Beast</a> - <a href="">Greater Invisibility</a></td>
+                            </tr>
+                            <tr>
+                                <td>5th</td>
+                                <td><a href="">Dominate Person</a> - <a href="">Seeming</a></td>
+                            </tr>
+                        </table>`,
+    patronSpellsFiend:`<table class="tableClass">
+                            <tr>
+                                <th>Spell Level</th>
+                                <th>Spells</th>
+                            </tr>
+                            <tr>
+                                <td>1st</td>
+                                <td><a href="">Burning Hands</a> - <a href="">Command</a></td>
+                            </tr>
+                            <tr>
+                                <td>2nd</td>
+                                <td><a href="">Blindness/Deafness</a> - <a href="">Scorching Ray</a></td>
+                            </tr>
+                            <tr>
+                                <td>3rd</td>
+                                <td><a href="">Fireball</a> - <a href="">Stinking Cloud</a></td>
+                            </tr>
+                            <tr>
+                                <td>4th</td>
+                                <td><a href="">Fire Shield</a> - <a href="">Wall of Fire</a></td>
+                            </tr>
+                            <tr>
+                                <td>5th</td>
+                                <td><a href="">Flame Strike</a> - <a href="">Hallow</a></td>
+                            </tr>
+                        </table>`,
+    patronSpellsOldOne:`<table class="tableClass">
+                            <tr>
+                                <th>Spell Level</th>
+                                <th>Spells</th>
+                            </tr>
+                            <tr>
+                                <td>1st</td>
+                                <td><a href="">Dissonant Whispers</a> - <a href="">Tasha's Hideous Laughter</a></td>
+                            </tr>
+                            <tr>
+                                <td>2nd</td>
+                                <td><a href="">Detect Thoughts</a> - <a href="">Phantasmal Force</a></td>
+                            </tr>
+                            <tr>
+                                <td>3rd</td>
+                                <td><a href="">Clairvoyance</a> - <a href="">Sending</a></td>
+                            </tr>
+                            <tr>
+                                <td>4th</td>
+                                <td><a href="">Dominate Beast</a> - <a href="">Evard's Black Tentacles</a></td>
+                            </tr>
+                            <tr>
+                                <td>5th</td>
+                                <td><a href="">Dominate Person</a> - <a href="">Telekinesis</a></td>
+                            </tr>
+                        </table>`,
+    table:`<table class="tableClass">
+                            <tr>
+                                <th>Level</th>
+                                <th>Proficiency Bonus</th>
+                                <th>Features</th>
+                                <th>Cantrips</th>
+                                <th>Spells known</th>
+                                <th>Spells Slots</th>
+                                <th>Slot Level</th>
+                                <th>Invocation Known</th>
+                            </tr>
+                            <tr>
+                                <td>1st</td>
+                                <td>+2</td>
+                                <td><a href="">Otherworldly Patron</a> - <a href="">Pact Magic</a></td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>1st</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>2nd</td>
+                                <td>+2</td>
+                                <td><a href="">Eldritch Invocations</a></td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td>1st</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>3rd</td>
+                                <td>+2</td>
+                                <td><a href="">Pact Boon</a></td>
+                                <td>2</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>2nd</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4th</td>
+                                <td>+2</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>3</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>2nd</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>5th</td>
+                                <td>+3</td>
+                                <td>-</td>
+                                <td>3</td>
+                                <td>6</td>
+                                <td>2</td>
+                                <td>3rd</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>6th</td>
+                                <td>+3</td>
+                                <td><a href="">Otherworldly Patron feature</a></td>
+                                <td>3</td>
+                                <td>7</td>
+                                <td>2</td>
+                                <td>3rd</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>7th</td>
+                                <td>+3</td>
+                                <td> - </td>
+                                <td>3</td>
+                                <td>8</td>
+                                <td>2</td>
+                                <td>4th</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>8th</td>
+                                <td>+3</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>3</td>
+                                <td>9</td>
+                                <td>2</td>
+                                <td>4th</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>9th</td>
+                                <td>+4</td>
+                                <td>-</td>
+                                <td>3</td>
+                                <td>10</td>
+                                <td>2</td>
+                                <td>5th</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>10th</td>
+                                <td>+4</td>
+                                <td><a href="">Otherworldly Patron feature</a></td>
+                                <td>4</td>
+                                <td>10</td>
+                                <td>2</td>
+                                <td>5th</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>11th</td>
+                                <td>+4</td>
+                                <td><a href="">Mystic Arcanum (6th level)</a></td>
+                                <td>4</td>
+                                <td>11</td>
+                                <td>3</td>
+                                <td>5th</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>12th</td>
+                                <td>+4</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>4</td>
+                                <td>11</td>
+                                <td>3</td>
+                                <td>5th</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>13th</td>
+                                <td>+5</td>
+                                <td><a href="">Mystic Arcanum (7th level)</a></td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>3</td>
+                                <td>5th</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>14th</td>
+                                <td>+5</td>
+                                <td><a href="">Otherworldly Patron feature</a></td>
+                                <td>4</td>
+                                <td>12</td>
+                                <td>3</td>
+                                <td>5th</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>15th</td>
+                                <td>+5</td>
+                                <td><a href="">Mystic Arcanum (8th level)</a></td>
+                                <td>4</td>
+                                <td>13</td>
+                                <td>3</td>
+                                <td>5th</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>16th</td>
+                                <td>+5</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>4</td>
+                                <td>13</td>
+                                <td>3</td>
+                                <td>5th</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>17th</td>
+                                <td>+6</td>
+                                <td><a href="">Mystic Arcanum (9th level)</a></td>
+                                <td>4</td>
+                                <td>14</td>
+                                <td>4</td>
+                                <td>5th</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>18th</td>
+                                <td>+6</td>
+                                <td><a href="">-</a></td>
+                                <td>4</td>
+                                <td>14</td>
+                                <td>4</td>
+                                <td>5th</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>19th</td>
+                                <td>+6</td>
+                                <td><a href="">Ability Score Improvement</a></td>
+                                <td>4</td>
+                                <td>15</td>
+                                <td>4</td>
+                                <td>5th</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>20th</td>
+                                <td>+6</td>
+                                <td><a href="">Eldritch Master</a></td>
+                                <td>4</td>
+                                <td>15</td>
+                                <td>4</td>
+                                <td>5th</td>
+                                <td>8</td>
+                            </tr>
 
+                        </table>`
 }
 const wizard = {
 
@@ -1645,6 +1965,7 @@ function displayMenuClasses(subclasses){
                 <p><b>Hit Points: </b> ${barbarian.hitPoints}</p>
                 <p><b>Proficiencies: </b>${barbarian.proficiencies}</p>
                 <p><b>Subclasses:</b><br>
+                <br>
                 <b class="importantDetail">Path of the Berserker</b> or <b class="importantDetail">Path of the Totem Warrior</b></p> 
                 <p><b>Path of The berserker:</b></p>
                 <p><b>Level 3 - Frenzy:</b> ${barbarian.frenzy}</p>
@@ -1652,7 +1973,11 @@ function displayMenuClasses(subclasses){
                 <p><b>Level 10 - Intimidating Presence:</b> ${barbarian.intimidatingPresence}</p>
                 <p><b>Level 14 - Retaliation:</b> ${barbarian.retaliation}</p>
                 <p><b class="importantDetail">Path of The Totem Warrior:</b></p>
-                <p><b>Level 3 (both skills) - Spirit Seeker:</b> ${barbarian.spiritSeeker}<br> <b>Totem Spirit:</b> ${barbarian.totemSpirit}</p>
+                <p><b>Level 3 (both skills)<br>
+                <br>
+                Spirit Seeker:</b> ${barbarian.spiritSeeker}<br>
+                <br>
+                <b>Totem Spirit:</b> ${barbarian.totemSpirit}</p>
                 <p><b>Level 6 - Aspect Of The Beast:</b> ${barbarian.aspectOfTheBeast}</p>
                 <p><b>Level 10 - Spirit Walker:</b> ${barbarian.spiritWalker}</p>
                 <p><b>Level 14 - Totemic Attunement:</b> ${barbarian.totemicAttunement}</p>
@@ -1747,6 +2072,47 @@ function displayMenuClasses(subclasses){
             <p><b>Level 15 - Soul of Vengeance:</b> ${paladin.soulOfVengeance}</p>
             <p><b>Level 20 - Avenging Angel:</b> ${paladin.avengingAngel}</p>
             <p><b>Class table per level</b> ${paladin.table}</p>
+            <button onclick = "logoReset()"> BACK </button>
+        </div>
+        <div>
+            <img class="raceImg" src="./img/aasimar.png" alt="">
+        </div>
+    </div>`
+    ;
+}
+    else if (subclasses === 'warlock'){
+    menuRaces.innerHTML= '';
+    menuRacesDetails.innerHTML= '';
+    menuRacesDetails.innerHTML= `
+    <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${warlock.name}</h1>
+            <p><b>Hit Points: </b> ${warlock.hitPoints}</p>
+            <p><b>Proficiencies: </b>${warlock.proficiencies}</p>
+            <p><b>Spells: </b>${warlock.spells}</p>
+            <p><b>Subclasses:</b><br>
+            <br>
+            <b class="importantDetail">The Archfey</b> , <b class="importantDetail">The Fiend</b> or <b class="importantDetail">The Great Old One</b></p> 
+            <p><b class="importantDetail">The Archfey:</b></p>
+            <p><b>You gain the following spells for your Oath:<br>
+            ${warlock.patronSpellsArchfey}</b></p>
+            <p><b>Level 1 - Fey Presence:</b> ${warlock.feyPresence}</p>
+            <p><b>Level 6 - Misty Escape:</b> ${warlock.mistyEscape}</p>
+            <p><b>Level 10 - Beguiling Defenses:</b> ${warlock.beguilingDefenses}</p>
+            <p><b>Level 14 - Dark Delirium:</b> ${warlock.darkDelirium}</p>
+            <p><b class="importantDetail">The Fiend:</b></p>
+            <p><b>You gain the following spells for your Oath:<br>
+            ${warlock.patronSpellsFiend}</b></p>
+            <p><b>Level 1 - Dark One's Blessing:</b> ${warlock.darkOneBlessing}</p>
+            <p><b>Level 6 - Dark One's Own Luck:</b> ${warlock.darkOnesOwnLuck}</p>
+            <p><b>Level 10 - Fiendish Resilience:</b> ${warlock.fiendishResilience}</p>
+            <p><b>Level 14 - Hurl Through Hell:</b> ${warlock.hurlThroughHell}</p>
+            <p><b class="importantDetail">The Great Old One:</b></p>
+            <p><b>Level 1 - Awakened Mind:</b> ${warlock.awakenedMind}</p>
+            <p><b>Level 6 - Entropic Ward:</b> ${warlock.entropicWard}</p>
+            <p><b>Level 10 - Thought Shield:</b> ${warlock.thoughtShield}</p>
+            <p><b>Level 14 - Create Thrall:</b> ${warlock.createThrall}</p>
+            <p><b>Class table per level</b> ${warlock.table}</p>
             <button onclick = "logoReset()"> BACK </button>
         </div>
         <div>
