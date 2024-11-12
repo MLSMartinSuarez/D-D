@@ -84,7 +84,7 @@ const dragonborn = {
                                 <td>Cold</td>
                             </tr>
                         </table>`,
-    breathWeapon:` When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw (DC 8 plus your Constitution modifier and Proficiency Bonus). On a failed save, a creature takes 1d10 damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by 1d10 when you reach character levels 5 (2d10), 11 (3d10), and 17 (4d10).You can use this Breath Weapon a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.`,
+    breathWeapon:` You can use your action to exhale destructive energy. It deals damage in an area according to your ancestry. When you use your breath weapon, all creatures in the area must make a saving throw, the type of which is determined by your ancestry. The DC of this saving throw is 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increase to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. After using your breath weapon, you cannot use it again until you complete a short or long rest.`,
     breathWeapon2024:`When you take the Attack action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot Cone or a 30-foot Line that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw (DC 8 plus your Constitution modifier and Proficiency Bonus). On a failed save, a creature takes 1d10 damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by 1d10 when you reach character levels 5 (2d10), 11 (3d10), and 17 (4d10).<br>
     You can use this Breath Weapon a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.`,
     damageResistance:` You have Resistance to the damage type determined by your Draconic Ancestry trait.`,
@@ -1407,7 +1407,296 @@ const paladin = {
                         </table>`,
 }
 const ranger = {
+    name:`Ranger`,
+    hitPoints:`Hit Dice: 1d10 per ranger level<br>
+    Hit Points at 1st Level: 10 + your Constitution modifier<br>
+    Hit Points at Higher Levels: 1d10 (or 6) + your Constitution modifier per ranger level after 1st`,
+    proficiencies:`Armor: Light armor, medium armor, shields<br> 
+    Weapons: Simple weapons, martial weapons<br> 
+    Tools: None<br>
+    Saving Throws: Strength, Dexterity<br>
+    Skills: Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival`,
+    spells:`By the time you reach 2nd level, you have learned to use the magical essence of nature to cast spells, much as a druid does.<br> 
+    You know two 1st-level spells of your choice from the ranger spell list.<br>
+    The Spells Known column of the Ranger table shows when you learn more ranger spells of your choice. Each of these spells must be of a level for which you have `,
+    primevalAwareness:`Beginning at 3rd level, you can use your action and expend one ranger spell slot to focus your awareness on the region around you. For 1 minute per level of the spell slot you expend, you can sense whether the following types of creatures are present within 1 mile of you (or within up to 6 miles if you are in your favored terrain): aberrations, celestials, dragons, elementals, fey, fiends, and undead. This feature doesn't reveal the creatures' location or number.`,
+    extraAttack:`Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.`,
+    landsStride:`Starting at 8th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard.<br>
+    In addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such those created by the entangle spell.`,
+    hideInPlainSight:`Starting at 10th level, you can spend 1 minute creating camouflage for yourself. You must have access to fresh mud, dirt, plants, soot, and other naturally occurring materials with which to create your camouflage.<br>
+    Once you are camouflaged in this way, you can try to hide by pressing yourself up against a solid surface, such as a tree or wall, that is at least as tall and wide as you are. You gain a +10 bonus to Dexterity (Stealth) checks as long as you remain there without moving or taking actions. Once you move or take an action or a reaction, you must camouflage yourself again to gain this benefit.`,
+    vanish:`Starting at 14th level, you can use the Hide action as a bonus action on your turn. Also, you can’t be tracked by nonmagical means, unless you choose to leave a trail.`,
+    feralSenses:`At 18th level, you gain preternatural senses that help you fight creatures you can’t see. When you attack a creature you can't see, your inability to see it doesn’t impose disadvantage on your attack rolls against it.<br>
+    You are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn’t hidden from you and you aren't blinded or deafened.`,
+    foeSlayer:`At 20th level, you become an unparalleled hunter of your enemies. Once on each of your turns, you can add your Wisdom modifier to the attack roll or the damage roll of an attack you make against one of your favored enemies. You can choose to use this feature before or after the roll, but before any effects of the roll are applied.`,
+    huntersPrey:`At 3rd level, you gain one of the following features of your choice.<br>
+    <br>
+    <b>Colossus Slayer:</b> - Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra 1d8 damage if it’s below its hit point maximum. You can deal this extra damage only once per turn.<br>
+    <br>
+    <b>Giant Killer:</b> - When a Large or larger creature within 5 feet of you hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature.<br>
+    <br>
+    <b>Horde Breaker:</b> - Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon.`,
+    defensiveTactics:`At 7th level, you gain one of the following features of your choice:<br>
+    <br>
+    <b>Escape the Horde:</b> - Opportunity attacks against you are made with disadvantage.<br>
+    <br>
+    <b>Multiattack Defense:</b> - When a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn.<br>
+    <br>
+    <b>Stee! Will:</b> You have advantage on saving throws against being frightened.`,
+    multiattack:`At 11th level, you gain one of the following features of your choice.<br>
+    <br>
+    <b>Volley:</b> - You can use your action to make a ranged attack against any number of creatures within 10 feet of a point you can see within your weapon's range. You must have ammunition for each target, as normal, and you make a separate attack roll for each target.<br>
+    <br>
+    <b>Whirlwind Attack:</b> - You can use your action to make a melee attack against any number of creatures within 5 feet of you, with a separate attack roll for each target.`,
+    superiorHuntersDefense:`At 15th level, you gain one of the following features of your choice.<br>
+    <br>
+    <b>Evasion:</b> - You can nimbly dodge out of the way of certain area effects, such as a red dragon's fiery breath or a lightning bolt spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.<br>
+    <br>
+    <b>Stand Against the Tide:</b> - When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.<br>
+    <br>
+    <b>Uncanny Dodge:</b> - When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.`,
+    rangersCompanion:`At 3rd level, you gain a beast companion that accompanies you on your adventures and is trained to fight alongside you. Choose a beast that is no larger than Medium and that has a challenge rating of 1/4 or lower. Add your proficiency bonus to the beast's AC, attack rolls, and damage rolls, as well as to any saving throws and skills it is proficient in. Its hit point maximum equals its normal maximum or four times your ranger level, whichever is higher.<br>
+    The beast obeys your commands as best as it can. It takes its turn on your initiative, though it doesn't take an action unless you command it to. On your turn, you can verbally command the beast where to move (no action required by you). You can use your action to verbally command it to take the Attack, Dash, Disengage, Dodge, or Help action. Once you have the Extra Attack feature, you can make one weapon attack yourself when you command the beast to take the Attack action.<br>
+    While traveling through your favored terrain with only the beast, you can move stealthily at a normal pace.<br>
+    If the beast dies, you can obtain another one by spending 8 hours magically bonding with another beast that isn't hostile to you, either the same type of beast as before or a different one.`,
+    exceptionalTraining:`Beginning at 7th level, on any of your turns when your beast companion doesn’t attack, you can use a bonus action to command the beast to take the Dash, Disengage, Dodge, or Help action on its turn.`,
+    bestialFury:`Starting at 11th level, your beast companion can make two attacks when you command it to use the Attack action.`,
+    shareSpells:`Beginning at 15th level, when you cast a spell targeting yourself, you can also affect your beast companion with the spell if the beast is within 30 feet of you.`,
+    table:`<table class="tableClass">
+                    <tr>
+                        <th >Level</th>
+                        <th >Proficiency Bonus</th>
+                        <th >Features</th>
+                        <th >Spells known</th>
+                        <th >1st</th>
+                        <th >2nd</th>
+                        <th >3rd</th>
+                        <th >4th</th>
+                        <th >5th</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td>+2</td>
+                        <td><a href="">Favored Enemy</a> - <a href="">Natural Explorer</a></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>+2</td>
+                        <td><a href="">Fighting Style</a> - <a href="">Spellcasting</a></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>+2</td>
+                        <td><a href="">Ranger Archetype</a> - <a href="">Primeval Awareness</a></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>+2</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>+3</td>
+                        <td><a href="">Extra Attack</a>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>6th</td>
+                        <td>+3</td>
+                        <td><a href="">Favored Enemy Improvement</a> - <a href="">Natural Explorer Improvement</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td>+3</td>
+                        <td> <a href="">Ranger Archetype Feature</a> </td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>+3</td>
+                        <td><a href="">Ability Score Improvement</a> - <a href="">Land's Stride</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td>+4</td>
+                        <td>-</td>
+                        <td>6</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>10th</td>
+                        <td>+4</td>
+                        <td><a href="">Natural Explorer Improvement</a> - <a href="">Hide in Plain Sight</a></td>
+                        <td>6</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>11th</td>
+                        <td>+4</td>
+                        <td><a href="">Ranger Archetype Feature</a></td>
+                        <td>7</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>12th</td>
+                        <td>+4</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>7</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>13th</td>
+                        <td>+5</td>
+                        <td>-</td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>-</td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>+5</td>
+                        <td><a href="">Favored Enemy Improvement</a> - <a href="">Vanish</a></td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>15th</td>
+                        <td>+5</td>
+                        <td><a href="">Ranger Archetype Feature</a></td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>16th</td>
+                        <td>+5</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>17th</td>
+                        <td>+6</td>
+                        <td>-</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>18th</td>
+                        <td>+6</td>
+                        <td><a href="">Feral Senses</a></td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>19th</td>
+                        <td>+6</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>11</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>20th</td>
+                        <td>+6</td>
+                        <td><a href="">Foe Slayer</a></td>
+                        <td>11</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                    </tr>
 
+                </table>`,
 }
 const rogue = {
 
@@ -2246,6 +2535,59 @@ function displayMenuClasses(subclasses){
     </div>`
     ;
 }
+    else if(subclasses === 'ranger'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${ranger.name}</h1>
+                <p><b>Hit Points: </b> ${ranger.hitPoints}</p>
+                <p><b>Proficiencies: </b>${ranger.proficiencies}</p>
+                <p><b>Spells: </b>${ranger.spells}</p>
+                <p><b class="importantDetail">Ranger Skills: </b></p>
+                <p><b>Level 3: Primeval Awareness:</b> ${ranger.primevalAwareness}<br>
+                <br>
+                <p><b>Level 5 - Extra Attack:</b> ${ranger.extraAttack}</p>
+                <p><b>Level 8 - Land's Stride:</b> ${ranger.landsStride}</p>
+                <p><b>Level 10 - Hide in Plain Sight:</b> ${ranger.hideInPlainSight}</p>
+                <p><b>Level 14 - Vanish:</b> ${ranger.vanish}</p>
+                <p><b>Level 18 - Feral Senses:</b> ${ranger.feralSenses}</p>
+                <p><b>Level 20 - Foe Slayer:</b> ${ranger.foeSlayer}</p>
+                <p><b>Subclasses:</b><br>
+                <br>
+                <b class="importantDetail">Hunter</b> or <b class="importantDetail">Beast Master</b></p> 
+                <p><b class="importantDetail">Hunter:</b></p>
+                <p><b>Level 3: - Hunter's Prey:</b> ${ranger.huntersPrey}
+                <br>
+                <p><b>Level 7 - Defensive Tactics:</b> ${ranger.defensiveTactics}</p>
+                <br>
+                <p><b>Level 11 - Multiattack:</b> ${bard.peerlessSkill}</p>
+                <br>
+                <p><b>Level 15 - Superior Hunter's Defense:</b> ${ranger.superiorHuntersDefense}</p>
+                <br>
+                <p><b class="importantDetail">Beast Master:</b></p>
+                <p><b>Level 3: - Ranger Companion:</b> ${ranger.rangersCompanion}
+                <br>
+                <p><b>Level 7 - Exceptional Training:</b> ${ranger.exceptionalTraining}</p>
+                <br>
+                <p><b>Level 11 - Bestial Fury:</b> ${ranger.bestialFury}</p>
+                <br>
+                <p><b>Level 15 - Share Spells:</b> ${ranger.shareSpells}</p>
+                <p><b>Class table per level</b> ${ranger.table}</p>
+                
+            </div>
+            
+        </div>`
+        menuSwitch = false;
+        if (layoutSwitch === true){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
+        ;
+    }
     else if (subclasses === 'warlock'){
     menuRaces.innerHTML= '';
     menuRacesDetails.innerHTML= '';
