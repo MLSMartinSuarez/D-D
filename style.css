@@ -19,7 +19,7 @@ body{
 
 .nav-bar{
     display: flex;
-    height: 55px;
+    height: 70px;
     align-items: center;
     justify-content: space-between;
     position: fixed;
@@ -28,7 +28,7 @@ body{
     left: 0;
     border: none;
     background-color: rgb(0, 0, 0);
-    box-shadow: 3px 1px 20px 11px;
+    box-shadow: 3px 1px 20px 0px;
     z-index: 10;
 }
 
@@ -48,21 +48,32 @@ body{
 
 /* MAIN RACES */
 
-.full-layout{
+.full-layout2{
     display: grid;
     grid-template-columns: 1fr;
     padding-left: 170px;
-    padding-top: 75px;
+    padding-top: 50px;
     margin-top: 28px;
 }
+
+#full-layout{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-left: 350px;
+    padding-top: 50px;
+    margin-top: 28px;
+}
+
 
 .sidebar-races-layout{
     position: fixed;
     top: 70px;
     bottom: 0px;
-    left: 20px;
+    left: 0px;
     width: 140px;
-    margin-top: 10px;
+    background-color: rgb(0, 0, 0);
+    padding: 0px 10px 0px 10px;
+    box-shadow: 3px 1px 20px 0px;
 }
 
 .sidebar-races{
@@ -70,53 +81,134 @@ body{
     flex-direction: column;
 }
 
+.sidebar-races h2{
+    text-align: center; 
+    margin: 5px 0px 5px 0px; 
+    color: rgba(32, 237, 172, 0.748); 
+    font-weight: 300; 
+}
+
+.sidebar-races p{
+    color: rgba(255, 255, 255, 0.597);
+    letter-spacing: 1px;
+    padding: 1px;
+    cursor: pointer;
+    transition: color 0.2s;
+    text-align: center;
+}
+
+.sidebar-races p:hover{
+    color: rgba(32, 237, 172, 0.748);
+}
+
 .sidebar-classes{
     display: flex;
     flex-direction: column;
 }
 
-.sidebar-classes button{
-    background-color: rgba(0, 0, 0, 0.607);
+.sidebar-classes h2{
+    text-align: center; 
+    color: rgba(32, 237, 172, 0.748); 
+    margin: 20px 0px 5px 0px; 
+    font-weight: 300;
+}
+
+.sidebar-classes p{
     color: rgba(255, 255, 255, 0.597);
     letter-spacing: 1px;
-    border-radius: 10px;
-
     padding: 1px;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    transition: color 0.2s;
+    text-align: center;
 }
 
-.sidebar-classes button:hover{
-    background-color: black;
+.sidebar-classes p:hover{
     color: rgba(32, 237, 172, 0.748);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.256);
 }
 
-.sidebar-races button{
-    background-color: rgba(0, 0, 0, 0.607);
-    color: rgba(255, 255, 255, 0.597);
-    letter-spacing: 1px;
-    border-radius: 10px;
-    padding: 1px;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-}
 
-.sidebar-races button:hover{
-    background-color: black;
-    color: rgba(32, 237, 172, 0.748);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.157);
-}
 
 /* RACE CONTAINERS */
 
+@keyframes Aparecer {
+    0%{
+        filter: opacity(0%);
+    }
+    100%{
+        filter: opacity(100%);
+    }
+}
+
+.races-menu-layout{
+    background-color: rgb(0 0 0);
+    position: fixed;
+    top: 70px;
+    bottom: 0px;
+    left: 135px;
+    width: 140px;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    border-radius: 20px;
+    z-index: 100;
+    animation: Aparecer 0.5s;
+    box-shadow: 3px 1px 20px 2px;
+}
+
+.races-menu{
+    display: flex;
+    align-items: center;
+    border: none;
+    margin: 20px 0px 0px 0px;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.races-menu-tiefling{
+    display: flex;
+    align-items: center;
+    border: none;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.races-menu p{
+    color: rgba(255, 255, 255, 0.597);
+    letter-spacing: 1px;
+    padding: 1px;
+    cursor: pointer;
+    transition: color 0.2s, box-shadow 0.2s;
+    text-align: center;
+    font-size: small;
+    margin: 10px 0px 10px 0px;
+}
+
+.races-menu-tiefling p{
+    color: rgba(255, 255, 255, 0.597);
+    letter-spacing: 1px;
+    padding: 1px;
+    cursor: pointer;
+    transition: color 0.2s, box-shadow 0.2s;
+    text-align: center;
+    font-size: small;
+    margin: 4px 0px 4px 0px;
+}
+
+.races-menu p:hover{
+    color: rgba(32, 237, 172, 0.748);
+}
+
+.races-menu-tiefling p:hover{
+    color: rgba(32, 237, 172, 0.748);
+}
+
 .races-container{
-    display: grid;
-    grid-template-columns: 1fr 250px;
+    display: flex;
+    align-items: flex-start;
     border: 1px solid black;
     border-radius: 20px;
-    margin: 0px 50px 0px 0px;
+    margin: 0px 10px 0px 0px;
     background-color: rgba(0, 0, 0, 0.644);
+    animation: Aparecer 0.5s;
 }
 
 .races-container p{
@@ -168,33 +260,39 @@ body{
 }
 
 .menu1-layout{
-    display: flex;
-    justify-content: center;
+    /* position: fixed;
+    top: 70px;
+    bottom: 0px;
+    left: 170px;
+    width: 140px;
+    background-color: rgba(0, 0, 0, 0.459);
+    padding: 0px 10px 0px 10px;
+    box-shadow: 3px 1px 20px 11px; */
 }
 
 .menu1{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     margin: 0px 50px 0px 50px;
-    width: 500px;
+    width: 200px;
 }
 
 .menu1 button{
     padding: 5px 20px 5px 20px;
-    margin-top: 10px;
     color: rgba(255, 255, 255, 0.597);
     letter-spacing: 1px;
     transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
     border-radius: 10px;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.607);
+    margin-top: 10px;
 }
 
 .hide-div{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 0px 10px 0px;
+
 }
 
 .menu1 button:hover{

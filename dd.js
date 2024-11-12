@@ -1742,12 +1742,44 @@ const wizard = {
 
 }
 
+const layoutId = document.querySelector("#full-layout");
+const layoutClass = document.querySelector(".full-layout2");
 const menuRaces = document.querySelector('.menu1');
 const menuRacesDetails = document.querySelector('.race-layout');
 const hideBtn = document.querySelector('.hide-btn');
 const logo = document.querySelector('.logo');
 let menuSwitch = true;
+let layoutSwitch = true;
 
+function Layout(){
+
+    if (layoutSwitch === false) {
+        const layoutFalse= document.querySelector(".full-layout2");
+        layoutFalse.setAttribute('id','full-layout');
+        layoutFalse.removeAttribute('class');
+        layoutSwitch = true;
+    }
+    else if (layoutSwitch === true ) {
+        
+        layoutId.className = "full-layout2"
+        layoutId.removeAttribute('id');
+        layoutSwitch = false;
+    }
+    else {
+        console.log('nothing');
+    }
+}
+
+function hideMenuRaces(){
+    if (!menuSwitch) {
+        menuRaces.innerHTML = '';
+        menuSwitch = true;
+        Layout();
+    }
+    else {
+        console.log ('error');
+    }
+}
 function logoReset(){
     menuRaces.innerHTML= '';
     menuRacesDetails.innerHTML= '';
@@ -1756,202 +1788,328 @@ function logoReset(){
 function displayMenuRaces(race) {
     if (race === 'aasimar'){
         menuRaces.innerHTML= '';
-        menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
+        <div class="races-menu-layout">
 
-                <button onclick="displayMenuRacesDetails('aasimarBase')"><li>Aasimar (Base)(2024 PHB) </li></button>
-                <button onclick="displayMenuRacesDetails('scourge')"><li>Scourge</li></button>
-                <button onclick="displayMenuRacesDetails('protector')"><li>Protector</li></button>
-                <button onclick="displayMenuRacesDetails('fallen')"><li>Fallen</li></button>
-            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
+            <div class="races-menu">
+            
+                    <p onclick="displayMenuRacesDetails('aasimarBase')">Aasimar (Base)(2024 PHB)</p>
+                    <p onclick="displayMenuRacesDetails('scourge')">Scourge</p>
+                    <p onclick="displayMenuRacesDetails('protector')">Protector</p>
+                    <p onclick="displayMenuRacesDetails('fallen')">Fallen</p>
+
+                <div class = "hide-div"> 
+                <p onclick="hideMenuRaces()" class="hide-btn"> HIDE </p> 
+                </div>
+            </div>
+        </div>`
         menuSwitch = false;
-        
-        
+        if (layoutSwitch === false){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
     }
     else if (race === 'dragonborn'){
         menuRaces.innerHTML= '';
-        menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
+        <div class="races-menu-layout">
 
-                <button onclick="displayMenuRacesDetails('dragonbornBase2024')"><li>Dragonborn (Base)(PHB 2024) </li></button>
-                <button onclick="displayMenuRacesDetails('dragonbornBase')"><li>Dragonborn (Base)(PHB 2014)</li></button>
-                <button onclick="displayMenuRacesDetails('dragonbornDracon')"><li>Dragonborn (Draconblood)</li></button>
-                <button onclick="displayMenuRacesDetails('dragonbornRavenite')"><li>Dragonborn (Ravenite)</li></button>
-            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
+            <div class="races-menu">
+
+                <p onclick="displayMenuRacesDetails('dragonbornBase2024')">Dragonborn (Base)(PHB 2024) </p>
+                <p onclick="displayMenuRacesDetails('dragonbornBase')">Dragonborn (Base)(PHB 2014)</p>
+                <p onclick="displayMenuRacesDetails('dragonbornDracon')">Dragonborn (Draconblood)</p>
+                <p onclick="displayMenuRacesDetails('dragonbornRavenite')">Dragonborn (Ravenite)</p>
+
+                <div class = "hide-div"> 
+                    <p onclick="hideMenuRaces()" class="hide-btn"> HIDE </p> 
+
+                </div>
+            </div>
+        </div>`
+        
         menuSwitch = false;
+        if (layoutSwitch === false){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
         
     }
     else if (race === 'dwarf'){
         menuRaces.innerHTML= '';
-        menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
 
-        <button onclick="displayMenuRacesDetails('dwarf2024')"><li>Dwarf (Base)(2024 PHB) </li></button>
-        <button onclick="displayMenuRacesDetails('dwarf')"><li>Dwarf (Base)(2014 PHB)</li></button>
-        <button onclick="displayMenuRacesDetails('dwarfduergar')"><li>Dwarf Duergar</li></button>
-        <button onclick="displayMenuRacesDetails('dwarfhill')"><li>Dwarf of the Hill</li></button>
-        <button onclick="displayMenuRacesDetails('dwarfmountain')"><li>Dwarf of the Mountain</li></button>
-        <button onclick="displayMenuRacesDetails('dwarfmark')"><li>Dwarf : Mark of the Warding</li></button>
-        <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
+        <div class="races-menu-layout">
+
+            <div class="races-menu">
+
+            <p onclick="displayMenuRacesDetails('dwarf2024')">Dwarf (Base)(2024 PHB)</p>
+            <p onclick="displayMenuRacesDetails('dwarf')">Dwarf (Base)(2014 PHB)</p>
+            <p onclick="displayMenuRacesDetails('dwarfduergar')">Dwarf Duergar</p>
+            <p onclick="displayMenuRacesDetails('dwarfhill')">Dwarf of the Hill</p>
+            <p onclick="displayMenuRacesDetails('dwarfmountain')">Dwarf of the Mountain</p>
+            <p onclick="displayMenuRacesDetails('dwarfmark')">Dwarf : Mark of the Warding</p>
+
+            <div class = "hide-div"> 
+                <p onclick="hideMenuRaces()" class="hide-btn"> HIDE </p> 
+            </div>
+            </div>
+        </div>`
+            
+            
 
         menuSwitch = false;
+        if (layoutSwitch === false){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
     }
     else if (race === 'elf'){
         menuRaces.innerHTML= '';
-        menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
 
-                <button onclick="displayMenuRacesDetails('elfBase2024')"><li>Elf (Base)(PHB 2024) </li></button>
+        <div class="races-menu-layout">
 
-                <button onclick="displayMenuRacesDetails('elfBase')"><li>Elf (Base)(PHB 2014)</li></button>
+            <div class="races-menu">
 
-                <button onclick="displayMenuRacesDetails('highelf')"><li>High Elf</li></button>
+                <p onclick="displayMenuRacesDetails('elfBase2024')">Elf (Base)(PHB 2024)</p>
 
-                <button onclick="displayMenuRacesDetails('woodelf')"><li>Wood Elf</li></button>
+                <p onclick="displayMenuRacesDetails('elfBase')">Elf (Base)(PHB 2014)</p>
 
-                <button onclick="displayMenuRacesDetails('drowelf')"><li>Drow Elf</li></button>
+                <p onclick="displayMenuRacesDetails('highelf')">High Elf</p>
 
-                <button onclick="displayMenuRacesDetails('eladrinelf')"><li>Eladrin Elf</li></button>
+                <p onclick="displayMenuRacesDetails('woodelf')">Wood Elf</p>
 
-                <button onclick="displayMenuRacesDetails('shadarelf')"><li>Shadar-kai Elf</li></button>
+                <p onclick="displayMenuRacesDetails('drowelf')">Drow Elf</p>
 
-                <button onclick="displayMenuRacesDetails('seaelf')"><li>Sea Elf</li></button>
+                <p onclick="displayMenuRacesDetails('eladrinelf')">Eladrin Elf</p>
 
-                <button onclick="displayMenuRacesDetails('pallidelf')"><li>Pallid Elf</li></button>
+                <p onclick="displayMenuRacesDetails('shadarelf')">Shadar-kai Elf</p>
 
-                <button onclick="displayMenuRacesDetails('markelf')"><li>Elf (Mark of Shadow)</li></button>
+                <p onclick="displayMenuRacesDetails('seaelf')">Sea Elf</p>
 
-            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
+                <p onclick="displayMenuRacesDetails('pallidelf')">Pallid Elf</p>
+
+                <p onclick="displayMenuRacesDetails('markelf')">Elf (Mark of Shadow)</p>
+
+                <div class = "hide-div"> <p            onclick="hideMenuRaces()" class="hide-btn"> HIDE </p> 
+                </div>
+             </div>
+        </div>`
+            
         menuSwitch = false;
+        if (layoutSwitch === false){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
     }
     else if (race === 'gnome'){
         menuRaces.innerHTML= '';
-        menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
+
+        <div class="races-menu-layout">
+
+            <div class="races-menu">
         
-                <button onclick="displayMenuRacesDetails('gnomeBase2024')"><li>Gnome (Base)(PHB 2024)</li></button>
-                <button onclick="displayMenuRacesDetails('gnomeBase2014')"><li>Gnome (Base)(PHB 2014)</li></button>
-                <button onclick="displayMenuRacesDetails('forestGnome')"><li>Forest Gnome (2014)</li></button>
-                <button onclick="displayMenuRacesDetails('rockGnome')"><li>Rock Gnome (2014)</li></button>
-                <button onclick="displayMenuRacesDetails('deepGnome')"><li>Deep Gnome</li></button>
-                <button onclick="displayMenuRacesDetails('gnomeMark')"><li>Gnome: Mark of Scribing (2014)</li></button>
+                <p onclick="displayMenuRacesDetails('gnomeBase2024')">Gnome (Base)(PHB 2024)</p>
+                <p onclick="displayMenuRacesDetails('gnomeBase2014')">Gnome (Base)(PHB 2014)</p>
+                <p onclick="displayMenuRacesDetails('forestGnome')">Forest Gnome (2014)</p>
+                <p onclick="displayMenuRacesDetails('rockGnome')">Rock Gnome (2014)</p>
+                <p onclick="displayMenuRacesDetails('deepGnome')">Deep Gnome</p>
+                <p onclick="displayMenuRacesDetails('gnomeMark')">Gnome: Mark of Scribing (2014)</p>
          
-        <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
+                <div class = "hide-div"> <p    onclick="hideMenuRaces()" class="hide-btn"> HIDE </p> 
+                </div>
+            </div>
+        </div>`
         menuSwitch = false;
+        if (layoutSwitch === false){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
     }
     else if (race === 'goliath'){
-        menuRaces.innerHTML= '';
-        menuRacesDetails.innerHTML= '';
+        menuRaces.innerHTML= '';;
         menuRaces.innerHTML = `
-        
-                <button onclick="displayMenuRacesDetails('goliathbase2024')"><li>Goliath (Base)(PHB 2024)</li></button>
+        <div class="races-menu-layout">
 
-                <button onclick="displayMenuRacesDetails('goliathbase')"><li>Goliath (Base)</li></button>
+            <div class="races-menu">
+        
+                <p onclick="displayMenuRacesDetails('goliathbase2024')">Goliath (Base)(PHB 2024)</p>
+
+                <p onclick="displayMenuRacesDetails('goliathbase')">Goliath (Base)</p>
          
-        <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
+                <div class = "hide-div"> <p onclick="hideMenuRaces()" class="hide-btn"> HIDE </p> 
+                </div>
+            </div>
+        </div>`
         menuSwitch = false;
+        if (layoutSwitch === false){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
     }
     else if (race === 'halfling'){
         menuRaces.innerHTML= '';
-        menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
 
-                <button onclick="displayMenuRacesDetails('halflingbase2024')"><li>Halfling (Base)(PHB 2024) </li></button>
+         <div class="races-menu-layout">
 
-                <button onclick="displayMenuRacesDetails('halflingBase')"><li>Halfling (Base)(PHB 2014)</li></button>
+            <div class="races-menu">
 
-                <button onclick="displayMenuRacesDetails('halflinglight')"><li>Halfling: Lightfoot</li></button>
+                <p onclick="displayMenuRacesDetails('halflingbase2024')">Halfling (Base)(PHB 2024)</p>
 
-                <button onclick="displayMenuRacesDetails('halflingstout')"><li>Halfling: Stout</li></button>
+                <p onclick="displayMenuRacesDetails('halflingBase')">Halfling (Base)(PHB 2014)</p>
 
-                <button onclick="displayMenuRacesDetails('halflinglotusden')"><li>Halfling: Lotusden</li></button>
+                <p onclick="displayMenuRacesDetails('halflinglight')">Halfling: Lightfoot</p>
 
-                <button onclick="displayMenuRacesDetails('halflingghost')"><li>Halfling: Ghostwise</li></button>
+                <p onclick="displayMenuRacesDetails('halflingstout')">Halfling: Stout</p>
 
-                <button onclick="displayMenuRacesDetails('halflingmarkhealing')"><li>Halfling: Mark of Healing</li></button>
+                <p onclick="displayMenuRacesDetails('halflinglotusden')">Halfling: Lotusden</p>
 
-                <button onclick="displayMenuRacesDetails('halflingmarkhospitality')"><li>Halfling: Mark of Hospitality</li></button>
+                <p onclick="displayMenuRacesDetails('halflingghost')">Halfling: Ghostwise</p>
 
-            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
+                <p onclick="displayMenuRacesDetails('halflingmarkhealing')">Halfling: Mark of Healing</p>
+
+                <p onclick="displayMenuRacesDetails('halflingmarkhospitality')">Halfling: Mark of Hospitality</p>
+
+                <div class = "hide-div"> <p onclick="hideMenuRaces()" class="hide-btn"> HIDE </p> 
+                </div>
+            </div>
+        </div>`
         menuSwitch = false;
+        if (layoutSwitch === false){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
     }
     else if (race === 'human'){
         menuRaces.innerHTML= '';
-        menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
 
-                <button onclick="displayMenuRacesDetails('humanbase2024')"><li>Human (Base)(PHB 2024) </li></button>
+         <div class="races-menu-layout">
 
-                <button onclick="displayMenuRacesDetails('humanbase')"><li>Human (Base)(PHB 2014)</li></button>
+            <div class="races-menu">
 
-                <button onclick="displayMenuRacesDetails('humanvariant')"><li>Human (Variant)</li></button>
+                <p onclick="displayMenuRacesDetails('humanbase2024')">Human (Base)(PHB 2024) </p>
 
-                <button onclick="displayMenuRacesDetails('humankeldon')"><li>Human Keldon</li></button>
+                <p onclick="displayMenuRacesDetails('humanbase')">Human (Base)(PHB 2014)</p>
 
-                <button onclick="displayMenuRacesDetails('humanmarkhandling')"><li>Human: Mark of Handling</li></button>
+                <p onclick="displayMenuRacesDetails('humanvariant')">Human (Variant)</p>
 
-                <button onclick="displayMenuRacesDetails('humanmarkmaking')"><li>Human: Mark of Making</li></button>
+                <p onclick="displayMenuRacesDetails('humankeldon')">Human Keldon</p>
 
-                <button onclick="displayMenuRacesDetails('humanmarkpassage')"><li>Human: Mark of Passage</li></button>
+                <p onclick="displayMenuRacesDetails('humanmarkhandling')">Human: Mark of Handling</p>
 
-                <button onclick="displayMenuRacesDetails('humanmarksentinel')"><li>Human: Mark of Sentinel</li></button>
+                <p onclick="displayMenuRacesDetails('humanmarkmaking')">Human: Mark of Making</p>
 
-                <button onclick="displayMenuRacesDetails('humanmarkfinding')"><li>Human: Mark of Finding</li></button>
+                <p onclick="displayMenuRacesDetails('humanmarkpassage')">Human: Mark of Passage</p>
 
-            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
+                <p onclick="displayMenuRacesDetails('humanmarksentinel')">Human: Mark of Sentinel</p>
+
+                <p onclick="displayMenuRacesDetails('humanmarkfinding')">Human: Mark of Finding</p>
+
+                <div class = "hide-div"> <p onclick="hideMenuRaces()" class="hide-btn"> HIDE </p> 
+                </div>
+            </div>
+        </div>`
         menuSwitch = false;
+        if (layoutSwitch === false){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
     }
     else if (race === 'orc'){
         menuRaces.innerHTML= '';
-        menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
 
-                <button onclick="displayMenuRacesDetails('orcbase2024')"><li>Orc (Base)(PHB 2024) </li></button>
+         <div class="races-menu-layout">
 
-                <button onclick="displayMenuRacesDetails('halforc')"><li>Half-Orc (Base)(PHB 2014)</li></button>
+            <div class="races-menu">
 
-                <button onclick="displayMenuRacesDetails('halforcmark')"><li>Half-Orc (Mark of Finding)</li></button>
+                <p onclick="displayMenuRacesDetails('orcbase2024')">Orc (Base)(PHB 2024)</p>
 
-            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
+                <p onclick="displayMenuRacesDetails('halforc')">Half-Orc (Base)(PHB 2014)</p>
+
+                <p onclick="displayMenuRacesDetails('halforcmark')">Half-Orc (Mark of Finding)</p>
+
+                <div class = "hide-div"> <p onclick="hideMenuRaces()" class="hide-btn"> HIDE </p> 
+                </div>
+            </div>
+        </div>`
         menuSwitch = false;
+        if (layoutSwitch === false){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
     }
     else if (race === 'tiefling'){
         menuRaces.innerHTML= '';
-        menuRacesDetails.innerHTML= '';
         menuRaces.innerHTML = `
 
-                <button onclick="displayMenuRacesDetails('tieflingbase2024')"><li>Tiefling (Base)(PHB 2024) </li></button>
+        <div class="races-menu-layout">
 
-                <button onclick="displayMenuRacesDetails('tieflingbase')"><li>Tiefling (Base)(PHB 2014)</li></button>
+            <div class="races-menu-tiefling">
 
-                <button onclick="displayMenuRacesDetails('tieflingasmodeus')"><li>Tiefling (Asmodeus)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflingbase2024')">Tiefling (Base)(PHB 2024) </p>
+
+                <p onclick="displayMenuRacesDetails('tieflingbase')">Tiefling (Base)(PHB 2014)</p>
+
+                <p onclick="displayMenuRacesDetails('tieflingasmodeus')">Tiefling (Asmodeus)</p>
                 
-                <button onclick="displayMenuRacesDetails('tieflingbaalzebul')"><li>Tiefling (Baalzebul)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflingbaalzebul')">Tiefling (Baalzebul)</p>
 
-                <button onclick="displayMenuRacesDetails('tieflingdispater')"><li>Tiefling (Dispater)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflingdispater')">Tiefling (Dispater)</p>
 
-                <button onclick="displayMenuRacesDetails('tieflingfierna')"><li>Tiefling (Fierna)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflingfierna')">Tiefling (Fierna)</p>
 
-                <button onclick="displayMenuRacesDetails('tieflingglasya')"><li>Tiefling (Glasya)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflingglasya')">Tiefling (Glasya)</p>
 
-                <button onclick="displayMenuRacesDetails('tieflinglevistus')"><li>Tiefling (Levistus)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflinglevistus')">Tiefling (Levistus)</p>
 
-                <button onclick="displayMenuRacesDetails('tieflingmammon')"><li>Tiefling (Mammon)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflingmammon')">Tiefling (Mammon)</p>
 
-                <button onclick="displayMenuRacesDetails('tieflingmephistopheles')"><li>Tiefling (Mephistopheles)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflingmephistopheles')">Tiefling (Mephistopheles)</p>
 
-                <button onclick="displayMenuRacesDetails('tieflingzariel')"><li>Tiefling (Zariel)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflingzariel')">Tiefling (Zariel)</p>
 
-                <button onclick="displayMenuRacesDetails('tieflingdeviltongue')"><li>Tiefling (Devil's Tongue)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflingdeviltongue')">Tiefling (Devil's Tongue)</p>
 
-                <button onclick="displayMenuRacesDetails('tieflinghellfire')"><li>Tiefling (Hellfire)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflinghellfire')">Tiefling (Hellfire)</li></p>
 
-                <button onclick="displayMenuRacesDetails('tieflinginfernallegacy')"><li>Tiefling (Infernal Legacy)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflinginfernallegacy')">Tiefling (Infernal Legacy)</p>
 
-                <button onclick="displayMenuRacesDetails('tieflingwinged')"><li>Tiefling (Winged)</li></button>
+                <p onclick="displayMenuRacesDetails('tieflingwinged')">Tiefling (Winged)</p>
 
-            <div class = "hide-div"> <button onclick="hideMenuRaces()" class="hide-btn"> HIDE </button> </div>`
+                <div class = "hide-div"> <p onclick="hideMenuRaces()" class="hide-btn"> HIDE </p> 
+                </div>
+            </div>
+        </div>`
         menuSwitch = false;
+        if (layoutSwitch === false){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
     }
 }
 function displayMenuClasses(subclasses){
@@ -1982,12 +2140,17 @@ function displayMenuClasses(subclasses){
                 <p><b>Level 10 - Spirit Walker:</b> ${barbarian.spiritWalker}</p>
                 <p><b>Level 14 - Totemic Attunement:</b> ${barbarian.totemicAttunement}</p>
                 <p><b>Class table per level</b> ${barbarian.table}</p>
-                <button onclick = "logoReset()"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
+        menuSwitch = false;
+        if (layoutSwitch === true){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
         ;
 }
     else if (subclasses === 'bard'){
@@ -2020,12 +2183,17 @@ function displayMenuClasses(subclasses){
                 <p><b>Level 6 - Extra Attack:</b> ${bard.extraAttack}</p>
                 <p><b>Level 14 - Battle Magic:</b> ${bard.battleMagic}</p>
                 <p><b>Class table per level</b> ${bard.table}</p>
-                <button onclick = "logoReset()"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
+        menuSwitch = false;
+        if (layoutSwitch === true){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
         ;
 }
     else if (subclasses === 'paladin'){
@@ -2072,11 +2240,9 @@ function displayMenuClasses(subclasses){
             <p><b>Level 15 - Soul of Vengeance:</b> ${paladin.soulOfVengeance}</p>
             <p><b>Level 20 - Avenging Angel:</b> ${paladin.avengingAngel}</p>
             <p><b>Class table per level</b> ${paladin.table}</p>
-            <button onclick = "logoReset()"> BACK </button>
+            
         </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ;
 }
@@ -2113,30 +2279,16 @@ function displayMenuClasses(subclasses){
             <p><b>Level 10 - Thought Shield:</b> ${warlock.thoughtShield}</p>
             <p><b>Level 14 - Create Thrall:</b> ${warlock.createThrall}</p>
             <p><b>Class table per level</b> ${warlock.table}</p>
-            <button onclick = "logoReset()"> BACK </button>
         </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ;
 }
 }
 
-function hideMenuRaces(){
-    if (!menuSwitch) {
-        menuRaces.innerHTML = '';
-        menuSwitch = true;
-    }
-    else {
-        console.log ('error');
-    }
-}
-
 function displayMenuRacesDetails(subrace){
     // AASIMAR
     if(subrace === 'fallen'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2152,16 +2304,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Healing Hands: </b>${aasimar.healingHand}</p>
                 <p><b>Light Barrier: </b>${aasimar.lightBarrier}</p>
                 <p><b>Necrotic Shroud: </b>${aasimar.necroticShroud}</p>
-                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if (subrace === 'protector') {
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2177,16 +2326,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Healing Hands: </b>${aasimar.healingHand}</p>
                 <p><b>Light Barrier: </b>${aasimar.lightBarrier}</p>
                 <p><b>Radiant Soul: </b>${aasimar.radiantSoul}</p>
-                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+                
                 </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if (subrace === 'scourge') {   
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2202,16 +2348,14 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Healing Hands: </b>${aasimar.healingHand}</p>
                 <p><b>Light Barrier: </b>${aasimar.lightBarrier}</p>
                 <p><b>Radiant Consumption: </b>${aasimar.radiantConsumption}</p>
-                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+                
                 </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if (subrace === 'aasimarBase'){
-        menuRaces.innerHTML= '';
+        
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
        <div class="races-container">
@@ -2227,17 +2371,14 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Healing Hands: </b>${aasimar.healingHand}</p>
                 <p><b>Light Barrier: </b>${aasimar.lightBarrier}</p>
                 <p><b>Celestial Revelation: </b>${aasimar.celestialRevelation}</p>
-                <button onclick = "displayMenuRaces('aasimar')"> BACK </button>
+                
                 </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     // DRAGONBORN
     else if (subrace === 'dragonbornBase2024'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
        <div class="races-container">
@@ -2252,16 +2393,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Draconic Flight: </b>${dragonborn.draconicFlight}</p>
                 <p><b>Damage Resistance: </b>${dragonborn.damageResistance}</p>
                 <p><b>Draconic Ancestry: </b>${dragonborn.draconicAncestry}</p>
-                <button onclick = "displayMenuRaces('dragonborn')"> BACK </button>
+                
                 </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if (subrace === 'dragonbornBase'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
        <div class="races-container">
@@ -2275,16 +2413,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Breath Weapon: </b>${dragonborn.breathWeapon}</p>
                 <p><b>Damage Resistance: </b>${dragonborn.damageResistance}</p>
                 <p><b>Draconic Ancestry: </b>${dragonborn.draconicAncestry}</p>
-                <button onclick = "displayMenuRaces('dragonborn')"> BACK </button>
+                
                 </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if (subrace === 'dragonbornDracon'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2299,16 +2434,13 @@ function displayMenuRacesDetails(subrace){
             <p><b>Breath Weapon: </b>${dragonborn.breathWeapon}</p>
             <p><b>Forceful Presence: </b>${dragonborn.forcefulPresence}</p>
             <p><b>Draconic Ancestry: </b>${dragonborn.draconicAncestry}</p>
-            <button onclick = "displayMenuRaces('dragonborn')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ; 
     }
     else if (subrace === 'dragonbornRavenite'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2323,17 +2455,14 @@ function displayMenuRacesDetails(subrace){
             <p><b>Breath Weapon: </b>${dragonborn.breathWeapon}</p>
             <p><b>Vengeful Assault: </b>${dragonborn.vengefulAssault}</p>
             <p><b>Draconic Ancestry: </b>${dragonborn.draconicAncestry}</p>
-            <button onclick = "displayMenuRaces('dragonborn')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ;   
     }
     //ELF
     else if (subrace === 'elfBase2024'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2348,16 +2477,13 @@ function displayMenuRacesDetails(subrace){
             <p><b>Keen Senses: </b>${elf.keenSenses2024}</p>
             <p><b>Trance: </b>${elf.trance}</p>
             <p><b>Elven Lineage: </b>${elf.elvenLineage}</p>
-            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ;   
     }
     else if (subrace === 'elfBase'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2372,16 +2498,13 @@ function displayMenuRacesDetails(subrace){
             <p><b>Fey Ancestry: </b>${elf.feyAncestry}</p>
             <p><b>Keen Senses: </b>${elf.keenSenses}</p>
             <p><b>Trance: </b>${elf.trance}</p>
-            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ;    
     }
     else if (subrace === 'highelf'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2399,16 +2522,13 @@ function displayMenuRacesDetails(subrace){
             <p><b>Extra Language: </b>${elf.extraLanguage1}</p>
             <p><b>Cantrip: </b>${elf.cantrip}</p>
             <p><b>Elf Weapon Training: </b>${elf.elfWeaponTraining}</p>
-            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+       
     </div>`
     ;    
     }
     else if (subrace === 'woodelf'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2426,16 +2546,13 @@ function displayMenuRacesDetails(subrace){
             <p><b>Mask of the Wild: </b>${elf.maskoftheWild}</p>
             <p><b>Fleet of Foot: </b>${elf.fleetofFoot}</p>
             <p><b>Elf Weapon Training: </b>${elf.elfWeaponTraining}</p>
-            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ;    
     }
     else if (subrace === 'drowelf'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2453,16 +2570,13 @@ function displayMenuRacesDetails(subrace){
             <p><b>Sunlight Sensitivity: </b>${elf.sunlightSensitivity}</p>
             <p><b>Drow Magic: </b>${elf.drowMagic}</p>
             <p><b>Drow Weapon Training: </b>${elf.drowWeaponTraining}</p>
-            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ;    
     }
     else if (subrace === 'eladrinelf'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2478,16 +2592,13 @@ function displayMenuRacesDetails(subrace){
             <p><b>Keen Senses: </b>${elf.keenSenses}</p>
             <p><b>Trance: </b>${elf.trance}</p>
             <p><b>Fey Step: </b>${elf.feyStep}
-            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ;    
     }
     else if (subrace === 'shadarelf'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2504,16 +2615,13 @@ function displayMenuRacesDetails(subrace){
             <p><b>Trance: </b>${elf.trance}</p>
             <p><b>Necrotic Resistance: </b>${elf.necroticResistance}
             <p><b>Blessing of the Raven Queen: </b>${elf.blessingoftheRavenQueen}</p>
-            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ;   
     }
     else if (subrace === 'seaelf'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2532,16 +2640,13 @@ function displayMenuRacesDetails(subrace){
             <p><b>Sea Elf Training: </b>${elf.seaElfTraining}</p>
             <p><b>Child of the Sea: </b>${elf.childoftheSea}</p>
             <p><b>Friend of the Sea: </b>${elf.friendoftheSea}</p>
-            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ;   
     }
     else if (subrace === 'pallidelf'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2558,16 +2663,13 @@ function displayMenuRacesDetails(subrace){
             <p><b>Trance: </b>${elf.trance}</p>
             <p><b>Incisive Sense: </b>${elf.incisiveSense}</p>
             <p><b>Blessing of the Moon Weaver: </b>${elf.blessingoftheMoonWeaver}</p>
-            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+       
     </div>`
     ;    
     }
     else if (subrace === 'markelf'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2585,17 +2687,14 @@ function displayMenuRacesDetails(subrace){
             <p><b>Cunning Intuition: </b>${elf.cunningIntuition}</p>
             <p><b>Shape of Shadow: </b>${elf.shapeShadows}</p>
             <p><b>Spells of the Mark: </b>${elf.spellsOfTheMark}</p>
-            <button onclick = "displayMenuRaces('elf')"> BACK </button>
+            
             </div>
-        <div>
-            <img class="raceImg" src="./img/aasimar.png" alt="">
-        </div>
+        
     </div>`
     ;     
     }
     // DWARF SUBRACE
     else if(subrace === 'dwarf2024'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML=`
         <div class="races-container">
@@ -2609,16 +2708,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dwarven Resilience: </b>${dwarf.dwarvenResilience}</p>
                 <p><b>Dwarven Toughness: </b>${dwarf.dwarvenToughness}</p>
                 <p><b>Stonecunning: </b>${dwarf.stonecunning2024}</p>
-                <button onclick = "displayMenuRaces('dwarf')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/dwarf2024.png" alt="">
-            </div>
+            
         </div>`
     ;  
     }
     else if(subrace === 'dwarf'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML=`
         <div class="races-container">
@@ -2634,16 +2730,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dwarven Combat Training: </b>${dwarf.dwarvenCombatTraining}</p>
                 <p><b>Tool Proficiency: </b>${dwarf.toolProficiency}</p>
                 <p><b>Stonecunning: </b>${dwarf.stonecunning}</p>
-                <button onclick = "displayMenuRaces('dwarf')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/dwarfBase.png" alt="">
-            </div>
+            
         </div>`
     ;  
     }
     else if(subrace === 'dwarfduergar'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML=`
         <div class="races-container">
@@ -2661,16 +2754,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Stonecunning: </b>${dwarf.stonecunning}</p>
                 <p><b>Duergar Magic: </b>${dwarf.duergarMagic}</p>
                 <p><b>Sunlight Sensitivity: </b>${dwarf.sunlightSensitivity}</p>
-                <button onclick = "displayMenuRaces('dwarf')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/dwarfDuergar.png" alt="">
-            </div>
+            
         </div>`
     ;  
     }
     else if(subrace === 'dwarfhill'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML=`
         <div class="races-container">
@@ -2687,16 +2777,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Tool Proficiency: </b>${dwarf.toolProficiency}</p>
                 <p><b>Stonecunning: </b>${dwarf.stonecunning}</p>
                 <p><b>Dwarven Toughness: </b>${dwarf.dwarvenToughness}</p>
-                <button onclick = "displayMenuRaces('dwarf')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/dwarfHill.png" alt="">
-            </div>
+            
         </div>`
     ;  
     }
     else if(subrace === 'dwarfmountain'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML=`
         <div class="races-container">
@@ -2713,16 +2800,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Tool Proficiency: </b>${dwarf.toolProficiency}</p>
                 <p><b>Stonecunning: </b>${dwarf.stonecunning}</p>
                 <p><b>Dwarven Armor Training: </b>${dwarf.dwarvenArmorTraining}</p>
-                <button onclick = "displayMenuRaces('dwarf')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/dwarfMountain.png" alt="">
-            </div>
+            
         </div>`
     ;  
     }
     else if(subrace === 'dwarfmark'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML=`
         <div class="races-container">
@@ -2741,17 +2825,14 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Warder's Intuition: </b>${dwarf.wardersIntuition}</p>
                 <p><b>Wards and Seals: </b>${dwarf.wardsAndSeals}</p>
                 <p><b>Spells of the Mark: </b>${dwarf.spellsOfTheMark}</p>
-                <button onclick = "displayMenuRaces('dwarf')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/dwarfWarding.png" alt="">
-            </div>
+            
         </div>`
     ;  
     }
     //GNOME
     else if(subrace === 'gnomeBase2024'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2764,16 +2845,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${gnome.darkvision}</p>
                 <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
                 <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
-                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+           
         </div>`
         ;
     }
     else if(subrace === 'gnomeBase2014'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2787,16 +2865,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${gnome.darkvision}</p>
                 <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
                 <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
-                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if(subrace === 'forestGnome'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2812,16 +2887,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
                 <p><b>Natural Illusionist: </b>${gnome.naturalIllusionist}</p>
                 <p><b>Speak with Small Beast: </b>${gnome.speakwithSmallBeasts}</p>
-                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if(subrace === 'rockGnome'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2837,16 +2909,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Gnomish Lineage: </b>${gnome.gnomishLineage}</p>
                 <p><b>Artificer's Lore: </b>${gnome.artificersLore}</p>
                 <p><b>Tinker: </b>${gnome.tinker}</p>
-                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+        
         </div>`
         ;
     }
     else if(subrace === 'deepGnome'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2860,16 +2929,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Superior Darkvision: </b>${gnome.superiorDarkvision}</p>
                 <p><b>Gnome Cunning: </b>${gnome.gnomeCunning}</p>
                 <p><b>Stone Camouflage: </b>${gnome.stoneCamouflage}</p>
-                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if(subrace === 'gnomeMark'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2885,17 +2951,14 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Gifted Scribe: </b>${gnome.giftedScribe}</p>
                 <p><b>Scribe's Insight: </b>${gnome.scribesInsight}</p>
                 <p><b>Spells of the Mark: </b>${gnome.spellsoftheMark}</p>
-                <button onclick = "displayMenuRaces('gnome')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     // GOLIATH
     else if (subrace === 'goliathbase2024'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2908,16 +2971,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Large Form: </b>${goliath.largeForm}</p>
                 <p><b>Powerful Build: </b>${goliath.powerfulBuild2024}</p>
                 <p><b>Giant Ancestry: </b>${goliath.giantAncestry}</p>
-                <button onclick = "displayMenuRaces('goliath')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if (subrace === 'goliathbase'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2931,17 +2991,14 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Powerful Build: </b>${goliath.powerfulBuild}</p>
                 <p><b>Stone Endurance: </b>${goliath.stonesEndurance}</p>
                 <p><b>Mountain Born: </b>${goliath.mountainBorn}</p>
-                <button onclick = "displayMenuRaces('goliath')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     // HALFLING
     else if (subrace === 'halflingbase2024'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2954,16 +3011,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Brave: </b>${halfling.brave}</p>
                 <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
                 <p><b>Naturally Stealthy: </b>${halfling.naturallyStealthy}</p>
-                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if (subrace === 'halflingBase'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2976,16 +3030,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Lucky: </b>${halfling.lucky}</p>
                 <p><b>Brave: </b>${halfling.brave}</p>
                 <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
-                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if (subrace === 'halflinglight'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -2999,16 +3050,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Brave: </b>${halfling.brave}</p>
                 <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
                 <p><b>Naturally Stealthy: </b>${halfling.naturallyStealthy}</p>
-                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if (subrace === 'halflingstout'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3022,16 +3070,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Brave: </b>${halfling.brave}</p>
                 <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
                 <p><b>Stout Resilience: </b>${halfling.stoutResilience}</p>
-                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+              
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+           
         </div>`
         ;
     }
     else if (subrace === 'halflinglotusden'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3046,16 +3091,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
                 <p><b>Child of the Woods: </b>${halfling.childOfTheWood}</p>
                 <p><b>Timberwalk: </b>${halfling.timberWalk}</p>
-                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+               
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+           
         </div>`
         ;
     }
     else if (subrace === 'halflingghost'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3069,16 +3111,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Brave: </b>${halfling.brave}</p>
                 <p><b>Halfling Nimbleness: </b>${halfling.halflingNimbleness}</p>
                 <p><b>Silent Speech: </b>${halfling.silentSpeech}</p>
-                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+              
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;
     }
     else if (subrace === 'halflingmarkhealing'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3094,16 +3133,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Medical Intuition: </b>${halfling.medicalIntuition}</p>
                 <p><b>Healing Touch: </b>${halfling.healingTouch}</p>
                 <p><b>Spells of the Mark: </b>${halfling.spellsoftheMarkHealing}</p>
-                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+           
         </div>`
         ; 
     }
     else if (subrace === 'halflingmarkhospitality'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3119,17 +3155,15 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Ever Hospitable: </b>${halfling.everHospitable}</p>
                 <p><b>Innkeeper's Magic: </b>${halfling.innkeepersMagic}</p>
                 <p><b>Spells of the Mark: </b>${halfling.spellsoftheMarkHospitality}</p>
-                <button onclick = "displayMenuRaces('halfling')"> BACK </button>
+              
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     // HUMAN
     else if (subrace === 'humanbase2024'){
-        menuRaces.innerHTML= '';
+
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3142,16 +3176,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Resourceful: </b>${human.resourceful}</p>
                 <p><b>Skillful: </b>${human.skillful}</p>
                 <p><b>Versatile: </b>${human.versatile}</p>
-                <button onclick = "displayMenuRaces('human')"> BACK </button>
+               
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+           
         </div>`
         ;   
     }
     else if (subrace === 'humanbase'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3162,16 +3193,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Speed: </b>${human.speed}</p>
                 <p><b>Age: </b>${human.age}</p>
                 <p><b>Language: </b>${human.languages}</p>
-                <button onclick = "displayMenuRaces('human')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;   
     }
     else if (subrace === 'humanvariant'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3184,16 +3212,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Language: </b>${human.languages}</p>
                 <p><b>Skills: </b>${human.skills}</p>
                 <p><b>Feat: </b>${human.feat}</p>
-                <button onclick = "displayMenuRaces('human')"> BACK </button>
+               
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;   
     }
     else if (subrace === 'humankeldon'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3208,16 +3233,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Keldon Resilience: </b>${human.keldonResilience}</p>
                 <p><b>Icehaven Born: </b>${human.icehavenBorn}</p>
                 <p><b>Alignment: </b>${human.alignment}</p>
-                <button onclick = "displayMenuRaces('human')"> BACK </button>
+               
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if (subrace === 'humanmarkhandling'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3232,16 +3254,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Primal Connection: </b>${human.primalConnection}</p>
                 <p><b>The Bigger They Are: </b>${human.theBiggerTheyAre}</p>
                 <p><b>Spells of the Mark: </b>${human.spellsOfTheMark}</p>
-                <button onclick = "displayMenuRaces('human')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if (subrace === 'humanmarkmaking'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3256,16 +3275,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Maker's Gift: </b>${human.makersGift}</p>
                 <p><b>Spellsmith: </b>${human.spellsmith}</p>
                 <p><b>Spells of the Mark: </b>${human.spellsOfTheMark}</p>
-                <button onclick = "displayMenuRaces('human')"> BACK </button>
+               
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if (subrace === 'humanmarkpassage'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3280,16 +3296,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Magical Passage: </b>${human.magicalPassage}</p>
                 <p><b>Courier's Speed: </b>${human.couriersSpeed}</p>
                 <p><b>Spells of the Mark: </b>${human.spellsOfTheMark}</p>
-                <button onclick = "displayMenuRaces('human')"> BACK </button>
+               
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if (subrace === 'humanmarksentinel'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3304,16 +3317,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Guardian's Shield: </b>${human.guardiansShield}</p>
                 <p><b>Vigilant Guardian: </b>${human.vigilantGuardian}</p>
                 <p><b>Spells of the Mark: </b>${human.spellsOfTheMark}</p>
-                <button onclick = "displayMenuRaces('human')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if (subrace === 'humanmarkfinding'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3328,17 +3338,14 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Hunter's Intuition: </b>${human.huntersIntuition}</p>
                 <p><b>Finder's Magic: </b>${human.findersMagic}</p>
                 <p><b>Spells of the Mark: </b>${human.spellsOfTheMark}</p>
-                <button onclick = "displayMenuRaces('human')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     // ORC x HALF-ORC
     else if (subrace === 'orcbase2024'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3351,16 +3358,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${orc.darkvision}</p>
                 <p><b>Adrenaline Rush: </b>${orc.adrenalineRush}</p>
                 <p><b>Relentless Endurance: </b>${orc.relentlessEndurance}</p>
-                <button onclick = "displayMenuRaces('orc')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if (subrace === 'halforc'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3375,16 +3379,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Menacing: </b>${orc.menacing}</p>
                 <p><b>Relentless Endurance: </b>${orc.relentlessEndurance}</p>
                 <p><b>Savage Attacks: </b>${orc.savageAttacks}</p>
-                <button onclick = "displayMenuRaces('orc')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+           
         </div>`
         ;  
     }
     else if (subrace === 'halforcmark'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3399,17 +3400,14 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Hunter's Intuition: </b>${orc.huntersIntuition}</p>
                 <p><b>Finder's Magic: </b>${orc.findersMagic}</p>
                 <p><b>Spells of the Mark: </b>${orc.spellsoftheMark}</p>
-                <button onclick = "displayMenuRaces('orc')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     // TIEFLING
     else if(subrace === 'tieflingbase2024'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3422,16 +3420,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
                 <p><b>Otherwordly Presence: </b>${tiefling.otherworldlyPresence}</p>
                 <p><b>Fiendish Legacy: </b>${tiefling.fiendishLegacy}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflingbase'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3445,16 +3440,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Infernal Legacy: </b>${tiefling.infernalLegacy}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflingasmodeus'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3468,16 +3460,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Infernal Legacy: </b>${tiefling.infernalLegacy}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflingbaalzebul'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3491,16 +3480,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Legacy of Maladomini: </b>${tiefling.legacyofMaladomini}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflingdispater'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3514,16 +3500,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Legacy of Dis: </b>${tiefling.legacyofDis}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflingfierna'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3537,16 +3520,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Legacy of Phlegethos: </b>${tiefling.legacyofPhlegethos}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+               
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflingglasya'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3560,16 +3540,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Legacy of Malbolge: </b>${tiefling.legacyofMalbolge}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflinglevistus'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3583,16 +3560,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Legacy of Stygia: </b>${tiefling.legacyofStygia}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+               
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflingmammon'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3606,16 +3580,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Legacy of Minauros: </b>${tiefling.legacyofMinauros}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflingmephistopheles'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3629,16 +3600,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Legacy of Cania: </b>${tiefling.legacyofCania}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflingzariel'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3652,16 +3620,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Dark Vision: </b>${tiefling.darkvision}</p>
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Legacy of Avernus: </b>${tiefling.legacyofAvernus}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflingdeviltongue'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3676,16 +3641,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Appearance: </b>${tiefling.appearance}</p>
                 <p><b>Devil's Tongue: </b>${tiefling.devilsTongue}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflinghellfire'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3700,16 +3662,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Appearance: </b>${tiefling.appearance}</p>
                 <p><b>Hellfire: </b>${tiefling.hellfire}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflinginfernallegacy'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3724,16 +3683,13 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Appearance: </b>${tiefling.appearance}</p>
                 <p><b>Infernal Legacy: </b>${tiefling.infernalLegacy}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
     else if(subrace === 'tieflingwinged'){
-        menuRaces.innerHTML= '';
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
@@ -3748,11 +3704,9 @@ function displayMenuRacesDetails(subrace){
                 <p><b>Hellish Resistance: </b>${tiefling.hellishResistance}</p>
                 <p><b>Appearance: </b>${tiefling.appearance}</p>
                 <p><b>Winged: </b>${tiefling.winged}</p>
-                <button onclick = "displayMenuRaces('tiefling')"> BACK </button>
+                
             </div>
-            <div>
-                <img class="raceImg" src="./img/aasimar.png" alt="">
-            </div>
+            
         </div>`
         ;  
     }
