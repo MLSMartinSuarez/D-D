@@ -1699,7 +1699,363 @@ const ranger = {
                 </table>`,
 }
 const rogue = {
+    name:`Rogue`,
+    hitPoints:`Hit Dice: 1d8 per rogue level<br>
+    Hit Points at 1st Level: 8 + your Constitution modifier<br>
+    Hit Points at Higher Levels: 1d8 (or 5) + your Constitution modifier per rogue level after 1st`,
+    proficiencies:`Armor: Light armor<br>
+    Weapons: Simple weapons, hand crossbows, longswords, rapiers. shortswords<br>
+    Tools: Thieve's tools<br>
+    Saving Throws: Dexterity. Intelligence<br>
+    Skills: Choose four from Acrobatics, Athletics, Deception. Insight, Intimidation, Investigation, Perception. Performance. Persuasion, Sleight of Hand. and Stealth`,
+    expertise:`Choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.<br>
+    At 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit.`,
+    sneakAttack:`You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.<br>
+    You don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.<br>
+    The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table.`,
+    thivesCant:`During your rogue training you learned thieves' cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves' cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.<br> 
+    In addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves' guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run.`,
+    cunningAction:`Your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action.`,
+    uncannyDodge:`When an attacker that you can seehits you with an attack, you can use your reaction to halve the attack's damage against you.`,
+    evasion:`You can nimbly dodge out of the way of certain area effects, such as a red dragon's fiery breath or an ice storm spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.`,
+    reliableTalent:`You have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10.`,
+    blindsense:`If you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you.`,
+    slipperyMind:`you have acquired greater mental strength. You gain proficiency in Wisdom saving throws.`,
+    elusive:`You are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't incapacitated.`,
+    strokeOfLuck:`You have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20.<br>
+    Once you use this feature, you can't use it again until you finish a short or long rest.`,
+    fastHands:`You can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves' tools to disarm a trap or open a lock, or take the Use an Object action.`,
+    secondStoryWork:` You gain the ability to climb faster than normal; climbing no longer costs you extra movement.<br>
+    In addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier.`,
+    supremeSneak:`You have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn.`,
+    useMagicDevice:`You have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items.`,
+    thiefReflexes:`You have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised.`,
+    bonusProficiencies:`You gain proficiency with the disguise kit and the poisoner's kit.`,
+    assassinate:`You are at your deadliest when you get the drop on your enemies. You have advantage on attack rolls against any creature that hasn't taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit.`,
+    infiltrationExpertise:`You can unfailingly create false identities for yourself. You must spend seven days and 25 gp to establish the history, profession, and affiliations for an identity. You can’t establish an identity that belongs to someone else. For example, you might acquire appropriate clothing, letters of introduction, and officiallooking certification to establish yourself as a member of a trading house from a remote city so you can insinuate yourself into the company of other wealthy merchants.<br> 
+    Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to.`,
+    impostor:`you gain the ability to unerringly mimic another person’s speech, writing, and behavior.<br>
+    You must spend at least three hours studying these three components of the person's behavior, listening to speech, examining handwriting, and observing mannerisms.<br>
+    Your ruse is indiscernible to the casual observer. If a wary creature suspects something is amiss, you have advantage on any Charisma (Deception) check you make to avoid detection.`,
+    deathStrike:`You become a master of instant death. When you attack and hit a creature that is surprised, it must make a Constitution saving throw (DC 8 + your Dexterity modifier + your proficiency bonus). On a failed save, double the damage of your attack against the creature.`,
+    spells:` <b>Cantrips:</b> You learn three cantrips: mage hand and two other cantrips of your choice from the wizard spell list. You learn another wizard cantrip of your choice at 10th level.<br><br> 
+    <b>Spell Slots:</b> The Arcane Trickster Spellcasting table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.<br>
+    Whenever you gain a level in this class, you can replace one of the wizard spells you know with another spell of your choice from the wizard spell list. The new spell must be of a level for which you have spell slots, and it must be an enchantment or illusion spell. unless you're replacing the spell you gained at 8th, 14th, or 20th level.<br>
+    Spelicasting Ability. Intelligence is your spelicasting ability for your wizard spells, since you learn your spells through dedicated study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability.`,
+    mageHandLegerdemain:`When you cast mage hand, you can make the spectral hand invisible, and you can perform the following additional tasks with it:<br><br>
+    - You can stow one object the hand is holding ina container worn or carried by another creature.<br>
+    - You can retrieve an object in a container worn or carried by another creature.<br>
+    - You can use thieves tools to pick locks and disarm traps at range.<br><br>
+    You can perform one of these tasks without being noticed by a creature if you succeed on a Dexterity (Sleight of Hand) check contested by the creature's Wisdom (Perception) check.<br>
+    In addition, you can use the bonus action granted by your Cunning Action to control the hand.`,
+    magicalAmbush:`if you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn.`,
+    versatileTrickster:`You gain the ability to distract targets with your mage hand. As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn.`,
+    spellThief:`you gain the ability to.magically steal the knowledge of how to cast a spell from another spellcaster.<br>
+    Immediately after a creature casts a spell that targets you or includes you in its area of effect, you can use your reaction to force the creature to make a saving throw with its spellcasting ability modifier. The DC equals your spell save DC. On a failed save, you negate the spell's effect against you, and you steal the knowledge of the spell if it is at least 1st level and of a level you can cast (it doesn't need to be a wizard spell). For the next 8 hours, you know the spel! and can cast it using your spell slots. The creature can't cast that spell until the 8 hours have passed.<br>
+    Once you use this feature, you can't use it again until you finish a long rest.`,
+    tableTrickster:`<table class="tableClass">
+                    <tr>
+                        <th >Rogue Level</th>
+                        <th >Cantrips Known</th>
+                        <th >Spells Known</th>
+                        <th >1st</th>
+                        <th >2nd</th>
+                        <th >3rd</th>
+                        <th >4th</th>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>6th</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>10th</td>
+                        <td>4</td>
+                        <td>7</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>11th</td>
+                        <td>4</td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>12th</td>
+                        <td>4</td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>13th</td>
+                        <td>4</td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>4</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>15th</td>
+                        <td>4</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>16th</td>
+                        <td>4</td>
+                        <td>11</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>17th</td>
+                        <td>4</td>
+                        <td>11</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>18th</td>
+                        <td>4</td>
+                        <td>11</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>>
+                    </tr>
+                    <tr>
+                        <td>19th</td>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>20th</td>
+                        <td>4</td>
+                        <td>13</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                    
+                </table>`,
+    table:`<table class="tableClass">
+                    <tr>
+                        <th >Level</th>
+                        <th >Proficiency Bonus</th>
+                        <th >Sneak Attack</th>
+                        <th >Features</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td>+2</td>
+                        <td>1d6</td>
+                        <td><a href="">Expertise</a> - <a href="">Sneak Attack</a> - <a href="">Thieves Can't</a></td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>+2</td>
+                        <td>1d6</td>
+                        <td><a href="">Cunning Action</a></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>+2</td>
+                        <td>2d6</td>
+                        <td><a href="">Roguish Archetype</a></td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>+2</td>
+                        <td>2d6</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>+3</td>
+                        <td>3d6</td>
+                        <td><a href="">Uncanny Dodge</a></td>
+                    </tr>
+                    <tr>
+                        <td>6th</td>
+                        <td>+3</td>
+                        <td>3d6</td>
+                        <td><a href="">Expertise</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td>+3</td>
+                        <td>4d6</td>
+                        <td><a href="">Evasion</a></td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>+3</td>
+                        <td>4d6</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td>+4</td>
+                        <td>5d6</td>
+                        <td><a href="">Roguish Archetype Feature</a></td>
+                    </tr>
+                    <tr>
+                        <td>10th</td>
+                        <td>+4</td>
+                        <td>5d6</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>11th</td>
+                        <td>+4</td>
+                        <td>6d6</td>
+                        <td><a href="">Reliable Talent</a></td>
+                    </tr>
+                    <tr>
+                        <td>12th</td>
+                        <td>+4</td>
+                        <td>6d6</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>13th</td>
+                        <td>+5</td>
+                        <td>7d6</td>
+                        <td><a href="">Roguish Archetype Feature</a></td>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>+5</td>
+                        <td>7d6</td>
+                        <td><a href="">Blindsense</a></td>
+                    </tr>
+                    <tr>
+                        <td>15th</td>
+                        <td>+5</td>
+                        <td>8d6</td>
+                        <td><a href="">Slippery Mind</a></td>
+                    </tr>
+                    <tr>
+                        <td>16th</td>
+                        <td>+5</td>
+                        <td>8d6</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>17th</td>
+                        <td>+6</td>
+                        <td>9d6</td>
+                        <td><a href="">Roguish Archetype Feature</a></td>
+                    </tr>
+                    <tr>
+                        <td>18th</td>
+                        <td>+6</td>
+                        <td>9d6</td>
+                        <td><a href="">Elusive</a></td>
+                    </tr>
+                    <tr>
+                        <td>19th</td>
+                        <td>+6</td>
+                        <td>10d6</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>20th</td>
+                        <td>+6</td>
+                        <td>10d6</td>
+                        <td><a href="">Stroke of Luck</a></td>
+                    </tr>
 
+                </table>`,
 }
 const sorcerer = {
 
@@ -2562,7 +2918,7 @@ function displayMenuClasses(subclasses){
                 <br>
                 <p><b>Level 7 - Defensive Tactics:</b> ${ranger.defensiveTactics}</p>
                 <br>
-                <p><b>Level 11 - Multiattack:</b> ${bard.peerlessSkill}</p>
+                <p><b>Level 11 - Multiattack:</b> ${ranger.multiattack}</p>
                 <br>
                 <p><b>Level 15 - Superior Hunter's Defense:</b> ${ranger.superiorHuntersDefense}</p>
                 <br>
@@ -2575,6 +2931,84 @@ function displayMenuClasses(subclasses){
                 <br>
                 <p><b>Level 15 - Share Spells:</b> ${ranger.shareSpells}</p>
                 <p><b>Class table per level</b> ${ranger.table}</p>
+                
+            </div>
+            
+        </div>`
+        menuSwitch = false;
+        if (layoutSwitch === true){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
+        ;
+    }
+    else if(subclasses === 'rogue'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+                <h1>${rogue.name}</h1>
+                <p><b>Hit Points: </b> ${rogue.hitPoints}</p>
+                <p><b>Proficiencies: </b>${rogue.proficiencies}</p>
+                <p><b class="importantDetail">Rogue Skills: </b></p>
+                <p><b>Level 1:</b><br> 
+                <br>
+                <b>Expertise:</b> ${rogue.expertise}
+                <br><br> 
+                <b>Sneak Attack:</b> ${rogue.sneakAttack}
+                <br><br> 
+                <b>Thieves Can't:</b> ${rogue.thivesCant}</p>
+                <p><b>Level 2 - Cunning Action:</b> ${rogue.cunningAction}</p>
+                <p><b>Level 5 - Uncanny Dodge:</b> ${rogue.uncannyDodge}</p>
+                <p><b>Level 7 - Evasion:</b> ${rogue.evasion}</p>
+                <p><b>Level 11 - Reliable Talent:</b> ${rogue.reliableTalent}</p>
+                <p><b>Level 14 - Blindsense:</b> ${rogue.blindsense}</p>
+                <p><b>Level 15 - Slippery Mind:</b> ${rogue.slipperyMind}</p>
+                <p><b>Level 18 - Elusive:</b> ${rogue.elusive}</p>
+                <p><b>Level 20 - Stroke Of Luck:</b> ${rogue.strokeOfLuck}</p>
+                <p><b>Subclasses:</b><br>
+                <br>
+                <b class="importantDetail">Thief</b> , <b class="importantDetail">Assasin</b> or <b class="importantDetail">Arcane Trickster</b></p> 
+                <p><b class="importantDetail">Thief:</b></p>
+                <p><b>Level 3:</b><br><br>  
+                <b>Fast Hands:</b> ${rogue.fastHands}
+                <br><br> 
+                <b>Second-Story Work:</b> ${rogue.secondStoryWork}</p>
+                <p><b>Level 9 - Supreme Sneak:</b> ${rogue.supremeSneak}</p>
+                <br>
+                <p><b>Level 13 - Use Magic Device:</b> ${rogue.useMagicDevice}</p>
+                <br>
+                <p><b>Level 17 - Thief's Reflexes:</b> ${rogue.thiefReflexes}</p>
+                <p><b class="importantDetail">Assassin:</b></p>
+                <br>
+                <p><b>Level 3:</b><br> <br> 
+                <b>Bonus Proficiencies:</b> ${rogue.bonusProficiencies}
+                <br><br> 
+                <b>Assassinate:</b> ${rogue.assassinate}</p>
+                <br>
+                <p><b>Level 9 - Infiltration Expertise:</b> ${rogue.infiltrationExpertise}</p>
+                <br>
+                <p><b>Level 13 - Impostor:</b> ${rogue.impostor}</p>
+                <br>
+                <p><b>Level 17 - Death Strike:</b> ${rogue.deathStrike}</p>
+                <p><b class="importantDetail">Arcane Trickster:</b></p>
+                <br>
+                <p><b>Level 3:</b><br> <br> 
+                <b>SpellCasting:</b><br><br> 
+                ${rogue.spells}
+                <br> 
+                <p><b>Trickster Spell Table</b> ${rogue.tableTrickster}</p>
+                <b>Mage Hand Legerdemain:</b> ${rogue.mageHandLegerdemain}</p>
+                <br>
+                <p><b>Level 9 - Magical Ambush:</b> ${rogue.magicalAmbush}</p>
+                <br>
+                <p><b>Level 13 - Versatile Trickster:</b> ${rogue.versatileTrickster}</p>
+                <br>
+                <p><b>Level 17 - Spell Thief:</b> ${rogue.spellThief}</p>
+                <p><b>Class table per level</b> ${rogue.table}</p>
                 
             </div>
             
