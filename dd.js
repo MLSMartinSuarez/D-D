@@ -777,7 +777,7 @@ aspectOfTheBeast:`you gain a magical benefit based on the totem animal of your c
 <b>Wolf</b>: You gain the hunting sensibilities of a wolf. You can track other creatures while traveling at a fast pace, and you can move stealthily while traveling at a normal pace.`,
 spiritWalker:`you can cast <a>the commune with nature</a> spell, but only as a ritual. When you do so, a spiritual version of one of the animals you chose for Totem Spirit or Aspect of the Beast appears to you to convey the information you seek.`,
 totemicAttunement:`You gain a magical benefit based on a totem animal of your choice. You can choose the same animal you selected previously or a different one.<br>
-<b>Bear</b> :While you're raging, any creature within 5 feet of you that’s hostile to you has disadvantage on attack rolls against targets other than you or another character witb this feature. An enemy is immune to this effect if it can't see or hear you or if it can’t be frightened.<br>
+<b>Bear</b> :While you're raging, any creature within 5 feet of you that's hostile to you has disadvantage on attack rolls against targets other than you or another character witb this feature. An enemy is immune to this effect if it can't see or hear you or if it can't be frightened.<br>
 <b>Eagle</b>: While raging, you have a flying speed equal to your current walking speed. This benefit works only in short bursts; you fall if you end your turn in the air and nothing else is holding you aloft.<br>
 <b>Wolf</b>: While you're raging, you can use a bonus action on your turn to knock a Large or smaller creature prone when you hit it with melee weapon attack.`,
 table:`<table class="tableClass">
@@ -1129,16 +1129,1892 @@ const bard = {
 
 }
 const cleric = {
-
+    name:`Cleric`,
+    hitPoints:`Hit Dice: 1d8 per cleric level<br>
+    Hit Points at 1st Level: 8 + your Constitution modifier<br>
+    Hit Points at Higher Levels: 1d8 (or 5) + your
+    Constitution m odifier per cleric level after 1st`,
+    proficiencies:`Armor: Light armor, medium armor, shields<br>
+    Weapons: All simple weapons<br>
+    Tools: None<br>
+    Saving Throws: Wisdom , Charisma<br>
+    Skills: C hoose two from History, Insight, Medicine,
+    Persuasion, and Religion`,
+    spells:`You know three cantrips o f your choice from
+    the cleric spell list. You learn additional cleric cantrips
+    of your choice at higher levels, as show in the Cantrips
+    Known column of the Cleric table<br>
+    You prepare the list of cleric spells that are available
+    for you to cast, choosing from the cleric spell list. When
+    you do so, choose a number of cleric spells equal to
+    your Wisdom modifier + your cleric level (minimum of
+    one spell). The spells must be of a level for which you
+    have spell slots.<br>
+    You can change your list of prepared spells when you
+    finish a long rest. Preparing a new list o f cleric spells
+    requires time spent in prayer and meditation: at least 1
+    minute per spell level for each spell on your list.<br>
+    Wisdom is your spellcasting ability for your cleric spells.`,
+    channelDivinity:`You gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.<br>
+    When you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.<br>
+    Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.<br>
+    Beginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.`,
+    channelDivinityTurnUndead:`As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.<br>
+    A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.`,
+    destroyUndead:`When an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table.`,
+    destroyUndeadTable:`<table class="tableClass">
+                    <tr>
+                        <th>Cleric Level</th>
+                        <th>Destroys Undead of CR</th>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>1/2 or lower</td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>1 or lower</td>
+                    </tr>
+                    <tr>
+                        <td>11th</td>
+                        <td>2 or lower</td>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>3 or lower</td>
+                    </tr>
+                    <tr>
+                        <td>17th</td>
+                        <td>4 or lower</td>
+                    </tr>
+                </table>`,
+    divineIntervention:`You can call on your deity to intervene on your behalf when your need is great.<br>
+    Imploring your deity's aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The DM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.<br>
+    If your deity intervenes, you can’t use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.<br>
+    At 20th level, your call for intervention succeeds automatically, no roll required.`,
+    blessingOfKnowledge:`You learn two languages of your choice.<br>
+    You also become proficient in your choice of two of the following skills: Arcana, History, Nature, or Religion.<br> 
+    Your proficiency bonus is doubled for any ability check you make that uses either of those skills.`,
+    channelDivinityKnowledgeOfTheAges:`You can use your Channel Divinity to tap into a divine well of knowledge. As an action,
+    you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool.`,
+    channelDivinityReadThoughts:`You can use your Channel Divinity to read a creature's thoughts. You can then use your access to the creature's mind to command it.<br>
+    As an action, choose one creature that you can see within 60 feet of you. That creature must make a Wisdom saving throw. If the creature succeeds on the saving throw, you can't use this feature on it again until you finish a long rest.<br>
+    If the creature fails its save, you can read its surface thoughts (those foremost in its mind, reflecting its current emotions and what it is actively thinking about) when it is within 60 feet of you. This effect lasts for 1 minute.
+    During that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell.`,
+    potentSpellcasting:`You add your Wisdom modifier to the damage you deal with any cleric cantrip.`,
+    visionsOfThePast:`You can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a spell.<br>
+    Once you use this feature, you can’t use it again until you finish a short or long rest.<br>
+    <b>  + Object Reading:</b> Holding an object as you meditate, you can see visions of the object’s previous owner. After meditating for 1 minute, you learn how the owner acquired and lost the object, as well as the most recent significant event involving the object and that owner.<br>
+    If the object was owned by another creature in the recent past (within a number of days equal to your Wisdom score), you can spend 1 additional minute for each owner to learn the same information about that creature.<br>
+    <b>     + Area Reading: </b> As you meditate, you see visions of recent events in your immediate vicinity (a room, street, tunnel, clearing, or the like, up to a 50-foot cube), going back a number of days equal to your Wisdom score. For each minute you meditate, you learn about one significant event, beginning with the most recent. Significant events typically involve powerful emotions, such as battles and betrayals, marriages and murders, births and funerals. However, they might also include more mundane events that are nevertheless important in your current situation.`,
+    bonusProficiencies:`When you choose this domain at 1st level, you gain proficiency with heavy armor.`,
+    discipleOfLife:`Your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level.`,
+    channelDivinityPreserveLife:`you can use your Channel Divinity to heal the badly injured.<br>
+    As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct.`,
+    blessedHealer:`The healing spells you cast on others heal you as well. When you cast a spell of 1st level or higher that restores hit points to a creature other than you, you regain hit points equal to 2 + the spell's level.`,
+    divineStrike:`You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8.`,
+    supremeHealing:`When you would normally roll one or more dice to restore hit points with a spell,you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points toa creature, you restore 12.`,
+    bonusCantrip:`When you choose this domain at 1st level, you gain the light cantrip if you don't already know it.`,
+    wardingFlare:`you can interpose divine light between yourself and an attacking enemy. When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature.<br>
+    You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.`,
+    channelDivinityRadianceOfTheDawn:`you can use your Channel Divinity to harness sunlight, banishing darkness and dealing radiant damage to your foes.<br>
+    As an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 2d10 + your cleric level on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected.`,
+    improvedFlare:`You can also use your Warding Flare feature when a creature that you can see within 30 feet of you attacks a creature other than you.`,
+    coronaOfLight:`You can use your action to activate an aura of sunlight that lasts for 1 minute or until you dismiss it using another action. You emit bright light in a 60-foot radius and dim light 30 feet beyond that. Your enemies in the bright light have disadvantage on saving throws against any spell that deals fire or radiant damage.`,
+    acolyteOfNature:`You learn one druid cantrip of your choice. You also gain proficiency in one of the following skills of your choice: Animal Handling, Nature, or Survival.`,
+    channelDivinityCharmAnimalsAndPlants:`you can use your Channel Divinity to charm animals and plants.<br>
+    As an action, you present your holy symbol and invoke the name of your deity. Each beast or plant creature that can see you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is charmed by you for 1 minute or until it takes damage. While it is charmed by you, it is friendly to you and other creatures you designate.`,
+    dampenElements:`When you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can use your reaction to grant resistance to the creature against that instance of the damage.`,
+    divineStrikeNature:`you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 cold, fire, or lightning damage (your choice) to the target. When you reach 14th level, the extra damage increases to 2d8.`,
+    masterOfNature:`You gain the ability to command animals and plant creatures. While creatures are charmed by your Charm Animals and Plants feature, you can take a bonus action on your turn to verbally command what each of those creatures will do on its next turn.`,
+    bonusProficienciesTempest:`You gain proficiency with martial weapons
+    and heavy armor.`,
+    wrathOfTheStorm:`you can thunderously rebuke attackers. When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one.<br>
+    You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.`,
+    channelDivinityDestructiveWrath:`you can use your Channel Divinity to wield the power of the storm with unchecked ferocity.<br>
+    When you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling.`,
+    thunderboltStrike:`When you deal lightning damage to a Large or smaller creature, you can also push it up to 10 feet away from you.`,
+    divineStrikeTempest:`You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 thunder damage to the target. When you reach 14th level, the extra damage increases to 2d8.`,
+    stormborn:`You have a flying speed equal to your current walking speed whenever you are not underground or indoors.`,
+    blessingOfTheTrickster:`You can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again.`,
+    channelDivinityInvokeDuplicity:`you can use your Channel Divinity to create an illusory duplicate of yourself.<br>
+    As an action, you create a perfect illusion of yourself that lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). The illusion appears in an unoccupied space that you can see within 30 feet of you. As a bonus action on your turn, you can move the illusion up to 30 feet to a space you can see, but it must remain within 120 feet of you.<br>
+    For the duration, you can cast spells as though you were in the illusion’s space, but you must use your own senses. Additionally, when both you and your illusion are within 5 feet of a creature that can see the illusion, you have advantage on attack rolls against that creature, given how distracting the illusion is to the target.`,
+    channelDivinityCloakOfShadows:`you can use your Channel Divinity to vanish.<br>
+    As an action, you become invisible until the end of your next turn. You become visible if you attack or cast a spell.`,
+    divineStrikeTrickster:`You gain the ability to infuse your weapon strikes with poison—a gift from your deity. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 poison damage to the target. When you reach 14th level, the extra damage increases to 2d8.`,
+    improvedDuplicity:`You can create up to four duplicates of yourself, instead of one, when you use Invoke Duplicity. As a bonus action on your turn, you can move any number of them up to 30 feet, to a maximum range of 120 feet.`,
+    bonusProficienciesWar:`You gain proficiency with martial weapons and heavy armor.`,
+    warPriest:` From Ist level, your god delivers bolts of inspiration to you while you are engaged in battle. When you use the Attack action, you can make one weapon attack as a bonus action.<br>
+    You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.`,
+    channelDivinityGuidedStrike:`You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll. You make this choice after you see the roll, but before the DM says whether the attack hits or misses.`,
+    channelDivinityWarGodsBlessing:`When a creature within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses.`,
+    divineStrikeWar:`You gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 damage of the same type dealt by the weapon to the target. When you reach 14th level, the extra damage increases to 2d8.`,
+    avatarOfBattle:`You gain resistance to bludgeoning, piercing, and slashing damage from nonmagical weapons.`,
+    abilityScore:`You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.`,
+    tempestDomainSpells:`<table class="tableClass">
+                    <tr>
+                        <th>Cleric Level</th>
+                        <th>Spells</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td><a href="">Fog Cloud</a> - <a href="">Thunderwave</a></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Gust of Wind</a> - <a href="">Shatter</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Call of Lighting</a> - <a href="">Sleet Storm</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Control Water</a> - <a href="">Ice Storm</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Destructive Wave</a> - <a href="">Insect Plague</a></td>
+                    </tr>
+                </table>`,
+    trickeryDomainSpells:`<table class="tableClass">
+                    <tr>
+                        <th>Cleric Level</th>
+                        <th>Spells</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td><a href="">Charm Person</a> - <a href="">Disguise Self</a></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Mirror Image</a> - <a href="">Pass Without Trace</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Blink</a> - <a href="">Dispel Magic</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Dimension Door</a> - <a href="">Polymorph</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Dominate Person</a> - <a href="">Modify Memory</a></td>
+                    </tr>
+                </table>`,
+    warDomainSpells:`<table class="tableClass">
+                    <tr>
+                        <th>Cleric Level</th>
+                        <th>Spells</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td><a href="">Divine Favor</a> - <a href="">Shield of Faith</a></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Magic Weapon</a> - <a href="">Spiritual Weapon</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Crusader's Mantle</a> - <a href="">Spirit Guardians</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Freedom of Movement</a> - <a href="">Stoneskin</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Flame Strike</a> - <a href="">Hold Monster</a></td>
+                    </tr>
+                </table>`,
+    natureDomainSpells:`<table class="tableClass">
+                    <tr>
+                        <th>Cleric Level</th>
+                        <th>Spells</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td><a href="">Animal Friendship</a> - <a href="">Speak With Animals</a></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Barkskin</a> - <a href="">Spike Growth</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Plant Growth</a> - <a href="">Wind Wall</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Dominate Beast</a> - <a href="">Grasping Vine</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Insect Plague</a> - <a href="">Tree Stride</a></td>
+                    </tr>
+                </table>`,
+    lightDomainSpells:`<table class="tableClass">
+                    <tr>
+                        <th>Cleric Level</th>
+                        <th>Spells</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td><a href="">Burning Hands</a> - <a href="">Fairie Fire</a></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Flaming Sphere</a> - <a href="">Scorching Ray</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Daylight</a> - <a href="">Fireball</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Guardian of Faith</a> - <a href="">Wall of Fire</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Flame Strike</a> - <a href="">Scrying</a></td>
+                    </tr>
+                </table>`,
+    lifeDomainSpells:`<table class="tableClass">
+                    <tr>
+                        <th>Cleric Level</th>
+                        <th>Spells</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td><a href="">Bless</a> - <a href="">Cure Wounds</a></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Lesser Restoration</a> - <a href="">Spiritual Weapon</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Beacon of Hope</a> - <a href="">Revivify</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Death Ward</a> - <a href="">Guardian of Faith</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Mass Cure Wounds</a> - <a href="">Raise Dead</a></td>
+                    </tr>
+                </table>`,
+    knowledgeDomainSpells:`<table class="tableClass">
+                    <tr>
+                        <th>Cleric Level</th>
+                        <th>Spells</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td><a href="">Command</a> - <a href="">Identify</a></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Augury</a> - <a href="">Suggestion</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Nondetection</a> - <a href="">Speak with Dead</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Arcane Eye</a> - <a href="">Confusion</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Legend Lore</a> - <a href="">Scrying</a></td>
+                    </tr>
+                </table>`,
+    table:`<table class="tableClass">
+                    <tr>
+                        <th >Level</th>
+                        <th >Proficiency Bonus</th>
+                        <th >Features</th>
+                        <th >Cantrips Known</th>
+                        <th >1st</th>
+                        <th >2nd</th>
+                        <th >3rd</th>
+                        <th >4th</th>
+                        <th >5th</th>
+                        <th >6th</th>
+                        <th >7th</th>
+                        <th >8th</th>
+                        <th >9th</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td>+2</td>
+                        <td><a href="">Spellcasting</a> - <a href=""> Divine Domain</a></td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>+2</td>
+                        <td><a href="">Channel Divinity(1/rest)</a> - <a href=""> Divine Domain Feature</a></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>+2</td>
+                        <td>-</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>+2</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>+3</td>
+                        <td><a href="">Destroy Undead (CR 1/2)</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>6th</td>
+                        <td>+3</td>
+                        <td><a href="">Channel Divinity(2/rest)</a> - <a href=""> Divine Domain Feature</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td>+3</td>
+                        <td>-</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>+3</td>
+                        <td><a href="">Ability Score Improvement</a> - <a href="">Destroy Undead (CR 1)</a> - <a href="">Divine Domain Feature</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td>+4</td>
+                        <td>-</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>10th</td>
+                        <td>+4</td>
+                        <td><a href="">Divine Intervention</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>11th</td>
+                        <td>+4</td>
+                        <td><a href="">Destroy Undead(CR 2)</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>12th</td>
+                        <td>+4</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>13th</td>
+                        <td>+5</td>
+                        <td>-</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>+5</td>
+                        <td><a href="">Destroy Undead (CR 3)</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>15th</td>
+                        <td>+5</td>
+                        <td>-</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>16th</td>
+                        <td>+5</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>17th</td>
+                        <td>+6</td>
+                        <td><a href="">Destroy Undead (CR 4)</a> - <a href="">Divine Domain Feature</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>18th</td>
+                        <td>+6</td>
+                        <td><a href="">Channel Divinity (3/rest)</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>19th</td>
+                        <td>+6</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>20th</td>
+                        <td>+6</td>
+                        <td><a href="">Divine Intervention Improvement</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    
+                </table>`,
 }
 const druid = {
+    name:`Druid`,
+    hitPoints:`Hit Dice: 1d8 per druid level<br>
+    Hit Points at 1st Level: 8 + your Constitution modifier<br>
+    Hit Points at Higher Levels: 1d8 (or 5) + your Constitution modifier per druid level after 1st`,
+    proficiencies:`Armor: Light armor, medium armor, shields (druids will not wear armor or use shields made of metal)<br>
+    Weapons: Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears<br>
+    Tools: Herbalism kit<br>
+    Saving Throws: Intelligence, Wisdom<br>
+    Skills: Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival`,
+    spells:` you know two cantrips of your choice from the druid speil list. You learn additional druid cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Druid table<br>
+    You prepare the list of druid spells that are available for you to cast, choosing from the druid spell list. When you do so, choose a number of druid spells equal to your Wisdom modifier + your druid level (minimum of one spell). The spells must be of a level for which you have spell slots.<br>
+    You can also change your list of prepared spells when you finish a long rest. Preparing a new list of druid spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.<br>
+    Wisdom is your spellcasting ability for your druid spells`,
+    abilityScore:`When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.`,
+    druidic:`You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic.`,
+    wildShape:`you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.<br>
+    Your druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.<br>
+    You can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.<br>
+    <br>
+    While you are transformed, the following rules apply:<br>
+    <br>
+     <b>+</b>  Your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.<br>
+     <b>+</b> When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.<br>
+    <b>+</b> You can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as call lightning, that you've already cast.<br>
+    <b>+</b> You retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense.<br>
+    <b>+</b> You choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it is practical for the new form to wear a piece of equipment. based on the creature's shape and size. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form.`,
+    druidCircle:`You choose to identify with a circle of druids: the Circle of the Land or the Circle of the Moon, both detailed at the end of the class description. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level.`,
+    bonusCantrip:`When you choose this circle at 2nd level, you learn one additional druid cantrip of your choice.`,
+    timelessBody:`The primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year.`,
+    beastSpells:`You can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren't able to provide material components.`,
+    archdruid:`You can use your Wild Shape an unlimited number of times.`,
+    naturalRecovery:`you can regain some of your magical energy by sitting in meditation and communing with nature. During a short rest, you choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your druid level (rounded up), and none of the slots can be 6th level or higher. You can't use this feature again until you finish a long rest<br>
+    For example, when you are a 4th-level druid, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level slot or two 1st-level slots.`,
+    circleSpells:`Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected
+    to the land where you became a druid. Choose that land—arctic, coast, desert, forest, grassland, mountain, swamp, or Underdark—and consult the associated list of spells.<br>
+    Once you gain access to a circle spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.`,
+    circleSpellsArtic:`<table class="tableClass">
+                    <tr>
+                        <th >Druid Level</th>
+                        <th >Circle Spells</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Hold Person</a> - <a href="">Spike Growth</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Sleet Storm</a> - <a href="">Slow</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Freedom of Movement</a> - <a href="">Ice Storm</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Commune with Nature</a> - <a href="">Cone of Cold</a></td>
+                    </tr>
+                </table>`,
+    circleSpellsCoast:`<table class="tableClass">
+                    <tr>
+                        <th >Druid Level</th>
+                        <th >Circle Spells</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Mirror Image</a> - <a href="">Misty Step</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Water Breathing</a> - <a href="">Water Walk</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Control Water</a> - <a href="">Freedom of Movement</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Conjure Elemental</a> - <a href="">Scrying</a></td>
+                    </tr>
+                </table>`,
+    circleSpellsDesert:`<table class="tableClass">
+                    <tr>
+                        <th >Druid Level</th>
+                        <th >Circle Spells</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Blur</a> - <a href="">Silence</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Create Food and Water</a> - <a href="">Protection from Energy</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Blight</a> - <a href="">Hallucinatory Terrain</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Insect Plague</a> - <a href="">Wall of Stone</a></td>
+                    </tr>
+                </table>`,
+    circleSpellsForest:`<table class="tableClass">
+                    <tr>
+                        <th >Druid Level</th>
+                        <th >Circle Spells</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Barskin</a> - <a href="">Spider Climb</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Call Lighting</a> - <a href="">Plant Growth</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Divination</a> - <a href="">Freedom of Movement</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Commune with Nature</a> - <a href="">Tree Slide</a></td>
+                    </tr>
+                </table>`,
+    circleSpellsGrassland:`<table class="tableClass">
+                    <tr>
+                        <th >Druid Level</th>
+                        <th >Circle Spells</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Invisibility</a> - <a href="">Pass Without Trace</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Daylight</a> - <a href="">Haste</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Divination</a> - <a href="">Freedom of Movement</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Insect Plague</a> - <a href="">Dream</a></td>
+                    </tr>
+                </table>`,
+    circleSpellsMountain:`<table class="tableClass">
+                    <tr>
+                        <th >Druid Level</th>
+                        <th >Circle Spells</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Spider Climb</a> - <a href="">Spike Growth</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Lighting Bolt</a> - <a href="">Meld into Stone</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Stone Shape</a> - <a href="">Stoneskin</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Passwall</a> - <a href="">Wall of Stone</a></td>
+                    </tr>
+                </table>`,
+    circleSpellsSwamp:`<table class="tableClass">
+                    <tr>
+                        <th >Druid Level</th>
+                        <th >Circle Spells</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Darkness</a> - <a href="">Melf's Acid Arrow</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Water Walk</a> - <a href="">Stinking Cloud</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Freedom of Movement</a> - <a href="">Locate Creature</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Insect Plague</a> - <a href="">Scrying</a></td>
+                    </tr>
+                </table>`,
+    circleSpellsUnderdark:`<table class="tableClass">
+                    <tr>
+                        <th >Druid Level</th>
+                        <th >Circle Spells</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td><a href="">Spider Climb</a> - <a href="">Web</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td><a href="">Gaseous Form</a> - <a href="">Stinking Cloud</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td><a href="">Greater Invisibility</a> - <a href="">Stone Shape</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td><a href="">Cloudkill</a> - <a href="">Insect Plague</a></td>
+                    </tr>
+                </table>`,
+    landsStride:`Moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard.<br>
+    In addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such those created by the entangle spell.`,
+    naturesWard:`You can't be charmed or frightened by elementals or fey, and you are immune to poison and disease.`,
+    naturesSanctuary:`Creatures of the natural world sense your connection to nature and become hesitant to attack you. When a beast or plant creature attacks you, that creature must make a Wisdom saving throw against your druid spell save DC. On a failed save, the creature must choose a different target, or the attack automatically misses. On a successful save, the creature is immune to this effect for 24 hours.<br>
+    The creature is aware of this effect before it makes its attack against you.`,
+    combatWildShape:`You gain the ability to use Wild Shape on your turn as a bonus action, rather than as an action.<br>
+    Additionally, while you are transformed by Wild Shape, you can use a bonus action to expend one spell slot to regain 1d8 hit points per level of the spell slot expended.`,
+    CircleForms:`The rites of your circle grant you the ability to transform into more dangerous animal forms. Starting at 2nd level, you can use your Wild Shape to transform into a beast with a challenge rating as high as 1 (you ignore the Max. CR column of the Beast Shapes table, but must abide by the other limitations there).<br>
+    Starting at 6th level, you can transform into a beast with a challenge rating as high as your druid level divided by 3, rounded down.`,
+    PrimalStrike:`Your attacks in beast form count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.`,
+    ElementalWildShape:`You can expend two uses of Wild Shape at the same time to transform into an air elemental, an earth elemental, a fire elemental, or a water elemental.`,
+    ThousandForms:`You have learned to use magic to alter your physical form in more subtle ways. You can cast the alter self spell at will.`,
 
+    beastShapeTable:`<table class="tableClass">
+                    <tr>
+                        <th >Level</th>
+                        <th >Max. CR</th>
+                        <th >Limitations</th>
+                        <th >Example</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>1/4</td>
+                        <td>No flying or swimming speed</td>
+                        <td>Wolf</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>1/2</td>
+                        <td>No flying speed</td>
+                        <td>Crocodile</td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>Giant Eagle</td>
+                    </tr>
+                    
+                </table>`,
+    table:`<table class="tableClass">
+                    <tr>
+                        <th >Level</th>
+                        <th >Proficiency Bonus</th>
+                        <th >Features</th>
+                        <th >Cantrips Known</th>
+                        <th >1st</th>
+                        <th >2nd</th>
+                        <th >3rd</th>
+                        <th >4th</th>
+                        <th >5th</th>
+                        <th >6th</th>
+                        <th >7th</th>
+                        <th >8th</th>
+                        <th >9th</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td>+2</td>
+                        <td><a href="">Druidic</a> - <a href="">SpellCasting</a></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>+2</td>
+                        <td><a href="">Wild Shape</a> - <a href="">Druid Circle</a></td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>+2</td>
+                        <td>-</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>+2</td>
+                        <td><a href="">Wild Shape Improvement</a> - <a href="">Ability Score Improvement</a></td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>+3</td>
+                        <td>-</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>6th</td>
+                        <td>+3</td>
+                        <td><a href="">Druid Circle Feature</a></td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td>+3</td>
+                        <td>-</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>+3</td>
+                        <td><a href="">Ability Score Improvement</a> - <a href="">Wild Shape Improvement</a></td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td>+4</td>
+                        <td>-</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>10th</td>
+                        <td>+4</td>
+                        <td><a href="">Druid Circle Feature</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>11th</td>
+                        <td>+4</td>
+                        <td>-</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>12th</td>
+                        <td>+4</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>13th</td>
+                        <td>+5</td>
+                        <td>-</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>+5</td>
+                        <td><a href="">Druid Circle Feature</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>15th</td>
+                        <td>+5</td>
+                        <td>-</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>16th</td>
+                        <td>+5</td>
+                        <td>-</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>17th</td>
+                        <td>+6</td>
+                        <td>-</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>18th</td>
+                        <td>+6</td>
+                        <td><a href="">Timeless Body</a> - <a href="">Beast Spells</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>19th</td>
+                        <td>+6</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>20th</td>
+                        <td>+6</td>
+                        <td><a href="">Archdruid</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    
+                </table>`,
 }
 const fighter = {
+    name:`Fighter`,
+    hitPoints:`Hit Dice: 1d10 per fighter level<br>
+    Hit Points at 1st Level: 10 + your Constitution modifier<br>
+    Hit Points at Higher Levels: 1d10 (or 6) + your Constitution modifier per fighter level after 1st`,
+    proficiencies:`Armor: All armor, shields<br>
+    Weapons: Simple weapons, martial weapons <br>
+    Tools: None<br>
+    Saving Throws: Strength, Constitution<br>
+    Skills: Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival`,
+    abilityScore:`When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.`,
+    fightingStyle:`You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again:<br>
+    <br>
+    <b>ARCHERY:</b> You gain a +2 bonus to attack rolls you make with ranged weapons.<br>
+    <br>
+    <b>DEFENSE:</b> While you are wearing armor, you gain a +1 bonus to AC.<br>
+    <br>
+    <b>DUELING:</b> When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.<br>
+    <br>
+    <b>GREAT WEAPON FIGHTING:</b> When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll isa 1 or a 2. The weapon must have the two-handed or versatile property for you to gain this benefit.<br>
+    <br>
+    <b>PROTECTION:</b> When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.<br>
+    <br>
+    <b>TWO-WEAPON FIGHTING:</b> When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.`,
+    secondWind:`You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level.<br>
+    Once you use this feature, you must finish a short or long rest before you can use it again.`,
+    actionSurge:`You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.<br>
+    Once you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.`,
+    martialArchetype:`You choose an archetype that you strive to emulate in your combat styles and techniques. Choose Champion, Battle Master, or Eldritch Knight, all detailed at the end of the class description. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level.`,
+    extraAttack:`You can attack twice, instead of once, whenever you take the Attack action on your turn.<br>
+    The number of attacks increases to three when you 2 reach 11th level in this class and to four when you reach 20th level in this class.`,
+    indomitable:` You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can’t use this feature again until you finish a long rest.<br>
+    You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level.`,
+    improvedCritical:`Your weapon attacks score a critical hit ona roll of 19 or 20.`,
+    remarkableAthlete:`You can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn't already use your proficiency bonus.<br>
+    In addition, when you make a running long jump, the distance you can cover increases by a number of feet equal to your Strength modifier.`,
+    additionalFightingStyle:`You can choose a second option from the Fighting Style class feature.`,
+    superiorCritical:`Your weapon attacks score a critical hit on a roll of 18—20.`,
+    survivor:`You attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don't gain this benefit if you have 0 hit points.`,
+    combatSuperiority:`When you choose this archetype at 3rd level, you learn maneuvers that are fueled by special dice called superiority dice.<br>
+    <b>Maneuvers:</b> You learn three maneuvers of your choice, which are detailed under 'Maneuvers' below. Many maneuvers enhance an attack in some way. You can use only one maneuver per attack.
+    You learn two additional maneuvers of your choice at 7th, 10th, and 15th level. Each time you learn new maneuvers, you can also replace one maneuver you know with a different one.<br>
+    <b>Superiority Dice:</b> You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest.
+    You gain another superiority die at 7th level and one more at 15th level.<br>
+    <b>Saving Throws:</b> Some of your maneuvers require your target to make a saving throw to resist the maneuver's effects. The saving throw DC is calculated as follows:<br>
+    - Maneuver save DC = 8 + your proficiency bonus + your Strength or Dexterity modifier (your choice) -`,
+    studentOfWar:`You gain proficiency with one type of artisan's tools of your choice.`,
+    knowYourEnemy:`if you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The DM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics of your choice:<br>
+    <br>
+    <b>+</b> Strength score<br>
+    <b>+</b> Dexterity score<br>
+    <b>+</b> Constitution score<br>
+    <b>+</b> Armor Class<br>
+    <b>+</b> Current hit points<br>
+    <b>+</b> Total class levels (if any)<br>
+    <b>+</b> Fighter class levels (if any)`,
+    improvedCombatSuperiority:`Your superiority dice turn into d10s. At 18th level, they turn into d12s.`,
+    relentless:`When you roll initiative and have no superiority dice remaining, you regain 1 superiority die.`,
+    maneuvers:`<b>Commander's Strike:</b> When you take the Attack action on your turn, you can forgo one of your attacks and use a bonus action to direct one of your companions to strike. When you do so, choose a friendly creature who can see or hear you and expend one superiority die. That creature can immediately use its reaction to make one weapon attack, adding the superiority die to the attac's damage roll.<br>
+    <br>
+    <b>Disarming Attack:</b> When you hit a creature with a weapon attack, you can expend one superiority die to attempt to disarm the target, forcing it to drop one item of your choice that it's holding. You add the superiority die to the attack's damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet.<br>
+    <br>
+    <b>Distracting Strike:</b> When you hit a creature with a weapon attack, you can expend one superiority die to distract the creature, giving your allies an opening. You add the superiority die to the attack's damage roll. The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn.<br>
+    <br>
+    <b>Evasive Footwork:</b> When you move, you can expend one superiority die, rolling the die and adding the number rolled to your AC until you stop moving.<br>
+    <br>
+    <b>Feinting Attack:</b> You can expend one superiority die and use a bonus action on your turn to feint, choosing one creature within 5 feet of you as your target. You have advantage on your next attack roll against that creature. If that attack hits, add the superiority die to the attack's damage roll.<br>
+    <br>
+    <b>Goading Attack:</b> When you hit a creature with a weapon attack, you can expend one superiority die to attempt to goad the target into attacking you. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn.<br>
+    <br>
+    <b>Lunging Attack:</b> When you make a melee weapon attack on your turn, you can expend one superiority die to increase your reach for that attack by 5 feet. If you hit, you add the superiority die to the attack's damage roll.<br>
+    <br>
+    <b>Maneuvering Attack:</b> When you hit a creature with a weapon attack, you can expend one superiority die to maneuver one of your comrades into a more advantageous position. You add the superiority die to the attack's damage roll, and you choose a friendly creature who can see or hear you. That creature can use its reaction to move up to half its speed without provoking opportunity attacks from the target of your attack.<br>
+    <br>
+    <b>Menacing Attack:</b> When you hit a creature with a weapon attack, you can expend one superiority die to attempt to frighten the target. You add the superiority die to the attack's damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn.<br>
+    <br>
+    <b>Parry:</b> When another creature damages you with a melee attack, you can use your reaction and expend one superiority die to reduce the damage by the number you roll on your superiority die + your Dexterity modifier.<br>
+    <br>
+    <b>Precision Attack:</b> When you make a weapon attack roll against a creature, you can expend one superiority die to add it to the roll. You can use this maneuver before or after making the attack roll, but before any effects of the attack are applied.<br>
+    <br>
+    <b>Pushing Attack:</b> When you hit a creature with a weapon attack, you can expend one superiority die to attempt to drive the target back. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you push the target up to 15 feet away from you.<br>
+    <br>
+    <b>Rally:</b> On your turn, you can use a bonus action and expend one superiority die to bolster the resolve of one of your companions. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hit points equal to the superiority die roll + your Charisma modifier.<br>
+    <br>
+    <b>Riposte:</b> When a creature misses you with a melee attack, you can use your reaction and expend one superiority die to make a melee weapon attack against the creature. If you hit, you add the superiority die to the attack's damage roll.<br>
+    <br>
+    <b>Sweeping Attack:</b> When you hit a creature with a melee weapon attack, you can expend one superiority die to attempt to damage another creature with the same attack. Choose another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your superiority die. The damage is of the same type dealt by the original attack.<br>
+    <br>
+    <b>Trip Attack:</b> When you hit a creature with a weapon attack, you can expend one superiority die to attempt to knock the target down. You add the superiority die to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. Ona failed save, you knock the target prone.`,
+    spells:`<b>Cantrips:</b> You learn two cantrips of your choice from the wizard spell list. You learn an additional wizard cantrip of your choice at 10th level.<br>
+    <br>
+    <b>Spells:</b> You regain all expended spell slots when you finish a long rest.<br>
+    You know three 1st-level wizard spells of your choice, two of which you must choose from the abjuration and evocation spells on the wizard spell list.<br>
+    The Spells Known column of <a href="">the Eldritch Knight Spellcasting table</a> shows when you learn more wizard spells of 1st level or higher. Each of these spells must be an abjuration or evocation spell of your choice, and must be of a level for which you have spell slots. For instance, when you reach 7th level in this class, you can learn one new spell of 1st or 2nd level. The spells you learn at 8th, 14th, and 20th level can come from any school of magic<br>
+    Whenever you gain a level in this class, you can replace one of the wizard spells you know with another spell of your choice from the wizard spell list. The new spell must be of a level for which you have spell slots, and it must be an abjuration or evocation spell, unless you're replacing the spell you gained at 8th, 14th. or 20th level.<br>
+    Intelligence is your spellcasting ability for your wizard spells.`,
+    weaponBond:`You learn a ritual that creates a magical bond between yourself and one weapon. You perform the ritual over the course of 1 hour, which can be done<br>
+    <br>
+    <table class="tableClass">
+                    <tr>
+                        <th >Fighter Level</th>
+                        <th >Cantrips Known</th>
+                        <th >Spells Known</th>
+                        <th >1st</th>
+                        <th >2nd</th>
+                        <th >3rd</th>
+                        <th >4th</th>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>6th</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>2</td>
+                        <td>6</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td>2</td>
+                        <td>6</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>10th</td>
+                        <td>3</td>
+                        <td>7</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>11th</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>12th</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>13th</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>3</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>15th</td>
+                        <td>3</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>16th</td>
+                        <td>3</td>
+                        <td>11</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>17th</td>
+                        <td>3</td>
+                        <td>11</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>18th</td>
+                        <td>3</td>
+                        <td>11</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>19th</td>
+                        <td>3</td>
+                        <td>12</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>20th</td>
+                        <td>3</td>
+                        <td>13</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                    
+                </table>
+    <br>
+    <br>
+    During a short rest. The weapon must be within your reach throughout the ritual, at the conclusion of which you touch the weapon and forge the bond.<br>
+    Once you have bonded a weapon to yourself, you can't be disarmed of that weapon unless you are incapacitated. If it is on the same plane of existence, you can summon that weapon as a bonus action on your turn, causing it to teleport instantly to your hand.<br>
+    You can have up to two bonded weapons, but can summon only one at a time with your bonus action.
+    If you attempt to bond with a third weapon, you must break the bond with one of the other two.`,
+    warMagic:`When you use your action to cast a cantrip, you can make one weapon attack as a bonus action.`,
+    eldritchStrike:`You learn how to make your weapon strikes undercut a creature's resistance to your spells. When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw
+    it makes against a spell you cast before the end of your next turn.`,
+    arcaneCharge:`You gain the ability to teleport up to 30 feet to an unoccupied space you can see when you use your Action Surge. You can teleport before or after the additional action.`,
+    improvedWarMagic:`When you use your action to cast a spell, you can make one weapon attack asa bonus action.`,
+    table:`<table class="tableClass">
+                    <tr>
+                        <th >Level</th>
+                        <th >Proficiency Bonus</th>
+                        <th >Features</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td>+2</td>
+                        <td><a href="">Fighting Style</a> - <a href="">Second Wind</a></td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>+2</td>
+                        <td><a href="">Action Surge (one use)</a></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>+2</td>
+                        <td><a href="">Martial Archetype</a></td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>+2</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>+3</td>
+                        <td><a href="">Extra attack</a></td>
+                    </tr>
+                    <tr>
+                        <td>6th</td>
+                        <td>+3</td>
+                        <td><a href="">>Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td>+3</td>
+                        <td><a href="">Martial Archetype Feature</a></td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>+3</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td>+4</td>
+                        <td><a href="">Indomitable (one use)</a></td>
+                    </tr>
+                    <tr>
+                        <td>10th</td>
+                        <td>+4</td>
+                        <td><a href="">Martial Archetype Feature</a></td>
+                    </tr>
+                    <tr>
+                        <td>11th</td>
+                        <td>+4</td>
+                        <td><a href="">Extra Attack (2)</a></td>
+                    </tr>
+                    <tr>
+                        <td>12th</td>
+                        <td>+4</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>13th</td>
+                        <td>+5</td>
+                        <td><a href="">Indomitable (two uses)</a></td>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>+5</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>15th</td>
+                        <td>+5</td>
+                        <td><a href="">Martial Archetype Feature</a></td>
+                    </tr>
+                    <tr>
+                        <td>16th</td>
+                        <td>+5</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>17th</td>
+                        <td>+6</td>
+                        <td><a href="">Action Surge (two uses)</a> - <a href="">Indomitable (three uses)</a></td>
+                    </tr>
+                    <tr>
+                        <td>18th</td>
+                        <td>+6</td>
+                        <td><a href="">Martial Archetype Feature</a></td>
+                    </tr>
+                    <tr>
+                        <td>19th</td>
+                        <td>+6</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>20th</td>
+                        <td>+6</td>
+                        <td><a href="">Extra Attack (3)</a></td>
+                    </tr>
 
+                </table>`,
 }
 const monk = {
-
+    name:`Monk`,
+    hitPoints:`Hit Dice: 1d8 per monk level<br>
+    Hit Points at Ist Level: 8 + your Constitution modifier<br>
+    Hit Points at Higher Levels: 1d8 (or 5) + your Constitution modifier per monk level after Ist`,
+    proficiencies:`Armor: None<br>
+    Weapons: Simple weapons, shortswords<br>
+    Tools: Choose one type of artisan's tools or one musical instrument<br>
+    Saving Throws: Strength, Dexterity<br>
+    Skills: Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth`,
+    abilityScore:`When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.`,
+    unarmoredDefense:`While you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier.`,
+    martialArts:`Your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two-handed or heavy property.
+    You gain the following benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:<br>
+    <br>
+    <b>+</b> You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes and monk weapons.<br>
+    <b>+</b> You can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.<br>
+    <b>+</b> When you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action. For example, if you take the Attack action and attack with a quarterstaff, you can also make an unarmed strike as a bonus action, assuming you haven't already taken a bonus action this turn.<br>
+    <br>
+    Certain monasteries use specialized forms of the monk weapons. For example, you might use a club that is two lengths of wood connected by a short chain (called a nunchaku) or a sickle with a shorter, straighter blade (called a kama). Whatever name you use for a monk weapon, you can use the game statistics provided for the weapon in chapter 5.`,
+    ki:`Your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table.<br>
+    You can spend these points to fuel various ki features. You start knowing three such features: <b>Flurry of Blows, Patient Defense, and Step of the Wind</b>. You learn more ki features as you gain levels in this class.<br>
+    <br>
+    <b>Flurry of Blows</b>: Immediately after you take the Attack action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action.<br>
+    <b>Patient Defense</b>: You can spend 1 ki point to take the Dodge action asa bonus action on your turn.<br>
+    <b>Step of the Wind</b>: You can spend 1 ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turn.<br>
+    <br>
+    When you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself. You must spend at least 30 minutes of the rest meditating to regain your ki points.<br>
+    Some of your ki features require your target to make a saving throw to resist the feature's effects. The saving throw DC is calculated as follows:<br>
+    <br>
+    <b>Ki save DC = 8 + your proficiency bonus + your Wisdom modifier</b>`,
+    unarmoredMovement:`Your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.<br>
+    At 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.`,
+    monasticTradition:`You commit yourself to a monastic tradition: the Way of the Open Hand, the Way of Shadow, or the Way of the Four Elements, all detailed at the end of the class description.<br> 
+    Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level.`,
+    deflectMissiles:`You can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level.<br>
+    If you reduce the damage to 0, you can catch the missile if it is small enough for you to hold in one hand and you have at least one hand free. If you catch a missile in this way, you can spend 1 ki point to make a ranged attack with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon for the attack.`,
+    slowFall:`You can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level.`,
+    extraAttack:`You can attack twice, instead of once, whenever you take the Attack action on your turn.`,
+    stunningStrike:`You can interfere with the flow of ki in an opponent's body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn.`,
+    kiEmpoweredStrikes:`Your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.`,
+    evasion:`Your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a fireball spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.`,
+    stillnessOfMind:`You can use your action to end one effect on yourself that is causing you to be charmed or frightened.`,
+    purityOfBody:`Your mastery of the ki flowing through you makes you immune to disease and poison.`,
+    tongueOfTheSunAndMoon:`You learn to touch the ki of other minds so that you understand all spoken languages. Moreover, any creature that can understand a language can understand what you say.`,
+    diamondSoul:`Your mastery of ki grants you proficiency in all saving throws.<br>
+    Additionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result.`,
+    timelessBody:`Your ki sustains you so that you suffer none of the frailty of old age, and you can’t be aged magically. You can still die of old age, however. In addition, you no longer need food or water.`,
+    emptyBody:`You can use your action to spend 4 ki points to become invisible for 1 minute, During that time, you also have resistance to all damage but force damage.<br>
+    Additionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you can't take any other creatures with you.`,
+    perfectSelf:`When you roll for initiative and have no ki points remaining, you regain 4 ki points.`,
+    openHandTechnique:`You can manipulate your enemy's ki when you harness your own. Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, you can impose one of the following effects on that target:<br>
+    <br>
+    <b>+</b> It must succeed on a Dexterity saving throw or be knocked prone.<br>
+    <b>+</b> It must make a Strength saving throw. If it fails, you can push it up to 15 feet away from you.<br>
+    <b>+</b> It can’t take reactions until the end of your next turn.`,
+    wholenessOfBody:`You gain the ability to heal yourself. As an action, you can regain hit points equal to three times your monk level. You must finish a long rest before you can use this feature again.`,
+    tranquility:`You can enter a special meditation that surrounds you with an aura of peace. At the end of a long rest, you gain the effect of a sanctuary spell that lasts until the start of your next long rest (the spell can end early as normal). The saving throw DC for the spell equals 8 + your Wisdom modifier + your proficiency bonus.`,
+    quiveringPalm:`You gain the ability to set up lethal vibrations in someone's body. When you hit a creature with an unarmed strike, you can spend 3 ki points to start these imperceptible vibrations, which last for a number of days equal to your monk level. The vibrations are harmless unless you use your action to end them. To do so, you and the target must be on the same plane of existence. When you use this action, the creature must make a Constitution saving throw. If it fails, it is reduced to 0 hit points. If it succeeds, it takes 10d10 necrotic damage.<br>
+    You can have only one creature under the effect of this feature at a time. You can choose to end the vibrations harmlessly without using an action.`,
+    shadowArts:`You can use your ki to duplicate the effects of certain spells. As an action, you can spend 2 ki points to cast darkness, darkvision, pass without trace, or silence, without providing material components. Additionally, you gain the <b>minor illusion cantrip</b> if you dont already know it.`,
+    shadowStep:`You gain the ability to step from one shadow into another. When you are in dim light or darkness, as a bonus action you can teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn.`,
+    cloakOfShadows:`You have learned to become one with the shadows. When you are in an area of dim light or darkness, you can use your action to become invisible. You remain invisible until you make an attack, cast a spell, or are in an area of bright light.`,
+    opportunist:`You can exploit a creature's momentary distraction when it is hit by an attack. Whenever a creature within 5 feet of you is hit by an attack made by a creature other than you, you can use your reaction to make a melee attack against that creature.`,
+    discipleOfTheElements:`You learn magical disciplines that harness the power of the four elements. A discipline requires you to spend ki points each time you use it.<br>
+    You know the Elemental Attunement discipline and one other elemental discipline of your choice, which are detailed in the “Elemental Disciplines” section below. You learn one additional elemental discipline of your choice at 6th, 11th, and 17th level.<br>
+    Whenever you learn a new elemental discipline, you can also replace one elemental discipline that you already know with a different discipline.
+    <b>Casting Elemental Spells</b>: Some elemental disciplines allow you to cast spells. To cast one of these spells, you use its casting time and other rules, but you <b>don't need to provide material components for it</b>.<br>
+    Once you reach 5th level in this class, you can spend additional ki points to increase the level of an elemental discipline spell that you cast, provided that the spell has an enhanced effect at a higher level, as burning hands does. The spell's level increases by 1 for each additional ki point you spend. For example, if you are a 5th-level monk and use Sweeping Cinder Strike to cast burning hands, you can spend 3 ki points to cast it as a 2nd-level spell (the discipline's base cost of 2 ki points plus 1).
+    The maximum number of ki points you can spend to cast a spell in this way (including its base ki point cost and any additional ki points you spend to increase its level) is determined by your monk level, as shown in the Spells and Ki Points table.<br>
+    <br>
+    <table class="tableClass">
+                    <tr>
+                        <th>Monk Levels</th>
+                        <th>Maximum Ki Point for a Spell</th>
+                    </tr>
+                    <tr>
+                        <td>5th to 8th</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>9th to 12th</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>13th to 16th</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>17th to 20th</td>
+                        <td>6</td>
+                    </tr>
+                </table>`,
+    elementalDisciplines:`The elemental disciplines are presented in alphabetical order. If a discipline requires a level, you must be that level in this class to learn the discipline.<br>
+    <br>
+    <b>Breath of Winter</b>: (17th Level Required). You can spend 6 ki points to cast <b>Cone of Cold</b>.<br>
+    <b>Clench of the North Wind</b>: (6th Level Required). You can spend 3 ki points to cast <b>Hold Person</b>.<br>
+    <b>Elemental Attunement.</b>: You can use your action to briefly control elemental forces nearby, causing one of the following effects of your choice:<br>
+    <b>+</b> Create a harmless, instantaneous sensory effect related to air, earth, fire, or water, such as a shower of sparks, a puff of wind, a spray of light mist, or a gentle rumbling of stone.<br>
+    <b>+</b> Instantaneously light or snuff out a candle, a torch, or asmall campfire.<br>
+    <b>+</b> Chill or warm up to 1 pound of nonliving material for up to 1 hour.<br>
+    <b>+</b> Cause earth, fire, water, or mist that can fit within a 1-foot cube to shape itself into a crude form you designate for 1 minute.<br>
+    <b>Eternal Mountain Defense</b>: (11th Level Required). You can spend 5 ki points to cast <b>Stoneskin</b>, targeting yourself.<br>
+    <b>Fangs of the Fire Snake</b>: When you use the Attack action on your turn, you can spend 1 ki point to cause tendrils of flame to stretch out from your fists and feet. Your reach with your unarmed strikes increases by 10 feet for that action, as well as the rest of the turn.<br>
+    A hit with such an attack deals fire damage instead of bludgeoning damage, and if you spend 1 ki point when the attack hits, it also deals an extra 1d10 fire damage.<br>
+    <b>Fist of Four Thunders</b>: You can spend 2 ki points to cast <b>Thunderwave</b>.
+    <b>Fist of Unbroken Air</b>: You can create a blast of compressed air that strikes like a mighty fist. As an action, you can spend 2 ki points and choose a creature within 30 feet of you. That creature must make a Strength saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10 bludgeoning damage for each additional ki point you spend, and you can push the creature up to 20 feet away from you and knock it prone. On a successful save, the creature takes half as much damage, and you don't push it or knock it prone.
+    <b>Flames of the Phoenix</b>: (11th Level Required). You can spend 4 ki points to cast <b>Fireball</b>.
+    <b>Gong of the Summit</b>: (6th Level Required). You can spend 3 ki points to cast <b>Shatter</b>.
+    <b>Mist Stance</b>: (11th Level Required). You can spend 4 ki points to cast <b>Gaseous Form</b>, targeting yourself.
+    <b>Ride the Wind</b>: (11th Level Required). You can spend 4 ki points to cast <b>Fly</b>, targeting yourself.
+    <b>River of Hungry Flame</b>: (17th Level Required). You can spend 5 ki points to cast <b>Wall of Fire</b>.
+    <b>Rush of the Gale Spirits</b>. You can spend 2 ki points to cast <b>Gust of Wind</b>.
+    <b>Shape the Flowing River</b>: As an action, you can spend 1 ki point to choose an area of ice or water no larger than 30 feet on a side within 120 feet of you. You can change water to ice within the area and vice versa, and you can reshape ice in the area in any manner you choose. You can raise or lower the ice's elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can't exceed half the area's largest dimension. For example, if you affect a 30-foot square, you can create a pillar up to 15 feet high, raise or lower the square's elevation by up to 15 feet, dig a trench up to 15 feet deep, and so on. You can't shape the ice to trap or injure a creature in the area.
+    <b>Sweeping Cinder Strike</b>: You can spend 2 ki points to cast <b>burning hands</b>.
+    <b>Water Whip</b>: You can spend 2 ki points as a bonus action to create a whip of water that shoves and pulls a creature to unbalance it. A creature that you can see that is within 30 feet of you must make a Dexterity saving throw. On a failed save, the creature takes 3d10 bludgeoning damage, plus an extra 1d10 bludgeoning damage for each additional ki point you spend, and you can either knock it prone or pull it up to 25 feet closer to you. On a successful save, the creature takes half as much damage, and you don't pull it or knock it prone.
+    <b>Wave of Rolling Earth</b>: (17th Level Required) You can spend 6 ki points to cast wall of stone.`,
+    table:`<table class="tableClass">
+                    <tr>
+                        <th >Level</th>
+                        <th >Proficiency Bonus</th>
+                        <th >Martial Arts</th>
+                        <th >Ki Points</th>
+                        <th >Unarmored Movement</th>
+                        <th >Features</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td>+2</td>
+                        <td>1d4</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><a href="">Unarmored Defense</a> - <a href="">Martial Arts</a></td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>+2</td>
+                        <td>1d4</td>
+                        <td>2</td>
+                        <td>+10 ft.</td>
+                        <td><a href="">Ki</a> - <a href="">Unarmored Movement</a></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>+2</td>
+                        <td>1d4</td>
+                        <td>3</td>
+                        <td>+10 ft.</td>
+                        <td><a href="">Monastic Tradition</a> - <a href="">Deflect Missiles</a></td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>+2</td>
+                        <td>1d4</td>
+                        <td>4</td>
+                        <td>+10 ft.</td>
+                        <td><a href="">Ability Score Improvement</a> - <a href="">Slow Fall</a></td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>+3</td>
+                        <td>1d6</td>
+                        <td>5</td>
+                        <td>+10 ft.</td>
+                        <td><a href="">Extra Attack</a> - <a href="">Stunning Strike</a></td>
+                    </tr>
+                    <tr>
+                        <td>6th</td>
+                        <td>+3</td>
+                        <td>1d6</td>
+                        <td>6</td>
+                        <td>+15 ft.</td>
+                        <td><a href="">Ki-Empowered Strikes</a> - <a href="">Monastic Tradition Feature</a></td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td>+3</td>
+                        <td>1d6</td>
+                        <td>7</td>
+                        <td>+15 ft.</td>
+                        <td><a href="">Evasion</a> - <a href="">Stillness of Mind</a></td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>+3</td>
+                        <td>1d6</td>
+                        <td>8</td>
+                        <td>+15 ft.</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td>+4</td>
+                        <td>1d6</td>
+                        <td>9</td>
+                        <td>+15 ft.</td>
+                        <td><a href="">Unarmored Movement Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>10th</td>
+                        <td>+4</td>
+                        <td>1d6</td>
+                        <td>10</td>
+                        <td>+20 ft.</td>
+                        <td><a href="">Purity of Body</a></td>
+                    </tr>
+                    <tr>
+                        <td>11th</td>
+                        <td>+4</td>
+                        <td>1d8</td>
+                        <td>11</td>
+                        <td>+20 ft.</td>
+                        <td><a href="">Monastic Tradition Feature</a></td>
+                    </tr>
+                    <tr>
+                        <td>12th</td>
+                        <td>+4</td>
+                        <td>1d8</td>
+                        <td>12</td>
+                        <td>+20 ft.</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>13th</td>
+                        <td>+5</td>
+                        <td>1d8</td>
+                        <td>13</td>
+                        <td>+20 ft.</td>
+                        <td><a href="">Tongue of the Sun and Moon</a></td>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>+5</td>
+                        <td>1d8</td>
+                        <td>14</td>
+                        <td>+25 ft.</td>
+                        <td><a href="">Diamond Soul</a></td>
+                    </tr>
+                    <tr>
+                        <td>15th</td>
+                        <td>+5</td>
+                        <td>1d8</td>
+                        <td>15</td>
+                        <td>+25 ft.</td>
+                        <td><a href="">Timeless Body</a></td>
+                    </tr>
+                    <tr>
+                        <td>16th</td>
+                        <td>+5</td>
+                        <td>1d8</td>
+                        <td>16</td>
+                        <td>+25 ft.</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>17th</td>
+                        <td>+6</td>
+                        <td>1d10</td>
+                        <td>17</td>
+                        <td>+25 ft.</td>
+                        <td><a href="">Monastic Tradition Feature</a></td>
+                    </tr>
+                    <tr>
+                        <td>18th</td>
+                        <td>+6</td>
+                        <td>1d10</td>
+                        <td>18</td>
+                        <td>+30 ft.</td>
+                        <td><a href="">Empty Body</a></td>
+                    </tr>
+                    <tr>
+                        <td>19th</td>
+                        <td>+6</td>
+                        <td>1d10</td>
+                        <td>19</td>
+                        <td>+30 ft.</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                    </tr>
+                    <tr>
+                        <td>20th</td>
+                        <td>+6</td>
+                        <td>1d10</td>
+                        <td>20</td>
+                        <td>+30 ft.</td>
+                        <td><a href="">Perfect Self</a></td>
+                    </tr>
+                    
+                </table>`,
 }
 const paladin = {
     name:`Paladin`,
@@ -1905,7 +3781,7 @@ const rogue = {
                         <td>4</td>
                         <td>3</td>
                         <td>3</td>
-                        <td>-</td>>
+                        <td>-</td>
                     </tr>
                     <tr>
                         <td>19th</td>
@@ -2058,7 +3934,487 @@ const rogue = {
                 </table>`,
 }
 const sorcerer = {
-
+    name:`Sorcerer`,
+    hitPoints:`Hit Dice: 1d6 per sorcerer level<br>
+    Hit Points at 1st Level: 6 + your Constitution modifier<br>
+    Hit Points at Higher Levels: 1d6 (or 4) + your Constitution modifier per sorcerer level after 1st`,
+    proficiencies:`Armor: None<br>
+    Weapons: Daggers, darts, slings, quarterstaffs, light crossbows<br>
+    Tools: None<br>
+    Saving Throws: Constitution, Charisma<br> 
+    Skills: Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion`,
+    abilityScore:`When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.`,
+    spells:`You know <b>four cantrips</b> of your choice from the <a href="">sorcerer spell list</a>. You learn additional sorcerer cantrips of your choice at higher levels.<br>
+    You know two 1st-level spells of your choice from the <a href="">sorcerer spell list</a>.<br>
+    Additionally, when you gain a level in this class, you can choose one of the sorcerer spells you know and replace it with another spell from the sorcerer spell list, which also must be of a level for which you have spell slots.<br>
+    Charisma is your spellcasting ability for your sorcerer spells,<br>
+    <b>Spell save DC = 8 + your proficiency bonus + your Charisma modifier<br>
+    Spell attack modifier = your proficiency bonus + your Charisma modifier</b>`,
+    sorcerousOrigin:`Choose a sorcerous origin, which describes the source of your innate magical power: Draconic Bloodline or Wild Magic. both detailed at the end of the class description.<br>
+    Your choice grants you features when you choose it at 1st level and again at 6th, 14th, and 18th level.`,
+    fontOfMagic:`You tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects.<br>
+    <b>Sorcery Points:</b> You have 2 sorcery points, and you gain more as you reach higher levels, as shown in the Sorcery Points column of the Sorcerer table. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest.<br>
+    <b>Flexible Casting:</b> You can use your sorcery points to gain additional spell slots, or sacrifice spell slots to gain additional sorcery points. You learn other ways to use your sorcery points as you reach higher levels.
+    <b>Creating Spell Slots:</b> You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.<br>
+    <b>Converting s Spell Slot to Sorcery Points</b>: As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot's level.<br>
+    <br>
+    <table class="tableClass">
+                    <tr>
+                        <th>Spell Slot Level</th>
+                        <th>Sorcery Point Cost</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>7</td>
+                    </tr>
+                </table>`,
+    metamagic:`You gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You gain another one at 10th and 17th level.<br>
+    You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.<br>
+    <b>Careful Spell</b>:When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell’s full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature), A chosen creature automatically succeeds on its saving throw against the spell.<br>
+    <b>Distant Spell</b>:When you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell.<br>
+    When you cast a spell that has a range of touch, you can spend 1 sorcery point to make the range of the spell 30 feet.<br>
+    <b>Empowered Spell</b>:When you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls.<br>
+    You can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell.<br>
+    <b>Extended Spell</b>:When you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours.<br>
+    <b>Heightened Spell</b>:When you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 sorcery points to give one target of the spell disadvantage on its first saving throw made against the spell.<br>
+    <b>Quickened Spell</b>:When you cast a spell that has a casting time of 1 action. you can spend 2 sorcery points to change the casting time to 1 bonus action for this casting.<br>
+    <b>Subtle Spell</b>:When you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components.<br>
+    <b>Twinned Spell</b>:When you cast a spell that targets only one creature and doesn't have a range of self, you can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).
+    `,
+    sorcerousRestoration:`At 20th level, you regain 4 expended sorcery points whenever you finish a short rest.`,
+    dragonAncestor:`You choose one type of dragon as your ancestor. The damage type associated with each dragon is used by features you gain later.<br>
+    You can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check.<br>
+    <br>
+    <table class="tableClass">
+                    <tr>
+                        <th>Dragon</th>
+                        <th>Damage Type</th>
+                    </tr>
+                    <tr>
+                        <td>Black</td>
+                        <td>Acid</td>
+                    </tr>
+                    <tr>
+                        <td>Blue</td>
+                        <td>Lighting</td>
+                    </tr>
+                    <tr>
+                        <td>Brass</td>
+                        <td>Fire</td>
+                    </tr>
+                    <tr>
+                        <td>Bronze</td>
+                        <td>Lighting</td>
+                    </tr>
+                    <tr>
+                        <td>Copper</td>
+                        <td>Acid</td>
+                    </tr>
+                    <tr>
+                        <td>Gold</td>
+                        <td>Fire</td>
+                    </tr>
+                    <tr>
+                        <td>Green</td>
+                        <td>Poison</td>
+                    </tr><tr>
+                        <td>Red</td>
+                        <td>Fire</td>
+                    </tr><tr>
+                        <td>Silver</td>
+                        <td>Cold</td>
+                    </tr><tr>
+                        <td>White</td>
+                        <td>Cold</td>
+                    
+                </table>`,
+    draconicResilience:`As magic flows through your body, it causes physical traits of your dragon ancestors to emerge. At 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class. Additionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren't wearing armor, your AC equals 13 + your Dexterity modifier.`,
+    elementalAffinity:`When you cast a spell that deals damage of the type associated with your draconic ancestry, add your Charisma modifier to that damage. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour.`,
+    dragonWings:`you gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to your current speed. You can create these wings as a bonus action on your turn. They last until you dismiss them as a bonus action on your turn.<br>
+    You can't manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them.`,
+    draconicPresence:`You can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your concentration (as if you were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (if you chose awe) or frightened (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours.`,
+    wildMagicSurge:`Your spellcasting can unleash surges of untamed magic. Immediately after you cast a sorcerer spell of 1st level or higher, the DM can have you roll a d20. If you roll a 1, roll on the Wild Magic Surge table to create a random magical effect.<br>
+    <a href="">Click here for the Wild Magic Surge Table</a>`,
+    tidesOfChaos:`You can manipulate the forces of chance and chaos to gain advantage on one attack roll, ability check, or saving throw. Once you do so, you must finish a long rest before you can use this feature again. Any time before you regain the use of this feature, the DM can have you roll on the Wild Magic Surge table immediately after you cast a sorcerer spell of 1st level or higher. You then regain the use of this feature.`,
+    BendLuck:`You have the ability to twist fate using your wild magic. When another creature you can see makes an attack roll, an ability check, or a saving throw, you can use your reaction and spend 2 sorcery points to roll 1d4 and apply the number rolled as a bonus or penalty (your choice) to the creature's roll. You can do so after the creature rolls but before any effects of the roll occur.`,
+    controlledChaos:`You gain a modicum of control over the surges of your wild magic. Whenever you roll on the Wild Magic Surge table, you can roll twice and use either number.`,
+    spellBombardment:`The harmful energy of your spells intensifies. When you roll damage for a spell and roll the highest number possible on any of the dice, choose one of those dice, roll it again and add that roll to the damage. You can use the feature only once per turn.`,
+    table:`<table class="tableClass">
+                    <tr>
+                        <th >Level</th>
+                        <th >Proficiency Bonus</th>
+                        <th >Sorcery Points</th>
+                        <th >Features</th>
+                        <th >Cantrips Known</th>
+                        <th >Spells Known</th>
+                        <th >1st</th>
+                        <th >2nd</th>
+                        <th >3rd</th>
+                        <th >4th</th>
+                        <th >5th</th>
+                        <th >6th</th>
+                        <th >7th</th>
+                        <th >8th</th>
+                        <th >9th</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td>+2</td>
+                        <td>-</td>
+                        <td><a href="">Spellcasting</a> - <a href="">Sorcerous Origin</a></td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>+2</td>
+                        <td>2</td>
+                        <td><a href="">Font of Magic</a></td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>+2</td>
+                        <td>3</td>
+                        <td><a href="">Metamagic</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>+2</td>
+                        <td>4</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>+3</td>
+                        <td>5</td>
+                        <td>-</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>6th</td>
+                        <td>+3</td>
+                        <td>6</td>
+                        <td><a href="">Sorcerous Origin feature</a></td>
+                        <td>5</td>
+                        <td>7</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td>+3</td>
+                        <td>7</td>
+                        <td>-</td>
+                        <td>5</td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>+3</td>
+                        <td>8</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>5</td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td>+4</td>
+                        <td>9</td>
+                        <td>-</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>10th</td>
+                        <td>+4</td>
+                        <td>10</td>
+                        <td><a href="">Metamagic</a></td>
+                        <td>6</td>
+                        <td>11</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>11th</td>
+                        <td>+4</td>
+                        <td>11</td>
+                        <td>-</td>
+                        <td>6</td>
+                        <td>12</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>12th</td>
+                        <td>+4</td>
+                        <td>12</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>6</td>
+                        <td>12</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>13th</td>
+                        <td>+5</td>
+                        <td>13</td>
+                        <td>-</td>
+                        <td>6</td>
+                        <td>13</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>+5</td>
+                        <td>14</td>
+                        <td><a href="">Sorcerous Origin feature</a></td>
+                        <td>6</td>
+                        <td>13</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>15th</td>
+                        <td>+5</td>
+                        <td>15</td>
+                        <td>-</td>
+                        <td>6</td>
+                        <td>14</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>16th</td>
+                        <td>+5</td>
+                        <td>16</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>6</td>
+                        <td>14</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>17th</td>
+                        <td>+6</td>
+                        <td>17</td>
+                        <td><a href="">Metamagic</a></td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>18th</td>
+                        <td>+6</td>
+                        <td>18</td>
+                        <td><a href="">Sorcerous Origin feature</a></td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>19th</td>
+                        <td>+6</td>
+                        <td>19</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>20th</td>
+                        <td>+6</td>
+                        <td>20</td>
+                        <td><a href="">Sorcerous Restoration</a></td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    
+                </table>`,
 }
 const warlock = {
     name:`Warlock`,
@@ -2384,7 +4740,432 @@ const warlock = {
                         </table>`
 }
 const wizard = {
-
+    name:`Wizard`,
+    hitPoints:`Hit Dice: 1d6 per wizard level<br>
+    Hit Points at 1st Level: 6 + your Constitution modifier<br>
+    Hit Points at Higher Levels: 1d6 (or 4) + your Constitution modifier per wizard level after 1st`,
+    proficiencies:`Armor: None<br>
+    Weapons: Daggers, darts, slings, quarterstaffs, light crossbows<br>
+    Tools: None<br>
+    Saving Throws: Intelligence, Wisdom<br> 
+    Skills: Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion`,
+    spellbook:`The spells that you add to your spellbook as you gain levels reflect the arcane research you conduct on your own, as well as intellectual breakthroughs you have had about the nature of the multiverse. You might find other spells during your adventures. You could discover a spell recorded on a scroll in an evil wizard's chest, for example, or in a dusty tome in an ancient library.<br>
+    <b>+</b> Copying a Spell into the Book: When you find a wizard spell of 1st level or higher, you can add it to your spellbook if it is of a level for which you have spell slots and if you can spare the time to decipher and copy it.<br>
+    Copying a spell into your spellbook involves reproducing the basic form of the spell, then deciphering the unique system of notation used by the wizard who wrote it. You must practice the spell until you understand the sounds or gestures required, then transcribe it into your spellbook using your own notation.<br>
+    For each level of the spell, the process takes 2 hours and costs 50 gp. The cost represents material components you expend as you experiment with the spell to master it, as well as the fine inks you need to record it. Once you have spent this time and money, you can prepare the spell just like your other spells.
+    <b>+</b> Replacing the Book: You can copy a spell from your own spellbook into another book—for example, if you want to make a backup copy of your spellbook. This is just like copying a new spell into your spellbook, but faster and easier, since you understand your own notation and already know how to cast the spell. You need spend only 1 hour and 10 gp for each level of the copied spell.<br>
+    If you lose your spellbook, you can use the same procedure to transcribe the spells that you have prepared into a new spellbook. Filling out the remainder of your spellbook requires you to find new spells to do so, as normal. For this reason, many wizards keep backup spellbooks in a safe place.<br>
+    <b>+</b> The Book's Appearance: Your spellbook is a unique compilation of spells, with its own decorative flourishes and margin notes. It might be a plain, functional leather volume that you received as a gift from your master, a finely bound gilt-edged tome you found in an ancient library, or even a loose collection of notes scrounged together after you lost your previous spellbook in a mishap.`,
+    spells:`<b>Cantrips</b>: You know three cantrips of your choice from the <a href="">wizard spell list</a>. You learn additional wizard cantrips of your choice at higher levels.<br>
+    You prepare the list of wizard spells that are available for you to cast. To do so. choose a number of wizard spells from your spellbook equal to your Intelligence modifier + your wizard level (minimum of one spell). The spells must be of a level for which you have spell slots.<br>
+    For example, if you're a 3rd-level wizard, you have four 1st-level and two 2nd-level spell slots. With an Intelligence of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination, chosen from your spellbook.<br>
+    You can change your list of prepared spells when you finish a long rest. Preparing a new list of wizard spells requires time spent studying your spellbook and memorizing the incantations and gestures you must make to cast the spell: at least 1 minute per spell level for each spell on your list.<br>
+    Intelligence is your spellcasting ability for your wizard spells<br>
+    <b>Spell save DC = 8 + your proficiency bonus + your Intelligence modifier</b><br>
+    <b>Spell attack modifier = your proficiency bonus + your Intelligence modifier</b><br>
+    <br>
+    <b>Ritual Casting:</b> You can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook. You don't need to have the spell prepared.
+    <b>Learning Spells of 1st Level and Higher</b>: Each time you gain a wizard level, you can add two wizard spells of your choice to your spellbook. Each of these spells must be of a level for which you have spell slots`,
+    arcaneRecovery:`You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher.<br>For example, if you're a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two Ist-level spell slots.`,
+    arcaneTradition:`You choose an arcane tradition, shaping your practice of magic through one of eight schools: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, or Transmutation.<br>
+    Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level.`,
+    abilityScore:`When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.`,
+    spellMastery:`You have achieved such mastery over certain spells that you can cast them at will. Choose a 1st-level wizard spell and a 2nd-level wizard spell that are in your spelibook. You can cast those spells at their lowest level without expending a spell slot when you have them prepared. If you want to cast either spell at a higher level, you must expend a spell slot as normal.<br>
+    By spending 8 hours in study, you can exchange one or both of the spells you chose for different spells of the same levels.`,
+    signatureSpells:`You gain mastery over two powerful spells and can cast them with little effort. Choose two 3rd-level wizard spells in your spellbook as your signature spells. You always have these spells prepared, they don't count against the number of spells you have prepared, and you can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest.<br>
+    If you want to cast either spell at a higher level, you must expend a spell slot as normal.`,
+    abjurationSavant:`The gold and time you must spend to copy an abjuration spell into your spellbook is halved.`,
+    arcaneWard:`You can weave magic around yourself for protection. When you cast an abjuration spell of 1st level or higher, you can simultaneously use a strand of the spell's magic to create a magical ward on yourself that lasts until you finish a long rest. The ward has hit points equal to twice your wizard level + your Intelligence modifier. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage.<br>
+    While the ward has 0 hit points, it can't absorb damage. but its magic remains. Whenever you cast an abjuration spell of 1st level or higher, the ward regains a number of hit points equal to twice the level of the spell.<br> 
+    Once you create the ward, you can't create it again until you finish a long rest.`,
+    projectedWard:`When a creature that you can see within 30 feet of you takes damage, you can use your reaction to cause your Arcane Ward to absorb that damage. If this damage reduces the ward to 0 hit points, the warded creature takes any remaining damage. `,
+    improvedAbjuration:`When you cast an abjuration spell that requires you to make an ability check as a part of casting that spell (as in counterspell and dispel magic), you add your proficiency bonus to that ability check.`,
+    spellResistance:`you have advantage on saving throws against spells.<br>
+    Furthermore, you have resistance against the damage of spells.`,
+    conjurationSavant:`The gold and time you must spend to copy a conjuration spell into your spellbook is halved.`,
+    minorConjuration:`You can use your action to conjure up an inanimate object in your hand or on the ground in an unoccupied space that you can see within 10 feet of you. This object can be no larger than 3 feet on a side and weigh no more than 10 pounds, and its form must be that of a nonmagical object that you have seen. The object is visibly magical, radiating dim light out to 5 feet.<br>
+    The object disappears after 1 hour, when you use this feature again, or if it takes any damage.`,
+    benignTransposition:`You can use your action to teleport up to 30 feet to an unoccupied space that you can see Alternatively, you can choose a space within range that is occupied by a Small or Medium creature. If that creature is willing, you both teleport, swapping places.<br> 
+    Once you use this feature, you can't use it again until you finish a long rest or you cast a conjuration spell of 1st level or higher.`,
+    focusedConjuration:`While you are concentrating on a conjuration spell, your concentration can't be broken as a result of taking damage.`,
+    durableSummons:`Any creature that you summon or create with a conjuration spell has 30 temporary hit points.`,
+    divinationSavant:`The goid and time you must spend to copy a divination spell into your spellbook is halved.`,
+    portent:`Glimpses of the future begin to press in on your awareness. When you finish a long rest, roll two d20s and record the numbers rolled. You can replace any attack roll, saving throw, or ability check made by you or a creature that you can see with one of these foretelling rolls. You must choose to do so before the roll, and you can replace a roll in this way only once per turn.<br>
+    Each foretelling roll can be used only once. When you finish a long rest, you lose any unused foretelling rolls.`,
+    expertDivination:`Casting divination spells comes so easily to you that it expends only a fraction of your spellcasting efforts. When you cast a divination spell of 2nd level or higher using a spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the spell you cast and can't be higher than 5th level.`,
+    theThirdEye:`You can use your action to increase your powers of perception. When you do so, choose one of the following benefits, which lasts until you are incapacitated or you take a short or long rest. You can't use the feature again until you finish a rest.<br>
+    <b>Darkvision</b>: You gain darkvision out to a range of 60 feet, as described in chapter 8.<br>
+    <b>Ethereal Sight</b>: You can see into the Ethereal Plane within 60 feet of you.<br>
+    <b>Greater Comprehensio</b>n: You can read any language.<br>
+    <b>See Invisibility</b>: You can see invisible creatures and objects within 10 feet of you that are within line of sight.`,
+    greaterPortent:`The visions in your dreams intensify and paint a more accurate picture in your mind of what is to come. You roll three d20s for your Portent feature, rather than two.`,
+    enchantmentSavant:`The gold and time you must spend to copy an enchantment spell into your spellbook is halved.`,
+    hypnoticGaze:`Your soft words and enchanting gaze can magically enthrall another creature. As an action, choose one creature that you can see within 5 feet of you. If the target can see or hear you, it must succeed on a Wisdom saving throw against your wizard spell save DC or be charmed by you until the end of your next turn. The charmed creature's speed drops to 0, and the creature is incapacitated and visibly dazed.<br>
+    On subsequent turns, you can use your action to maintain this effect, extending its duration until the end of your next turn. However, the effect ends if you move more than 5 feet away from the creature, if the creature can neither see nor hear you, or if the creature takes damage.<br>
+    Once the effect ends, or if the creature succeeds on its initial saving throw against this effect, you can't use this feature on that creature again until you finish a long rest.`,
+    instinctiveCharm:`When a creature you can see within 30 feet of you makes an attack roll against you, you can use your reaction to divert the attack, provided that another creature is within the attack's range. The attacker must make a Wisdom saving throw against your wizard spell save DC. On a failed save, the attacker must target the creature that is closest to it, not including you or itself. If multiple creatures are closest, the attacker chooses which one to target.<br>
+    On a successful save, you can't use this feature on the attacker again until you finish a long rest.<br>
+    You must choose to use this feature before knowing whether the attack hits or misses. Creatures that can't be charmed are immune to this effect.`,
+    splitEnchantment:`When you cast an enchantment spell of 1st level or higher that targets only one creature, you can have it target a second creature.`,
+    alterMemories:`You gain the ability to make a creature unaware of your magical influence on it. When you cast an enchantment spell to charm one or more creatures, you can alter one creature's understanding so that it remains unaware of being charmed.<br>
+    Additionally, once before the spell expires, you can use your action to try to make the chosen creature forget some of the time it spent charmed. The creature must succeed on an Intelligence saving throw against your wizard spell save DC or lose a number of hours of its memories equal to 1 + your Charisma modifier (minimum 1). You can make the creature forget less time, and the amount of time can't exceed the duration of your enchantment spell.`,
+    evocationSavant:`The gold and time you must spend to copy an evocation spell into your spellbook is halved.`,
+    sculptSpells:`You can create pockets of relative safety within the effects of your evocation spells. When you cast an evocation spell that affects other creatures that you can see, you can choose a number of them equal to 1 + the spell's level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save.`,
+    potentCantrip:`Your damaging cantrips affect even creatures that avoid the brunt of the effect. When a creature succeeds on a saving throw against your cantrip, the creature takes half the cantrip's damage (if any) but suffers no additional effect from the cantrip.`,
+    empoweredEvocation:`You can add your Intelligence modifier to the damage roll of any wizard evocation spell you cast.`,
+    overchannel:`Starting at 14th level, you can increase the power of your simpler spells. When you cast a wizard spell of 5th level or lower that deals damage, you can deal maximum damage with that spell.<br>
+    The first time you do so, you suffer no adverse effect. If you use this feature again before you finish a long rest, you take 2d12 necrotic damage for each level of the spell, immediately after you cast it. Each time you use this feature again before finishing a long rest, the necrotic damage per spell level increases by 1d12. This damage ignores resistance and immunity.`,
+    illusionSavant:`The gold and time you must spend to copy an illusion spell into your spellbook is halved.`,
+    improvedMinorIllusion:`You learn the minor illusion cantrip. If you already know this cantrip, you learn a different wizard cantrip of your choice. The cantrip doesn't count against your number of cantrips known.<br>
+    When you cast minor illusion, you can create both a l sound and an image with a single casting of the spell.`,
+    malleableIllusions:`When you cast an illusion spell that has a duration of 1 minute or longer, you can use your action to change the nature of that illusion (using the spell's normal parameters for the illusion), provided that f you can see the illusion.`,
+    illusorySelf:`You can create an illusory duplicate of yourself as an instant, almost instinctual reaction to danger. When a creature makes an attack f roll against you, you can use your reaction to interpose the illusory duplicate between the attacker and l yourself. The attack automatically misses you, then the illusion dissipates.<br>
+    Once you use this feature, you can't use it again until you finish a short or long rest.`,
+    illusoryReality:`You have learned the secret of weaving shadow magic into your illusions to give them a semireality. When you cast an illusion spell of 1st level or higher, you can choose one inanimate, nonmagical object that is part of the illusion and make that object real. You can do this on your turn as a bonus action while the spell is ongoing. The object remains real for 1 minute. For example, you can create an illusion of a bridge over a chasm and then make it real long enough for your allies to cross.<br>
+    The object can't deal damage or otherwise directly harm anyone.`,
+    necromancySavant:`The gold and time you must spend to copy a necromancy spell into your spellbook is halved.`,
+    grimHarvest:`You gain the ability to reap life energy from creatures you kill with your spells. Once per turn when you kill one or more creatures with a spell of Ist level or higher, you regain hit points equal to twice the spell's level, or three times its level if the spell belongs to the School of Necromancy. You don't gain this benefit for killing constructs or undead.`,
+    undeadThralls:`You add the animate dead spell to your spellbook if it is not there already. When you cast animate dead, you can target one additional corpse or pile of bones, creating another zombie or skeleton, as appropriate.<br>
+    Whenever you create an undead using a necromancy spell, it has additional benefits:<br>
+    <b>+</b> The creature's hit point maximum is increased by an amount equal to your wizard level.
+    <b>+</b> The creature adds your proficiency bonus to its weapon damage rolls.`,
+    inuredToUndeath:`You have resistance to necrotic damage, and your hit point maximum can't be reduced. You have spent so much time dealing with undead and the forces that animate them that you have become inured to some of their worst effects.`,
+    commandUndead:`You can use magic to bring undead under your control, even those created by other wizards. As an action, you can choose one undead that you can see within 60 feet of you. That creature must make a Charisma saving throw against your wizard spell save DC. If it succeeds, you can't use this feature on it again. If it fails, it becomes friendly to you and obeys your commands until you use this feature again.<br> 
+    Intelligent undead are harder to control in this way. If the target has an Intelligence of 8 or higher, it has advantage on the saving throw. If it fails the saving throw and has an Intelligence of 12 or higher, it can repeat the saving throw at the end of every hour until it succeeds and breaks free.`,
+    transmutationSavant:`The gold and time you must spend to copy a transmutation spell into your spellbook is halved.`,
+    minorAlchemy:`You can temporarily alter the physical properties of one nonmagical object, changing it from one substance into another. You perform a special alchemical procedure on one object composed entirely of wood, stone (but not a gemstone), iron, copper, or silver, transforming it into a different one of those materials. For each 10 minutes you spend performing the procedure, you can transform up to 1 cubic foot of material. After 1 hour, or until you lose your concentration (as if you were concentrating on a spell), the material reverts to its original substance.`,
+    transmutersStone:`You can spend 8 hours creating a transmuter's stone that stores transmutation magic. You can benefit from the stone yourself or give it to another creature. A creature gains a benefit of your choice as long as the stone is in the creature's possession. When you create the stone, choose the benefit from the following options:<br>
+    <b>+</b> Darkvision out to a range of 60 feet<br>
+    <b>+</b> An increase to speed of 10 feet while the creature is unencumbered<br>
+    <b>+</b> Proficiency in Constitution saving throws<br>
+    <b>+</b> Resistance to acid, cold, fire, lightning, or thunder damage (your choice whenever you choose this benefit)<br>
+    Each time you cast a transmutation spell of 1st level or higher, you can change the effect of your stone if the stone is on your person.<br>
+    If you create a new transmuter's stone, the previous one ceases to function.`,
+    shapechanger:`You add the polymorph spell to your spellbook, if it is not there already. You can cast polymorph without expending a spell slot. When you do so, you can target only yourself and transform into a beast whose challenge rating is 1 or lower.<br>
+    Once you cast polymorph in this way, you can't do so again until you finish a short or long rest, though you can still cast it normally using an available spell slot.`,
+    masterTransmuter:`You can use your action to consume the reserve of transmutation magic stored within your transmuter's stone in a single burst. When you do so, choose one of the following effects. Your transmuter's stone is destroyed and can't be remade until you finish a long rest.<br>
+    <b>Major Transformation</b>: You can transmute one nonmagical object—no larger than a 5-foot cube—into another nonmagical object of similar size and mass and of equal or lesser value. You must spend 10 minutes handling the object to transform it.<br>
+    <b>Panacea</b>: You remove all curses, diseases, and poisons affecting a creature that you touch with the transmuter's stone. The creature also regains all its hit points.<br>
+    <b>Restore Life</b>: You cast the raise dead spell on a creature you touch with the transmuter's stone, without expending a spell slot or needing to have the spell in your spellbook.<br>
+    <b>Restore Youth</b>: You touch the transmuter's stone to a willing creature, and that creature's apparent age is reduced by 3d10 years, to a minimum of 13 years. This effect doesn't extend the creature's lifespan.`,
+    table:`<table class="tableClass">
+                    <tr>
+                        <th >Level</th>
+                        <th >Proficiency Bonus</th>
+                        <th >Features</th>
+                        <th >Cantrips Known</th>
+                        <th >1st</th>
+                        <th >2nd</th>
+                        <th >3rd</th>
+                        <th >4th</th>
+                        <th >5th</th>
+                        <th >6th</th>
+                        <th >7th</th>
+                        <th >8th</th>
+                        <th >9th</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td>+2</td>
+                        <td><a href="">Spellcasting</a> - <a href="">Arcane Recovery</a></td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>+2</td>
+                        <td><a href="">Arcane Tradition</a></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>+2</td>
+                        <td>-</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td>+2</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td>+3</td>
+                        <td>-</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>6th</td>
+                        <td>+3</td>
+                        <td><a href="">Arcane Tradition feature</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>7th</td>
+                        <td>+3</td>
+                        <td>-</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>8th</td>
+                        <td>+3</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>9th</td>
+                        <td>+4</td>
+                        <td>-</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>10th</td>
+                        <td>+4</td>
+                        <td><a href="">Arcane Tradition feature</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>11th</td>
+                        <td>+4</td>
+                        <td>-</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>12th</td>
+                        <td>+4</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>13th</td>
+                        <td>+5</td>
+                        <td>-</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>+5</td>
+                        <td><a href="">Arcane Tradition feature</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>15th</td>
+                        <td>+5</td>
+                        <td>-</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>16th</td>
+                        <td>+5</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>17th</td>
+                        <td>+6</td>
+                        <td>-</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>18th</td>
+                        <td>+6</td>
+                        <td><a href="">Spell Mastery</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>19th</td>
+                        <td>+6</td>
+                        <td><a href="">Ability Score Improvement</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>20th</td>
+                        <td>+6</td>
+                        <td><a href="">Signature Spell</a></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    
+                </table>`,
 }
 
 const layoutId = document.querySelector("#full-layout");
@@ -2890,6 +5671,14 @@ function displayMenuClasses(subclasses){
         
     </div>`
     ;
+    menuSwitch = false;
+        if (layoutSwitch === true){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
+        ;
 }
     else if(subclasses === 'ranger'){
         menuRaces.innerHTML= '';
@@ -3058,10 +5847,668 @@ function displayMenuClasses(subclasses){
         </div>
         
     </div>`
+    menuSwitch = false;
+        if (layoutSwitch === true){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
+        
     ;
 }
-}
+    else if (subclasses === 'cleric'){
+    menuRaces.innerHTML= '';
+    menuRacesDetails.innerHTML= '';
+    menuRacesDetails.innerHTML= `
+    <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${cleric.name}</h1>
+            <p><b>Hit Points:<br> </b> ${cleric.hitPoints}</p>
+            <p><b>Proficiencies:<br> </b>${cleric.proficiencies}</p>
+            <p><b>Spells:<br> </b>${cleric.spells}</p>
+            <p><b class="importantDetail">Cleric Skills:</b></p>
+            <p><b>Level 2 - Channel Divinity:</b><br>${cleric.channelDivinity}</p><br>
+            
+            <p><b>Channel Divinity: Turn Undead:</b><br> ${cleric.channelDivinityTurnUndead}</p><br>
+            
+            <p><b>Level 4/8/12/16/19 - Ability Score: </b><br>${cleric.abilityScore}</p><br>
+            
+            <p><b>Level 5 - Destroy Undead:</b> <br>${cleric.destroyUndead}
+            ${cleric.destroyUndeadTable}</p><br>
+            
+            <p><b>Level 10 - Divine Intervention:</b> <br>${cleric.divineIntervention}</p><br>
+            
+            <p><b>Subclasses: Divine Domains</b><br>
+            <br>
+            <b class="importantDetail">Knowledge Domain</b> , <b class="importantDetail">Life Domain</b> , <b class="importantDetail">Light Domain</b> , <b class="importantDetail">Nature Domain</b> , <b class="importantDetail">War Domain</b> , <b class="importantDetail">Trickery Domain</b> or <b class="importantDetail">Tempest Domain</b></p> 
+            <p><b class="importantDetail">Knowledge Domain:</b></p>
+            <p><b>You gain the following spells for your Domain:</b><br>
+            ${cleric.knowledgeDomainSpells}</p>
+            <p><b>Level 1 - Blessing Of Knowledge:</b><br> ${cleric.blessingOfKnowledge}</p><br>
+            
+            <p><b>Level 2 - Channel Divinity: Knowledge of Ages:</b><br> ${cleric.channelDivinityKnowledgeOfTheAges}</p><br>
+            
+            <p><b>Level 6 - Channel Divinity: Read Thoughts:</b> <br> ${cleric.channelDivinityReadThoughts}</p><br>
+            
+            <p><b>Level 8 - Potent Spellcasting:</b> <br> ${cleric.potentSpellcasting}</p><br>
+            
+            <p><b>Level 17 - Vision of the Past:</b> <br> ${cleric.visionsOfThePast}</p><br>
+            <br>
+            <p><b class="importantDetail">Life Domain:</b></p>
+            <p><b>You gain the following spells for your Domain:</b><br>
+            ${cleric.lifeDomainSpells}</p>
+            <p><b>Level 1 - Bonus Proficiency:</b><br> ${cleric.bonusProficiencies}</p><br>
+            
+            <p><b>Level 2 - Channel Divinity: Preserve Life:</b><br> ${cleric.channelDivinityPreserveLife}</p><br>
+            
+            <p><b>Level 6 - Blessed Healer:</b> <br> ${cleric.blessedHealer}</p><br>
+            
+            <p><b>Level 8 - Divine Strike:</b> <br> ${cleric.divineStrike}</p><br>
+            
+            <p><b>Level 17 - Supreme Healing:</b> <br> ${cleric.supremeHealing}</p><br>
+            <br>
+            <p><b class="importantDetail">Light Domain:</b></p>
+            <p><b>You gain the following spells for your Domain:</b><br>
+            ${cleric.lightDomainSpells}</p>
+            <p><b>Level 1 - Bonus Cantrip:</b><br> ${cleric.bonusCantrip}</p><br>
+            
+            <p><b>also at Level 1 - Warding Flare:</b><br> ${cleric.wardingFlare}</p><br>
+            
+            <p><b>Level 2 - Channel Divinity: Radiance Of The Dawn:</b> <br> ${cleric.channelDivinityRadianceOfTheDawn}</p><br>
+            
+            <p><b>Level 6 - Improved Flare:</b> <br> ${cleric.improvedFlare}</p><br>
 
+            <p><b>Level 8 - Potent Spellcasting:</b> <br> ${cleric.potentSpellcasting}</p><br>
+            
+            <p><b>Level 17 - Corona of Light:</b> <br> ${cleric.coronaOfLight}</p><br>
+            <br>
+
+            <p><b class="importantDetail">Nature Domain:</b></p>
+            <p><b>You gain the following spells for your Domain:</b><br>
+            ${cleric.natureDomainSpells}</p>
+            <p><b>Level 1 - Acolyte of Nature:</b><br> ${cleric.acolyteOfNature}</p><br>
+            
+            <p><b>also at Level 1 - Bonus Proficiency:</b><br> ${cleric.bonusProficiencies}</p><br>
+            
+            <p><b>Level 2 - Channel Divinity: Charm Animals and Plants:</b> <br> ${cleric.channelDivinityCharmAnimalsAndPlants}</p><br>
+            
+            <p><b>Level 6 - Dampen Elements:</b> <br> ${cleric.dampenElements}</p><br>
+
+            <p><b>Level 8 - Divine Strike:</b> <br> ${cleric.divineStrikeNature}</p><br>
+            
+            <p><b>Level 17 - Master of Nature:</b> <br> ${cleric.masterOfNature}</p><br>
+            <br>
+
+            <p><b class="importantDetail">Tempest Domain:</b></p>
+            <p><b>You gain the following spells for your Domain:</b><br>
+            ${cleric.tempestDomainSpells}</p>
+            <p><b>Level 1 - Wrath of the Storm:</b><br> ${cleric.wrathOfTheStorm}</p><br>
+            
+            <p><b>also at Level 1 - Bonus Proficiency:</b><br> ${cleric.bonusProficienciesTempest}</p><br>
+            
+            <p><b>Level 2 - Channel Divinity: Destructive Wrath:</b> <br> ${cleric.channelDivinityDestructiveWrath}</p><br>
+            
+            <p><b>Level 6 - Thunderbolt Strike:</b> <br> ${cleric.thunderboltStrike}</p><br>
+
+            <p><b>Level 8 - Divine Strike:</b> <br> ${cleric.divineStrikeTempest}</p><br>
+            
+            <p><b>Level 17 - Stormborn:</b> <br> ${cleric.stormborn}</p><br>
+            <br>
+
+            <p><b class="importantDetail">Trickery Domain:</b></p>
+            <p><b>You gain the following spells for your Domain:</b><br>
+            ${cleric.trickeryDomainSpells}</p>
+            <p><b>Level 1 - Wrath of the Storm:</b><br> ${cleric.wrathOfTheStorm}</p><br>
+            
+            <p><b>also at Level 1 - Blessing of the Trickster:</b><br> ${cleric.blessingOfTheTrickster}</p><br>
+            
+            <p><b>Level 2 - Channel Divinity: Invoke Duplicity:</b> <br> ${cleric.channelDivinityInvokeDuplicity}</p><br>
+            
+            <p><b>Level 6 - Channel Divinity: Cloak of Shadows:</b> <br> ${cleric.thunderboltStrike}</p><br>
+
+            <p><b>Level 8 - Divine Strike:</b> <br> ${cleric.divineStrikeTrickster}</p><br>
+            
+            <p><b>Level 17 - Improved Duplicity:</b> <br> ${cleric.improvedDuplicity}</p><br>
+            <br>
+
+            <p><b class="importantDetail">War Domain:</b></p>
+            <p><b>You gain the following spells for your Domain:</b><br>
+            ${cleric.warDomainSpells}</p>
+            <p><b>Level 1 - Bonus Proficiency:</b><br> ${cleric.bonusProficienciesWar}</p><br>
+            
+            <p><b>also at Level 1 - War Priest:</b><br> ${cleric.warPriest}</p><br>
+            
+            <p><b>Level 2 - Channel Divinity: Guided Strike:</b> <br> ${cleric.channelDivinityGuidedStrike}</p><br>
+            
+            <p><b>Level 6 - Channel Divinity: War God's Blessing:</b> <br> ${cleric.channelDivinityWarGodsBlessing}</p><br>
+
+            <p><b>Level 8 - Divine Strike:</b> <br> ${cleric.divineStrikeWar}</p><br>
+            
+            <p><b>Level 17 - Avatar of Battle:</b> <br> ${cleric.avatarOfBattle}</p><br>
+            <br>
+
+            <p><b>Class table per level</b><br> ${cleric.table}</p><br>
+            
+        </div>
+        
+    </div>`
+    menuSwitch = false;
+        if (layoutSwitch === true){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
+        
+    ;
+}
+    else if (subclasses === 'druid'){
+    menuRaces.innerHTML= '';
+    menuRacesDetails.innerHTML= '';
+    menuRacesDetails.innerHTML= `
+    <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${druid.name}</h1>
+            <p><b>Hit Points:<br> </b> ${druid.hitPoints}</p>
+            <p><b>Proficiencies:<br> </b>${druid.proficiencies}</p>
+            <p><b>Spells:<br> </b>${druid.spells}</p>
+            <p><b class="importantDetail">Druid Skills:</b></p>
+            
+            <p><b>Level 1 - Druidic:</b><br>${druid.druidic}</p><br>
+           
+            <p><b>Level 2 - Wild Shape:</b><br>${druid.wildShape}</p><br>
+            <p>${druid.beastShapeTable}</p><br>
+            
+            <p><b>Also at Level 2: Druid Circle</b><br> ${druid.druidCircle}</p><br>
+            
+            <p><b>Level 4/8/12/16/19 - Ability Score: </b><br>${druid.abilityScore}</p><br>
+            
+            <p><b>Level 18 - Timeless Body</b> <br>${druid.timelessBody}</p><br>
+            
+            <p><b>also at Level 18 - Beast Spells</b> <br>${druid.beastSpells}</p><br>
+
+            <p><b>Level 20 - Archdruid</b> <br>${druid.archdruid}</p><br>
+            
+            <p><b>Subclasses: Druid Circles</b><br>
+            <br>
+            <b class="importantDetail">Circle of the Land</b> or <b class="importantDetail">Circle of the Moon</b></p>
+
+            <p><b class="importantDetail">Circle of the Land:</b></p>
+
+            <p><b>Level 2 - Bonus Cantrip</b><br> ${druid.bonusCantrip}</p><br>
+            
+            <p><b>Also at Level 2 - Natural Recovery</b><br> ${druid.naturalRecovery}</p><br>
+            
+            <p><b>Level 3/5/7/9 - Circle Spells</b> <br> ${druid.circleSpells}</p><br>
+
+            <p><b>Table of Spells</b><br> 
+            <br>
+            <b>Arctic</b><br>
+            ${druid.circleSpellsArtic}<br>
+            <b>Coast</b><br>
+            ${druid.circleSpellsCoast}<br>
+            <b>Desert</b><br>
+            ${druid.circleSpellsDesert}<br>
+            <b>Forest</b><br>
+            ${druid.circleSpellsForest}<br>
+            <b>Grassland</b><br>
+            ${druid.circleSpellsGrassland}<br>
+            <b>Mountain</b><br>
+            ${druid.circleSpellsMountain}<br>
+            <b>Swamp</b><br>
+            ${druid.circleSpellsSwamp}<br>
+            <b>Underdark</b><br>
+            ${druid.circleSpellsUnderdark}<br>
+            </p><br>
+            
+            <p><b>Level 6 - Land's Stride</b><br> ${druid.landsStride}</p><br>
+            
+            <p><b>Level 10 - Nature's Ward</b> <br> ${druid.naturesWard}</p><br>
+
+            <p><b>Level 14 - Nature's Sanctuary</b><br> ${druid.naturesSanctuary}</p><br>
+            <br>
+            <p><b class="importantDetail">Circle of the Moon:</b></p>
+            
+            <p><b>Level 2 - Combat Wild Shape</b><br> ${druid.combatWildShape}</p><br>
+            
+            <p><b>Also at Level 2 - Circle Forms</b><br> ${druid.CircleForms}</p><br>
+            
+            <p><b>Level 6 - Primal Strike</b> <br> ${druid.PrimalStrike}</p><br>
+            
+            <p><b>Level 10 - Elemental Wild Shape</b> <br> ${druid.ElementalWildShape}</p><br>
+            
+            <p><b>Level 14 - Thousand Forms</b><br> ${druid.ThousandForms}</p><br>
+
+            <p><b>Class table per level</b><br> ${druid.table}</p><br>
+            
+        </div>
+        
+    </div>`
+    menuSwitch = false;
+        if (layoutSwitch === true){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
+        
+    ;
+}
+    else if (subclasses === 'fighter'){
+    menuRaces.innerHTML= '';
+    menuRacesDetails.innerHTML= '';
+    menuRacesDetails.innerHTML= `
+    <div class="races-container">
+        <div class="race-detail-container">
+            <h1>${fighter.name}</h1>
+            <p><b>Hit Points:<br> </b> ${fighter.hitPoints}</p>
+            <p><b>Proficiencies:<br> </b>${fighter.proficiencies}</p>
+            
+            <p><b class="importantDetail">Fighter Skills:</b></p>
+            
+            <p><b>Level 1 - Fighting Style</b><br>${fighter.fightingStyle}</p><br>
+           
+            <p><b>Also at Level 1 - Second Wind</b><br>${fighter.secondWind}</p><br>
+            
+            <p><b>Level 2: Action Surge</b><br> ${fighter.actionSurge}</p><br>
+            
+            <p><b>Level 3 - Martial Archetype </b><br>${fighter.martialArchetype}</p><br>
+            
+            <p><b>Level 4/6/8/12/14/16/19 -Ability Score Improvement</b> <br>${fighter.abilityScore}</p><br>
+            
+            <p><b>Level 5 - Extra Attack</b> <br>${fighter.extraAttack}</p><br>
+
+            <p><b>Level 9 - Indomitable</b> <br>${fighter.indomitable}</p><br>
+            
+            <p><b>Subclasses: Martial Archetypes</b><br>
+            <br>
+            <b class="importantDetail">Champion</b> , <b class="importantDetail">Battle Master</b> or <b class="importantDetail">Eldrich Knight</b></p>
+
+            <p><b class="importantDetail">Champion</b></p>
+
+            <p><b>Level 3 - Improved Critical</b><br> ${fighter.improvedCritical}</p><br>
+            
+            <p><b>Level 7 - Remarkable Athlete</b><br> ${fighter.remarkableAthlete}</p><br>
+            
+            <p><b>Level 10 - Additional Fighting Style</b> <br> ${fighter.additionalFightingStyle}</p><br>
+
+            <p><b>Level 15 - Superior Critical</b> <br> ${fighter.superiorCritical}</p><br>
+
+            <p><b>Level 18 - Survivor</b> <br> ${fighter.survivor}</p><br>
+            <br>
+
+            <p><b class="importantDetail">Battle Master</b></p>
+
+            <p><b>Level 3 - Combat Superiority</b><br> ${fighter.combatSuperiority}</p><br>
+            
+            <p><b>Also at Level 3 - Student of War</b><br> ${fighter.studentOfWar}</p><br>
+            
+            <p><b>Level 7 - Know Your Enemy</b> <br> ${fighter.knowYourEnemy}</p><br>
+
+            <p><b>Level 10 - Improved Combat Superiority</b> <br> ${fighter.improvedCombatSuperiority}</p><br>
+
+            <p><b>Level 15 - Relentless</b> <br> ${fighter.relentless}</p><br>
+
+            <p><b>Level 18 - Maneuvers</b> <br> ${fighter.maneuvers}</p><br>
+            
+            <p><b class="importantDetail">Eldritch Knightr</b></p>
+
+            <p><b>Level 3 - Spellcasting</b><br> ${fighter.spells}</p><br>
+            
+            <p><b>Also at Level 3 - Weapon Bond</b><br> ${fighter.weaponBond}</p><br>
+            
+            <p><b>Level 7 - War Magic</b> <br> ${fighter.warMagic}</p><br>
+
+            <p><b>Level 10 - Eldritch Strike</b> <br> ${fighter.eldritchStrike}</p><br>
+
+            <p><b>Level 15 - Arcane Charge</b> <br> ${fighter.arcaneCharge}</p><br>
+
+            <p><b>Level 18 - Improved War Magic</b> <br> ${fighter.improvedWarMagic}</p><br>
+            
+            <p><b>Class table per level</b><br> ${fighter.table}</p><br>
+            
+        </div>
+        
+    </div>`
+    menuSwitch = false;
+        if (layoutSwitch === true){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
+        
+    ;
+}
+    else if (subclasses === 'monk'){
+    menuRaces.innerHTML= '';
+    menuRacesDetails.innerHTML= '';
+    menuRacesDetails.innerHTML= `
+    <div class="races-container">
+        <div class="race-detail-container">
+
+            <h1>${monk.name}</h1>
+
+            <p><b>Hit Points:<br> </b> ${monk.hitPoints}</p>
+
+            <p><b>Proficiencies:<br> </b>${monk.proficiencies}</p>
+            
+            <p><b class="importantDetail">Monk Skills:</b></p>
+            
+            <p><b>Level 1 - Unarmored Defense</b><br>${monk.unarmoredDefense}</p><br>
+           
+            <p><b>Also at Level 1 - Martial Arts</b><br>${monk.martialArts}</p><br>
+            
+            <p><b>Level 2: Ki</b><br> ${monk.ki}</p><br>
+            
+            <p><b>Also at Level 2 - Unarmored Movement</b><br>${monk.unarmoredMovement}</p><br>
+
+            <p><b>Level 3 - Monastic Tradition</b><br>${monk.monasticTradition}</p><br>
+
+            <p><b>Also at Level 3 - Deflect Missiles</b><br>${monk.deflectMissiles}</p><br>
+            
+            <p><b>Level 4/6/8/12/14/16/19 -Ability Score Improvement</b> <br>${monk.abilityScore}</p><br>
+            
+            <p><b>Level 4 - Slow Fall</b> <br>${monk.slowFall}</p><br>
+
+            <p><b>Level 5 - Extra Attack</b> <br>${monk.extraAttack}</p><br>
+
+            <p><b>Also at Level 5 - Stunning Strike</b> <br>${monk.stunningStrike}</p><br>
+
+            <p><b>Level 6 - Ki-Empowered Strikes</b> <br>${monk.kiEmpoweredStrikes}</p><br>
+
+            <p><b>Level 7 - Evasion</b> <br>${monk.evasion}</p><br>
+
+            <p><b>Also at Level 7 - Stillness of Mind</b> <br>${monk.stillnessOfMind}</p><br>
+
+            <p><b>Level 10 - Purity Of Body</b> <br>${monk.purityOfBody}</p><br>
+
+            <p><b>Level 13 - Tongue of The Sun and Moon</b> <br>${monk.tongueOfTheSunAndMoon}</p><br>
+
+            <p><b>Level 14 - Diamond Soul</b> <br>${monk.diamondSoul}</p><br>
+
+            <p><b>Level 15 - Timeless Body</b> <br>${monk.timelessBody}</p><br>
+
+            <p><b>Level 18 - Empty Body</b> <br>${monk.emptyBody}</p><br>
+
+            <p><b>Level 20 - Perfect Self</b> <br>${monk.perfectSelf}</p><br>
+            
+            <p><b>Subclasses: Monastic Traditions</b><br>
+            <br>
+            <b class="importantDetail">Way of the Open Hand</b><br>
+            <b class="importantDetail">Way of Shadow</b><br>
+            <b class="importantDetail">Way of the Four Elements</b></p>
+
+            <p><b class="importantDetail">Way of the Open Hand</b></p>
+
+            <p><b>Level 3 - Open Hand Technique</b><br> ${monk.openHandTechnique}</p><br>
+            
+            <p><b>Level 6 - Wholeness of Body</b><br> ${monk.wholenessOfBody}</p><br>
+            
+            <p><b>Level 11 - Tranquility</b> <br> ${monk.tranquility}</p><br>
+
+            <p><b>Level 17 - Quivering Palm</b> <br> ${monk.quiveringPalm}</p><br>
+
+            <p><b class="importantDetail">Way of Shadow</b></p>
+
+            <p><b>Level 3 - Shadow Arts</b><br> ${monk.shadowArts}</p><br>
+            
+            <p><b>Level 6 - Shadow Step</b><br> ${monk.shadowStep}</p><br>
+            
+            <p><b>Level 11 - Cloak of Shadows</b> <br> ${monk.cloakOfShadows}</p><br>
+
+            <p><b>Level 17 - Opportunist</b> <br> ${monk.opportunist}</p><br>
+
+            <p><b class="importantDetail">Way of the Four Elements</b></p>
+
+            <p><b>Level 3 - Disciple of the Elements</b><br> ${monk.discipleOfTheElements}</p><br>
+
+            <p><b>Class table per level</b><br> ${monk.table}</p><br>
+
+            </div>
+        
+    </div>`
+    menuSwitch = false;
+        if (layoutSwitch === true){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
+        
+    ;
+}
+    else if (subclasses === 'sorcerer'){
+    menuRaces.innerHTML= '';
+    menuRacesDetails.innerHTML= '';
+    menuRacesDetails.innerHTML= `
+    <div class="races-container">
+        <div class="race-detail-container">
+
+            <h1>${sorcerer.name}</h1>
+
+            <p><b>Hit Points:<br> </b> ${sorcerer.hitPoints}</p>
+
+            <p><b>Proficiencies:<br> </b>${sorcerer.proficiencies}</p>
+
+            <p><b>SpellCasting:<br> </b>${sorcerer.spells}</p>
+            
+            <p><b class="importantDetail">Sorcerer Skills:</b></p>
+            
+            <p><b>Level 1 - Sorcerous Origin</b><br>${sorcerer.sorcerousOrigin}</p><br>
+            
+            <p><b>Level 2: Font of Magic</b><br> ${sorcerer.fontOfMagic}</p><br>
+            
+            <p><b>Level 3 - Metamagic </b><br>${sorcerer.metamagic}</p><br>
+            
+            <p><b>Level 4/6/8/12/14/16/19 -Ability Score Improvement</b> <br>${sorcerer.abilityScore}</p><br>
+            
+            <p><b>Level 20 - Sorcerous Restoration</b> <br>${sorcerer.sorcerousRestoration}</p><br>
+            
+            <p><b>Subclasses: Sorcerous Origins</b><br>
+            <br>
+            <b class="importantDetail">Draconic Bloodline</b><br>
+            <b class="importantDetail">Wild Magic</b></p>
+
+            <p><b class="importantDetail">Draconic Bloodline</b></p>
+
+            <p><b>Level 1 - Dragon Ancestor</b><br> ${sorcerer.dragonAncestor}</p><br>
+            
+            <p><b>Also at Level 1 - Draconic Resilience</b><br> ${sorcerer.draconicResilience}</p><br>
+            
+            <p><b>Level 6 - Elemental Affinity</b> <br> ${sorcerer.elementalAffinity}</p><br>
+
+            <p><b>Level 14- Dragon Wings</b> <br> ${sorcerer.dragonWings}</p><br>
+
+            <p><b>Level 18 - Draconic Presence</b> <br> ${sorcerer.draconicPresence}</p><br>
+            <br>
+
+            <p><b class="importantDetail">Wild Magic</b></p>
+
+            <p><b>Level 1 - Wild Magic Surge</b><br> ${sorcerer.wildMagicSurge}</p><br>
+            
+            <p><b>Also at Level 1 - Tide of Chaos</b><br> ${sorcerer.tidesOfChaos}</p><br>
+            
+            <p><b>Level 6 - Bend Luck</b> <br> ${sorcerer.BendLuck}</p><br>
+
+            <p><b>Level 14- Controlled Chaos</b> <br> ${sorcerer.controlledChaos}</p><br>
+
+            <p><b>Level 18 - Spell Bombardment</b> <br> ${sorcerer.spellBombardment}</p><br>
+            <br><br>
+
+            <p><b>Class table per level</b><br> ${sorcerer.table}</p><br>
+            
+            </div>
+        
+    </div>`
+    menuSwitch = false;
+        if (layoutSwitch === true){
+            Layout();   
+        }
+        else {
+            console.log('sigue');
+        }
+        
+    ;
+}
+    else if (subclasses === 'wizard'){
+        menuRaces.innerHTML= '';
+        menuRacesDetails.innerHTML= '';
+        menuRacesDetails.innerHTML= `
+        <div class="races-container">
+            <div class="race-detail-container">
+    
+                <h1>${wizard.name}</h1>
+    
+                <p><b>Hit Points:<br> </b> ${wizard.hitPoints}</p>
+    
+                <p><b>Proficiencies:<br> </b>${wizard.proficiencies}</p>
+    
+                <p><b>SpellCasting:<br> </b>${wizard.spells}</p>
+
+                <p><b>SpellBook:<br> </b>${wizard.spellbook}</p>
+                
+                <p><b class="importantDetail">Wizard Skills:</b></p>
+                
+                <p><b>Passive - Level 1 - Arcane Recovery</b><br>${wizard.arcaneRecovery}</p><br>
+                
+                <p><b>Level 2: Arcane Tradition</b><br> ${wizard.arcaneTradition}</p><br>
+                
+                <p><b>Level 4/6/8/12/14/16/19 -Ability Score Improvement</b> <br>${wizard.abilityScore}</p><br>
+                
+                <p><b>Level 18 - Spell Mastery</b> <br>${wizard.spellMastery}</p><br>
+
+                <p><b>Level 20 - Signature Spells</b> <br>${wizard.signatureSpells}</p><br>
+                
+                <p><b>Subclasses: Arcane Traditions</b><br>
+                <br>
+                <b class="importantDetail">School of Abjuration</b><br>
+                <b class="importantDetail">School of Conjuration</b><br>
+                <b class="importantDetail">School of Divination</b><br>
+                <b class="importantDetail">School of Enchantment</b><br>
+                <b class="importantDetail">School of Evocation</b><br>
+                <b class="importantDetail">School of Illusion</b><br>
+                <b class="importantDetail">School of Necromancy</b><br>
+                <b class="importantDetail">School of Transmutation</b></p><br>
+    
+                <p><b class="importantDetail">School of Abjuration</b></p>
+    
+                <p><b>Level 2 - Abjuration Savant</b><br> ${wizard.abjurationSavant}</p><br>
+                
+                <p><b>Also at Level 2 - Arcane Ward</b><br> ${wizard.arcaneWard}</p><br>
+                
+                <p><b>Level 6 - Projected Ward</b> <br> ${wizard.projectedWard}</p><br>
+    
+                <p><b>Level 10- Improved Abjuration</b> <br> ${wizard.improvedAbjuration}</p><br>
+    
+                <p><b>Level 14 - Spell Resistance</b> <br> ${wizard.spellResistance}</p><br>
+                <br>
+    
+                <p><b class="importantDetail">School of Conjuration</b></p>
+    
+                <p><b>Level 2 - Conjuration Savant</b><br> ${wizard.conjurationSavant}</p><br>
+                
+                <p><b>Also at Level 2 - Minor Conjuration</b><br> ${wizard.minorConjuration}</p><br>
+                
+                <p><b>Level 6 - Benign Transposition</b> <br> ${wizard.benignTransposition}</p><br>
+    
+                <p><b>Level 10- Focused Conjuration</b> <br> ${wizard.focusedConjuration}</p><br>
+    
+                <p><b>Level 14 - Durable Summons</b> <br> ${wizard.durableSummons}</p><br>
+                <br>
+
+                <p><b class="importantDetail">School of Divination</b></p>
+    
+                <p><b>Level 2 - Divination Savant</b><br> ${wizard.divinationSavant}</p><br>
+                
+                <p><b>Also at Level 2 - Portent</b><br> ${wizard.portent}</p><br>
+                
+                <p><b>Level 6 - Expert Divination</b> <br> ${wizard.expertDivination}</p><br>
+    
+                <p><b>Level 10- The Third Eye</b> <br> ${wizard.theThirdEye}</p><br>
+    
+                <p><b>Level 14 - Greater Portent</b> <br> ${wizard.greaterPortent}</p><br>
+                <br>
+
+                <p><b class="importantDetail">School of Enchantment</b></p>
+    
+                <p><b>Level 2 - Enchantment Savant</b><br> ${wizard.enchantmentSavant}</p><br>
+                
+                <p><b>Also at Level 2 - Hypnotic Gaze</b><br> ${wizard.hypnoticGaze}</p><br>
+                
+                <p><b>Level 6 - Instinctive Charm</b> <br> ${wizard.instinctiveCharm}</p><br>
+    
+                <p><b>Level 10- Split Enchantment</b> <br> ${wizard.splitEnchantment}</p><br>
+    
+                <p><b>Level 14 - Alter Memories</b> <br> ${wizard.alterMemories}</p><br>
+                <br>
+
+                <p><b class="importantDetail">School of Evocation</b></p>
+    
+                <p><b>Level 2 - Evocation Savant</b><br> ${wizard.evocationSavant}</p><br>
+                
+                <p><b>Also at Level 2 - Sculpt Spells</b><br> ${wizard.sculptSpells}</p><br>
+                
+                <p><b>Level 6 - Potent Cantrip</b> <br> ${wizard.potentCantrip}</p><br>
+    
+                <p><b>Level 10- Empowered Evocation</b> <br> ${wizard.empoweredEvocation}</p><br>
+    
+                <p><b>Level 14 - Overchannel</b> <br> ${wizard.overchannel}</p><br>
+                <br>
+
+                <p><b class="importantDetail">School of Illusion</b></p>
+    
+                <p><b>Level 2 - Illusion Savant</b><br> ${wizard.illusionSavant}</p><br>
+                
+                <p><b>Also at Level 2 - Improved Minor Illusion</b><br> ${wizard.improvedMinorIllusion}</p><br>
+                
+                <p><b>Level 6 - Malleable Illusions</b> <br> ${wizard.malleableIllusions}</p><br>
+    
+                <p><b>Level 10- Illusory Self</b> <br> ${wizard.illusorySelf}</p><br>
+    
+                <p><b>Level 14 - Illusory Reality</b> <br> ${wizard.illusoryReality}</p><br>
+                <br>
+
+                <p><b class="importantDetail">School of Necromancy</b></p>
+    
+                <p><b>Level 2 - Necromancy Savant</b><br> ${wizard.necromancySavant}</p><br>
+                
+                <p><b>Also at Level 2 - Grim Harvest</b><br> ${wizard.grimHarvest}</p><br>
+                
+                <p><b>Level 6 - Undead Thralls</b> <br> ${wizard.undeadThralls}</p><br>
+    
+                <p><b>Level 10- Inured To Undeath</b> <br> ${wizard.inuredToUndeath}</p><br>
+    
+                <p><b>Level 14 - Command Undead</b> <br> ${wizard.commandUndead}</p><br>
+                <br>
+
+                <p><b class="importantDetail">School of Transmutation</b></p>
+    
+                <p><b>Level 2 - Transmutation Savant</b><br> ${wizard.transmutationSavant}</p><br>
+                
+                <p><b>Also at Level 2 - Minor Alchemy</b><br> ${wizard.minorAlchemy}</p><br>
+                
+                <p><b>Level 6 - Transmuter's Stone</b> <br> ${wizard.transmutersStone}</p><br>
+    
+                <p><b>Level 10- Shapechanger</b> <br> ${wizard.shapechanger}</p><br>
+    
+                <p><b>Level 14 - Master Transmuter</b> <br> ${wizard.masterTransmuter}</p><br>
+                <br>
+                </div>
+            
+        </div>`
+        menuSwitch = false;
+            if (layoutSwitch === true){
+                Layout();   
+            }
+            else {
+                console.log('sigue');
+            }
+            
+        ;
+}
+}
 function displayMenuRacesDetails(subrace){
     // AASIMAR
     if(subrace === 'fallen'){
