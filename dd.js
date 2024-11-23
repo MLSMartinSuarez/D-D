@@ -761,21 +761,51 @@ Weapons: Simple weapons, martial weapons<br>
 Tools: None<br>
 Saving Throws: Strength, Constitution<br> 
 Skills: Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival`,
+rage:`In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.<br>
+While raging, you gain the following benefits if you aren't wearing heavy armor:<br>
+<b>+</b> You have advantage on Strength checks and Strength saving throws.<br>
+<b>+</b>When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.<br>
+<b>+</b>You have resistance to bludgeoning, piercing, and slashing damage.<br>
+lf you are able to cast spells, you can't cast them or concentrate on them while raging.<br>
+Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.<br>
+Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again.`,
+unarmoredDefense:`While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit.`,
+recklessAttack:`You can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn.`,
+dangerSense:`you gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger.<br>
+You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated.`,
+primalPath:`You choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels.`,
+abilityScore:`When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.`,
+extraAttack:`You can attack twice, instead of once, whenever you take the Attack action on your turn.`,
+fastMovement:`Your speed increases by 10 feet while you aren't wearing heavy armor.`,
+feralInstinct:`Your instincts are so honed that you have advantage on initiative rolls.<br>
+Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn.`,
+brutalCritical:`You can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.<br>
+This increases to two additional dice at 13th level and three additional dice at 17th level.`,
+relentlessRage:`Your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don’t die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead.<br>
+Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10.`,
+persistentRage:`Your rage is so fierce that it ends early only if you fall unconscious or if you choose to end it.`,
+indomitableMight:`If your total for a Strength check is less than your Strength score, you can use that score in place of the total.`,
+primalChampion:`You embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24.`,
 frenzy:` You can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion`,
 mindlessRage:`You can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage.`,
 intimidatingPresence:`You can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you.
 If the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours.`,
 retaliation:`when you take damage froma creature that is within 5 feet of you. you can use your reaction to make a melee weapon attack against that creature.`,
-spiritSeeker:`Yours is a path that seeks attunement with the natural world, giving you a kinship with beasts. You gain the ability to cast the <a>beast sense</a> and <a>speak with animals</a> spells. but only as rituals`,
+
+spiritSeeker:`Yours is a path that seeks attunement with the natural world, giving you a kinship with beasts. You gain the ability to cast the <a target="_blank" href="https://dnd5e.wikidot.com/spell:beast-sense">Beast Sense</a> and <a target="_blank" href="https://dnd5e.wikidot.com/spell:speak-with-animals">Speak With Animals</a> spells. but only as rituals`,
+
 totemSpirit:`When you adopt this path, you choose a totem spirit and gain its feature. You must make or acquire a physical totem object- an amulet or similar adornment—that incorporates fur or feathers, claws. teeth, or bones of the totem animal. At your option, you also gain minor physical attributes that are reminiscent of your totem spirit. For example, if you have a bear totem spirit, you might be unusually hairy and thickskinned, or if your totem is the eagle, your eyes turn bright yellow. Your totem animal might be an animal related to those listed here but more appropriate to your homeland. For example, you could choose a hawk or vulture in place of an eagle.<br>
 <b>Bear</b> :While raging. you have resistance to all damage except psychic damage. The spirit of the bear makes you tough enough to stand up to any punishment.<br>
 <b>Eagle</b>: While you're raging and aren't wearing heavy armor, other creatures have disadvantage on opportunity attack rolls against you, and you can use the Dash action as a bonus action on your turn. The spirit of the eagle makes you into a predator who can weave through the fray with ease.<br>
 <b>Wolf</b>: While you're raging, your friends have advantage on melee attack rolls against any creature within 5 feet of you that is hostile to you. The spirit of the wolf makes you a leader of hunters.`,
+
 aspectOfTheBeast:`you gain a magical benefit based on the totem animal of your choice. You can choose the same animal you selected at 3rd level or a different one.<br>
 <b>Bear</b>: You gain the might of a bear. Your carrying capacity (including maximum load and maximum lift) is doubled, and you have advantage on Strength checks made to push, pull, lift, or break objects.<br>
 <b>Eagle</b>: You gain the eyesight of an eagle. You can see up to 1 mile away with no difficulty, able to discern even fine details as though looking at something no more than 100 feet away from you. Additionally, dim light doesn't impose disadvantage on your Wisdom (Perception) checks.<br>
 <b>Wolf</b>: You gain the hunting sensibilities of a wolf. You can track other creatures while traveling at a fast pace, and you can move stealthily while traveling at a normal pace.`,
-spiritWalker:`you can cast <a>the commune with nature</a> spell, but only as a ritual. When you do so, a spiritual version of one of the animals you chose for Totem Spirit or Aspect of the Beast appears to you to convey the information you seek.`,
+
+spiritWalker:`you can cast <a target="_blank" href="https://dnd5e.wikidot.com/spell:commune-with-nature">Commune With Nature</a> spell, but only as a ritual. When you do so, a spiritual version of one of the animals you chose for Totem Spirit or Aspect of the Beast appears to you to convey the information you seek.`,
+
 totemicAttunement:`You gain a magical benefit based on a totem animal of your choice. You can choose the same animal you selected previously or a different one.<br>
 <b>Bear</b> :While you're raging, any creature within 5 feet of you that's hostile to you has disadvantage on attack rolls against targets other than you or another character witb this feature. An enemy is immune to this effect if it can't see or hear you or if it can't be frightened.<br>
 <b>Eagle</b>: While raging, you have a flying speed equal to your current walking speed. This benefit works only in short bursts; you fall if you end your turn in the air and nothing else is holding you aloft.<br>
@@ -5545,26 +5575,67 @@ function displayMenuClasses(subclasses){
         menuRacesDetails.innerHTML= `
         <div class="races-container">
             <div class="race-detail-container">
+
                 <h1>${barbarian.name}</h1>
-                <p><b>Hit Points: </b> ${barbarian.hitPoints}</p>
-                <p><b>Proficiencies: </b>${barbarian.proficiencies}</p>
-                <p><b>Subclasses:</b><br>
+
+                <p><b>Hit Points:<br></b> ${barbarian.hitPoints}</p>
+
+                <p><b>Proficiencies:<br> </b>${barbarian.proficiencies}</p>
+
+                <p><b class="importantDetail">Barbarian Skills:</b></p>
+
+                <p><b>Level 1 - Rage:</b><br> ${barbarian.rage}</p><br>
+
+                <p><b>Also at Level 1 - Unarmored Defense:</b><br> ${barbarian.unarmoredDefense}</p><br>
+
+                <p><b>Level 2 - Danger Sense:</b><br> ${barbarian.dangerSense}</p><br>
+
+                <p><b>Level 3 - Primal Path:</b><br> ${barbarian.primalPath}</p><br>
+
+                <p><b>Level 4/8/12/16/19 - Ability Score Improvement:</b><br> ${barbarian.abilityScore}</p><br>
+
+                <p><b>Level 5 - Extra Attack:</b><br> ${barbarian.extraAttack}</p><br>
+
+                <p><b>Also at Level 5 - Fast Movement:</b><br> ${barbarian.fastMovement}</p><br>
+
+                <p><b>Level 7 - Feral Instincth:</b><br> ${barbarian.feralInstinct}</p><br>
+
+                <p><b>Level 9 - Brutal Critical:</b><br> ${barbarian.brutalCritical}</p><br>
+
+                <p><b>Level 11 - Relentless Rage:</b><br> ${barbarian.relentlessRage}</p><br>
+
+                <p><b>Level 15 - Persistent Rage:</b><br> ${barbarian.persistentRage}</p><br>
+
+                <p><b>Level 18 - Indomitable Might:</b><br> ${barbarian.indomitableMight}</p><br>
+
+                <p><b>Level 20 - Primal Champion:</b><br> ${barbarian.primalChampion}</p><br>
+
+                <p><b>Subclasses: Primal Path</b><br>
                 <br>
-                <b class="importantDetail">Path of the Berserker</b> or <b class="importantDetail">Path of the Totem Warrior</b></p> 
-                <p><b>Path of The berserker:</b></p>
-                <p><b>Level 3 - Frenzy:</b> ${barbarian.frenzy}</p>
-                <p><b>Level 6 - Mindless Rage:</b> ${barbarian.mindlessRage}</p>
-                <p><b>Level 10 - Intimidating Presence:</b> ${barbarian.intimidatingPresence}</p>
-                <p><b>Level 14 - Retaliation:</b> ${barbarian.retaliation}</p>
-                <p><b class="importantDetail">Path of The Totem Warrior:</b></p>
-                <p><b>Level 3 (both skills)<br>
-                <br>
-                Spirit Seeker:</b> ${barbarian.spiritSeeker}<br>
-                <br>
-                <b>Totem Spirit:</b> ${barbarian.totemSpirit}</p>
-                <p><b>Level 6 - Aspect Of The Beast:</b> ${barbarian.aspectOfTheBeast}</p>
-                <p><b>Level 10 - Spirit Walker:</b> ${barbarian.spiritWalker}</p>
-                <p><b>Level 14 - Totemic Attunement:</b> ${barbarian.totemicAttunement}</p>
+                <b class="importantDetail">Path of the Berserker</b><br>
+                <b class="importantDetail">Path of the Totem Warrior</b></p>
+                <p><b>Path of The Berserker:</b></p><br>
+
+                <p><b>Level 3 - Frenzy:</b><br> ${barbarian.frenzy}</p><br>
+
+                <p><b>Level 6 - Mindless Rage:</b><br> ${barbarian.mindlessRage}</p><br>
+
+                <p><b>Level 10 - Intimidating Presence:</b><br> ${barbarian.intimidatingPresence}</p><br>
+
+                <p><b>Level 14 - Retaliation:</b><br> ${barbarian.retaliation}</p><br>
+
+                <p><b class="importantDetail">Path of The Totem Warrior:</b></p><br>
+
+                <p><b>Level 3 - Spirit Seeker:</b><br> ${barbarian.spiritSeeker}</p><br>
+
+                <p><b>Also at Level 3 - Totem Spirit:</b><br> ${barbarian.totemSpirit}</p><br>
+
+                <p><b>Level 6 - Aspect Of The Beast:</b><br> ${barbarian.aspectOfTheBeast}</p><br>
+
+                <p><b>Level 10 - Spirit Walker:</b><br> ${barbarian.spiritWalker}</p><br>
+
+                <p><b>Level 14 - Totemic Attunement:</b><br> ${barbarian.totemicAttunement}</p><br>
+
                 <p><b>Class table per level</b> ${barbarian.table}</p>
                 
             </div>
@@ -5584,30 +5655,40 @@ function displayMenuClasses(subclasses){
         menuRacesDetails.innerHTML= '';
         menuRacesDetails.innerHTML= `
         <div class="races-container">
+
             <div class="race-detail-container">
+
                 <h1>${bard.name}</h1>
-                <p><b>Hit Points: </b> ${bard.hitPoints}</p>
-                <p><b>Proficiencies: </b>${bard.proficiencies}</p>
-                <p><b>Spells: </b>${bard.spells}</p>
+                <p><b>Hit Points:</b><br> ${bard.hitPoints}</p>
+                <p><b>Proficiencies: </b><br>${bard.proficiencies}</p>
+
+                <p><b>Spells: </b><br>${bard.spells}</p>
+
                 <p><b>Subclasses:</b><br>
                 <br>
-                <b class="importantDetail">College of Lore</b> or <b class="importantDetail">College of Valor</b></p> 
+                <b class="importantDetail">College of Lore</b><br>
+                <b class="importantDetail">College of Valor</b></p>
+
                 <p><b class="importantDetail">College of Lore:</b></p>
-                <p><b>Level 3 (both skills):<br>
-                <br>
-                Bonus Proficiencies:</b> ${bard.bonusProficienciesLore}<br>
-                <br>
-                <b>Cutting Word:</b> ${bard.cuttingWords}</p>
-                <p><b>Level 6 - Additional Magical Secrets:</b> ${bard.additionalMagicalSecrets}</p>
-                <p><b>Level 14 - Peerless Skill:</b> ${bard.peerlessSkill}</p>
+
+                <p><b>Level 3 - Cutting Word</b><br>${bard.cuttingWords}</p><br>
+
+                <p><b>Also at Level 3 - Bonus Proficiencies</b><br>${bard.bonusProficienciesLore}</p><br>
+
+                <p><b>Level 6 - Additional Magical Secrets</b><br> ${bard.additionalMagicalSecrets}</p><br>
+
+                <p><b>Level 14 - Peerless Skill</b><br> ${bard.peerlessSkill}</p>
+
                 <p><b class="importantDetail">College of Valor:</b></p>
-                <p><b>Level 3 (both skills)<br>
-                <br>
-                Bonus Proficiencies:</b> ${bard.bonusProficienciesValor}<br> 
-                <br>
-                <b>Combat Inspiration:</b> ${bard.combatInspiration}</p>
-                <p><b>Level 6 - Extra Attack:</b> ${bard.extraAttack}</p>
-                <p><b>Level 14 - Battle Magic:</b> ${bard.battleMagic}</p>
+
+                <p><b>Level 3 - Combat Inspiration</b><br>${bard.combatInspiration}</p><br>
+
+                <p><b>Also at Level 3 - Bonus Proficiencies</b><br>${bard.bonusProficienciesValor}</p><br>
+
+                <p><b>Level 6 - Extra Attack</b><br> ${bard.extraAttack}</p><br>
+
+                <p><b>Level 14 - Battle Magic</b><br> ${bard.battleMagic}</p><br>
+
                 <p><b>Class table per level</b> ${bard.table}</p>
                 
             </div>
@@ -5628,10 +5709,15 @@ function displayMenuClasses(subclasses){
     menuRacesDetails.innerHTML= `
     <div class="races-container">
         <div class="race-detail-container">
+
             <h1>${paladin.name}</h1>
-            <p><b>Hit Points: </b> ${paladin.hitPoints}</p>
-            <p><b>Proficiencies: </b>${paladin.proficiencies}</p>
-            <p><b>Spells: </b>${paladin.spells}</p>
+
+            <p><b>Hit Points: </b> <br>${paladin.hitPoints}</p>
+
+            <p><b>Proficiencies: </b><br>${paladin.proficiencies}</p>
+
+            <p><b>Spells: </b><br>${paladin.spells}</p>
+
             <p><b>Subclasses:</b><br>
             <br>
             <b class="importantDetail">Oath of Devotion</b> , <b class="importantDetail">Oath of Ancient</b> or <b class="importantDetail">Oath of Vengeance</b></p> 

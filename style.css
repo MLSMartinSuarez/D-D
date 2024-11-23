@@ -2,9 +2,16 @@
     margin: 0px;
     padding: 0px;
     list-style: none;
-    font-family: Montserrat;
+    font-family: 'text';
 }
-
+@font-face {
+    font-family: 'title';
+    src: url(/dragon-hunter-font/Celestia\ Antiqua\ SC.otf);
+}
+@font-face {
+    font-family: 'text';
+    src: url(/dragon-hunter-font/AveriaSerifGWF-Regular.ttf);
+}
 
 body{
     background-image: url('./img/dd-wallpaper3.png');
@@ -242,17 +249,31 @@ body{
     color: rgba(32, 237, 172, 0.748);
     letter-spacing: 2px;
     margin-bottom: 20px;
+    font-family: 'title';
 }
 
 .race-detail-container p{
     margin-bottom: 10px;
+    font-family: 'text';
+    font-size: large;
 }
 .race-detail-container a {
     color: rgba(32, 237, 172, 0.748);
     text-decoration: none;
     transition: background-color 0.2s, box-shadow 0.2s;
+    font-family: 'text';
     font-style: italic;
+    cursor: pointer;
+
 }
+
+.race-detail-container b{
+    font-family: 'title';
+    font-size: larger;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
 .race-detail-container a:hover{
     box-shadow: 1px -2px 20px 5px rgb(249 249 249 / 11%);
     background-color: rgb(249 249 249 / 11%);
@@ -305,7 +326,6 @@ body{
     color: rgba(32, 237, 172, 0.748);
     font-weight: 100;
     letter-spacing: 2px;
-    font-weight: bold;
 }
 
 .raceImg{
