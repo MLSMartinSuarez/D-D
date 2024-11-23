@@ -6,11 +6,11 @@
 }
 @font-face {
     font-family: 'title';
-    src: url('/dragon-hunter-font/Celestia\ Antiqua\ SC.otf');
+    src: url('./img/Celestia\ Antiqua\ SC.otf');
 }
 @font-face {
     font-family: 'text';
-    src: url('/dragon-hunter-font/AveriaSerifGWF-Regular.ttf');
+    src: url('./img/AveriaSerifGWF-Regular.ttf');
 }
 
 body{
